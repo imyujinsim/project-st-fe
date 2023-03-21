@@ -1,0 +1,32 @@
+.info {
+  border-bottom: 2px solid #333333;
+  border-radius: 3px;
+}
+.line {
+  width: 75%;
+  height: 75%;
+}
+table {
+  margin-left: 350px;
+  margin-right: auto;
+}
+h1 {
+  font-size: xx-large;
+  margin-left: 100px;
+}
+.info img {
+  width: 400px;
+  height: auto;
+  margin-top: 45px;
+}
+.right > h1 {
+  font-size: 30px;
+  position: relative;
+  bottom: 150px;
+  margin: 10px;
+}
+.right > h2 {
+  position: relative;
+  bottom: 150px;
+  margin: 10px;
+}
