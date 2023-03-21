@@ -1,0 +1,17 @@
+.search {
+  /* margin-bottom: 20px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 170px;
+}
+
+.search_bar {
+  padding: 0 30px;
+  width: 50%;
+  height: 55px;
+  border-radius: 30px;
+  border: none;
+  background-color: #f5f6f7;
+}

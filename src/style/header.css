@@ -1,0 +1,32 @@
+header {
+  padding: 30px 150px 40px 80px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li:first-child {
+  margin-right: 30px;
+}
+
+header nav ul li a {
+  color: #585858;
+}
+
+header nav ul li a:hover {
+  color: #000000;
+}
+
+.main-logo {
+  width: 30%;
+  min-width: 200px;
+  max-width: 280px;
+  height: auto;
+}

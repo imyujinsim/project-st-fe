@@ -1,0 +1,61 @@
+.list {
+  margin-bottom: 80px;
+}
+
+.list h1 {
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.list ul {
+  display: flex;
+  overflow-y: hidden;
+}
+
+.list ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.list ul li img {
+  margin-right: 15px;
+  margin-bottom: 10px;
+  width: 250px;
+  height: 160px;
+}
+
+.list ul li img:last-child {
+  margin-right: 0;
+}
+
+.list ul li h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.main_login_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #b1aeae;
+  border-radius: 5px;
+}
+
+.main_login_btn a {
+  width: 80px;
+  height: 40px;
+  font-weight: 700;
+}
+
+.carousel::-webkit-scrollbar {
+  width: 2px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #808080;
+}
+.carousel::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #c4bebe;
+}
