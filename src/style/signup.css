@@ -1,0 +1,27 @@
+@import "~mdb-ui-kit/css/mdb.min.css";
+
+.form-outline > input {
+  width: inherit;
+  border-radius: 9px;
+  height: 45px;
+  background-color: #f8f8f8;
+}
+
+.card-body > h3 {
+  width: 300px;
+  position: relative;
+  top: 30px;
+}
+
+.btn-color {
+  background-color: #b1aeae;
+}
+
+.mt-4 > input {
+  position: relative;
+  bottom: 40px;
+}
+
+.card-body {
+  padding-top: 0;
+}
