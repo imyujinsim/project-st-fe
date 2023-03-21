@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./project-st/src/style/reset.css">
+  <style>
+    /* 검색 입력창 */
+    .search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 150px;
+    }
+
+    .search_bar {
+      padding: 0 20px;
+      width: 50%;
+      height: 45px;
+      border-radius: 30px;
+      border: none;
+      background-color: #f5f6f7;
+    }
+
+    /* 목록 */
+    .list h1 {
+      margin-bottom: 15px;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .list ul {
+      display: flex;
+    }
+
+    .list ul li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .list ul li img {
+      margin-right: 15px;
+      margin-bottom: 10px;
+      width: 250px;
+      height: 160px;
+    }
+
+    .list ul li h3 {
+      margin-bottom: 50px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .main_login_btn {
+      width: 80px;
+      height: 40px;
+      background-color: #b1aeae;
+      border-radius: 5px;
+    }
+
+    .main_login_btn a {
+      width: 80px;
+      height: 40px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="search">
+    <input type="text" class="search_bar" placeholder="도시나 관광지를 검색해보세요">
+  </div>
+
+  <article class="list">
+    <h1>내 지역 관광지</h1>
+    <ul>
+      <li>
+        <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel" alt="">
+        <h3>해운대</h3>
+      </li>
+      <li>
+        <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel" alt="">
+        <h3>해운대</h3>
+      </li>
+      <li>
+        <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel" alt="">
+        <h3>해운대</h3>
+      </li>
+      <li>
+        <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel" alt="">
+        <h3>해운대</h3>
+      </li>
+      <li>
+        <img src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel" alt="">
+        <h3>해운대</h3>
+      </li>
+    </ul>
+  </article>
+
+  <button class="main_login_btn"><a href="">로그인</a></button>
+
+  <p>북마크를 추가해주세요🙏🏻</p>
+</body>
+
+</html>
