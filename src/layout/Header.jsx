@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <header>
       <nav>
-        <img src={logo} class="main-logo" />
+        <img src={logo} className="main-logo" />
         <ul>
           <li>
             <a href="">로그인</a>

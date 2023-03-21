@@ -1,15 +1,19 @@
 import React from 'react';
-import '../style/reset.css';
-import '../style/main.css';
-import ListItem from './ListItem';
+import ListItem from '../component/ListItem';
+import '../style/search-result.css';
 
-function List(props) {
+function Result(props) {
   return (
-    <article className="wrapper list list-main">
-      <div className="title">
-        <h1>{props.title}</h1>
-      </div>
-      <ul>
+    <div className="search-result-page">
+      <ul className="result-list">
+        <ListItem
+          picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
+          name="해운대"
+        />
+        <ListItem
+          picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
+          name="해운대"
+        />
         <ListItem
           picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
           name="해운대"
@@ -31,8 +35,8 @@ function List(props) {
           name="해운대"
         />
       </ul>
-    </article>
+    </div>
   );
 }
 
-export default List;
+export default Result;

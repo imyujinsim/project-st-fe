@@ -1,0 +1,21 @@
+.search-result-page {
+  width: 100vw;
+  /* display: flex;
+  align-items: center; */
+  padding: 30px 80px;
+}
+
+.result-list {
+  width: 100%;
+  display: grid;
+  /* grid-template-columns: 200px 200px 500px;
+  grid-template-rows: 200px 200px 500px; */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+  gap: 30px;
+  justify-content: center;
+}
+
+/* .result-list .card {
+  display: flex;
+  justify-content: flex-start;
+} */
