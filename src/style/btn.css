@@ -1,0 +1,12 @@
+.main-login-btn {
+  width: 80px;
+  height: 40px;
+  background-color: #b1aeae;
+  border-radius: 5px;
+}
+
+.main-login-btn a {
+  width: 80px;
+  height: 40px;
+  font-weight: 700;
+}

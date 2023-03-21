@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Search from './component/Search';
-import MainList from './main/MainList';
-import MainListNoBookmark from './main/MainListNoBookmark';
+import NoResult from './searchResult/NoResult';
+import List from './component/List';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,12 +12,8 @@ root.render(
     <Header />
     <hr />
     <Search />
-    <MainListNoBookmark />
+    <NoResult />
+    <List title="찜한 관광지" />
     <Footer />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();

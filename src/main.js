@@ -4,7 +4,6 @@ import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Search from './component/Search';
 import MainList from './main/MainList';
-import MainListNoBookmark from './main/MainListNoBookmark';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +11,7 @@ root.render(
     <Header />
     <hr />
     <Search />
-    <MainListNoBookmark />
+    <MainList />
     <Footer />
   </React.StrictMode>
 );

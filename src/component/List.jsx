@@ -1,12 +1,14 @@
 import React from 'react';
 import '../style/reset.css';
-import '../style/list.css';
+import '../style/main.css';
 import ListItem from './ListItem';
 
 function List(props) {
   return (
-    <article className="wrapper list">
-      <h1>{props.title}</h1>
+    <article className="wrapper list list-main">
+      <div className="title">
+        <h1>{props.title}</h1>
+      </div>
       <ul>
         <ListItem
           picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
