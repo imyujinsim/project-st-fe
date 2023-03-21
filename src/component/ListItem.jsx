@@ -1,8 +1,10 @@
 import React from 'react';
+import '../style/reset.css';
+import '../style/card.css';
 
 function ListItem(props) {
   return (
-    <li class="card" data-target="card">
+    <li className="card" data-target="card">
       <a href="">
         <img src={props.picture} alt={props.name} />
         <h3>{props.name}</h3>
