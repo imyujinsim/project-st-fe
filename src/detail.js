@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import Footer from './layout/Footer';
@@ -8,11 +9,12 @@ import InfoAlbum from './component/InfoAlbum';
 import KakaoMap from './component/KakaoMap';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <Header />
-    <hr />
     <InfoAlbum />
+    <Info />
     <hr />
     <ReviewTable />
     <KakaoMap />
