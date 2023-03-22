@@ -13,22 +13,27 @@ function List(props) {
         <ListItem
           picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
           name="해운대"
+          index="1"
         />
         <ListItem
           picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
           name="해운대"
+          index="2"
         />
         <ListItem
           picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
           name="해운대"
+          index="3"
         />
         <ListItem
           picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
           name="해운대"
+          index="4"
         />
         <ListItem
           picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
           name="해운대"
+          index="5"
         />
       </ul>
     </article>

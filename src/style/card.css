@@ -28,7 +28,7 @@
   border-radius: 5px;
 }
 
-input[type='checkbox'] {
+/* input[type='checkbox'] {
   display: none;
 }
 input[type='checkbox'] + label {
@@ -39,7 +39,7 @@ input[type='checkbox'] + label {
   position: relative;
   border-radius: 100%;
 }
-input[id='check']:checked + label::after {
+input[value='1']:checked + label::after {
   content: '★';
   font-size: 25px;
   width: 30px;
@@ -49,4 +49,39 @@ input[id='check']:checked + label::after {
   position: absolute;
   left: -2px;
   bottom: 4px;
+} */
+
+.bookmark {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 100%;
+  position: relative;
+}
+
+/* .bookmark:after {
+  content: '☆';
+  position: absolute;
+  bottom: -0.5px;
+  left: 2px;
+  font-size: 20px;
+} */
+
+.checked {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 100%;
+  position: relative;
+}
+
+.checked:after {
+  content: '★';
+  position: absolute;
+  bottom: -0.5px;
+  left: 2px;
+  font-size: 20px;
+  color: red;
 }
