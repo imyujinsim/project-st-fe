@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Footer from "./layout/Footer";
 import Header from "./layout/Header";
-import Info from "./component/Info";
-import Table from "./component/table";
+import Info from "./component/info";
+import MapTest from "./component/MapTest";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,8 +11,8 @@ root.render(
     <Header />
     <hr />
     <Info />
-    <hr />
-    <Table />
+    <MapTest />
+
     <Footer />
   </React.StrictMode>
 );
