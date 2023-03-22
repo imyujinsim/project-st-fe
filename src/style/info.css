@@ -1,32 +1,14 @@
-/* .info {
-  border-bottom: 2px solid #333333;
-  border-radius: 3px;
+.info {
+  margin-left: 80px;
 }
-.line {
-  width: 75%;
-  height: 75%;
+.user-information h1 {
+  margin-bottom: 30px;
 }
-table {
-  margin-left: 350px;
-  margin-right: auto;
+
+.user-info tbody tr th {
+  padding-right: 50px;
+  text-align: start;
 }
 h1 {
-  font-size: xx-large;
-  margin-left: 100px;
+  font-size: x-large;
 }
-.info img {
-  width: 400px;
-  height: auto;
-  margin-top: 45px;
-}
-.right > h1 {
-  font-size: 30px;
-  position: relative;
-  bottom: 150px;
-  margin: 10px;
-}
-.right > h2 {
-  position: relative;
-  bottom: 150px;
-  margin: 10px;
-} */

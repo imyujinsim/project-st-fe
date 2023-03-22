@@ -12,6 +12,7 @@ root.render(
   <React.StrictMode>
     <Header />
     <hr />
+
     <InfoAlbum />
     <hr />
     <ReviewTable />
