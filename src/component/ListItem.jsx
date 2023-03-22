@@ -9,6 +9,8 @@ function ListItem(props) {
         <img src={props.picture} alt={props.name} />
         <h3>{props.name}</h3>
       </a>
+      <input type="checkbox" id="check-{props.index}" />
+      <label htmlFor="check"></label>
     </li>
   );
 }
