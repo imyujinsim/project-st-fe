@@ -38,6 +38,6 @@ tbody tr td {
   padding: 3px;
 }
 
-tbody tr:hover {
+.table tbody tr:hover {
   background-color: #edecec7d;
 }

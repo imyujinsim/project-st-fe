@@ -1,6 +1,6 @@
-import React from 'react';
-import '../style/reset.css';
-import '../style/card.css';
+import React, { useCallback, useState } from "react";
+import "../style/reset.css";
+import "../style/card.css";
 
 function ListItem(props) {
   return (
@@ -9,8 +9,6 @@ function ListItem(props) {
         <img src={props.picture} alt={props.name} />
         <h3>{props.name}</h3>
       </a>
-      <input type="checkbox" id="check-{props.index}" />
-      <label htmlFor="check"></label>
     </li>
   );
 }
