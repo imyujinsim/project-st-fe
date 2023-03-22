@@ -28,75 +28,37 @@
   border-radius: 5px;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
-input[type="checkbox"] + label {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  border: 3px solid #707070;
-  position: relative;
+.bookmark {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid black;
   border-radius: 100%;
+  position: relative;
 }
 
-input[id="check1"]:checked + label::after {
-  content: "★";
-  font-size: 25px;
-  width: 30px;
-  height: 30px;
-  color: red;
-  text-align: center;
+/* .bookmark:after {
+  content: '☆';
   position: absolute;
-  left: -2px;
-  bottom: 4px;
+  bottom: -0.5px;
+  left: 2px;
+  font-size: 20px;
+} */
+
+.checked {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 100%;
+  position: relative;
 }
 
-input[id="check2"]:checked + label::after {
-  content: "★";
-  font-size: 25px;
-  width: 30px;
-  height: 30px;
-  color: red;
-  text-align: center;
+.checked:after {
+  content: '★';
   position: absolute;
-  left: -2px;
-  bottom: 4px;
-}
-
-input[id="check3"]:checked + label::after {
-  content: "★";
-  font-size: 25px;
-  width: 30px;
-  height: 30px;
+  bottom: -0.5px;
+  left: 2px;
+  font-size: 20px;
   color: red;
-  text-align: center;
-  position: absolute;
-  left: -2px;
-  bottom: 4px;
-}
-
-input[id="check4"]:checked + label::after {
-  content: "★";
-  font-size: 25px;
-  width: 30px;
-  height: 30px;
-  color: red;
-  text-align: center;
-  position: absolute;
-  left: -2px;
-  bottom: 4px;
-}
-
-input[id="check5"]:checked + label::after {
-  content: "★";
-  font-size: 25px;
-  width: 30px;
-  height: 30px;
-  color: red;
-  text-align: center;
-  position: absolute;
-  left: -2px;
-  bottom: 4px;
 }
