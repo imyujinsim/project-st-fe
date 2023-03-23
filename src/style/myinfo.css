@@ -1,3 +1,25 @@
+.user-information {
+  padding: 70px 95px 60px 95px;
+}
+
+.user-information h1 {
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.user-info {
+  margin-left: 20px;
+}
+
+.user-info tbody {
+  text-align: left;
+}
+
+.user-info tbody tr th {
+  width: 100px;
+}
+
 b {
   font-weight: 600;
 }

@@ -1,20 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Footer from "./layout/Footer";
-import Header from "./layout/Header";
-import Myreview from "./mypage/Myreview";
-import MyInfo from './mypage/MyInfo';
-import { ListGroup } from 'react-bootstrap';
-import List from './component/List';
+import React from 'react';
+import ReactDOM from 'react-dom';
+// import './index.css';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <Header />
-    <hr />
-    <MyInfo />
-    <List title="찜한 목록" />
-    <Myreview />
-    <Footer />
-  </React.StrictMode>
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
 );

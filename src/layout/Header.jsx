@@ -2,18 +2,25 @@ import React from 'react';
 import logo from '../resources/logo.png';
 import '../style/reset.css';
 import '../style/header.css';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
   return (
     <header>
       <nav>
-        <img src={logo} className="main-logo" />
+        <Link to="/">
+          <img src={logo} className="main-logo" />
+        </Link>
         <ul>
           <li>
-            <a href="">로그인</a>
+            <Link to="/login" className="nav-item">
+              로그인
+            </Link>
           </li>
           <li>
-            <a href="">회원가입</a>
+            <Link to="/signup" className="nav-item">
+              회원가입
+            </Link>
           </li>
         </ul>
       </nav>

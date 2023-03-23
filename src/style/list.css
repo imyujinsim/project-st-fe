@@ -1,5 +1,5 @@
 .list {
-  padding: 0 80px 0 80px;
+  padding: 0 80px 0 150px;
 }
 
 .list h1 {
@@ -16,6 +16,10 @@
 
 .list-main ul {
   margin-bottom: 30px;
+}
+
+.list-wrapper {
+  padding-left: 0;
 }
 
 .main-login-btn a {

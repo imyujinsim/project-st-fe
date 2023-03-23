@@ -1,6 +1,6 @@
 .album-container {
-  height: 450px;
-  padding: 30px 80px;
+  height: 500px;
+  padding: 30px 150px;
 }
 
 .album-container h1 {
@@ -13,28 +13,27 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  /* height: 450px; */
 }
 
 .album table {
-  width: 80%;
-  max-width: 1200px;
+  width: 90%;
+  max-width: 1400px;
 }
 
 .one {
   width: 500px;
-  height: 350px;
+  height: 400px;
 }
 
 .two {
   width: 500px;
-  height: 175px;
+  height: 200px;
 }
 
 .three,
 .four {
   width: 250px;
-  height: 175px;
+  height: 200px;
 }
 
 .album-pic img {

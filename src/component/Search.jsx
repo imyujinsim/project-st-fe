@@ -7,7 +7,7 @@ function Search(props) {
     <div className="search">
       <input
         type="text"
-        className="search_bar"
+        className="search_bar_main"
         placeholder="도시나 관광지를 검색해보세요"
       />
     </div>

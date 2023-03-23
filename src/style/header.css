@@ -16,11 +16,11 @@ header nav ul li:first-child {
   margin-right: 30px;
 }
 
-header nav ul li a {
+.nav-item {
   color: #585858;
 }
 
-header nav ul li a:hover {
+.nav-item:hover {
   color: #000000;
 }
 

@@ -1,7 +1,7 @@
-import React from "react";
-import "../style/reset.css";
-import "../style/table.css";
-import TableItem from "../component/TableItem";
+import React from 'react';
+import '../style/reset.css';
+import '../style/table.css';
+import TableItem from '../component/TableItem';
 
 function Myreview(props) {
   return (

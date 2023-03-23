@@ -1,14 +1,24 @@
 .info {
-  margin-left: 80px;
+  padding: 0 80px;
 }
-.user-information h1 {
-  margin-bottom: 30px;
+.info h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 15px 0 10px 90px;
+}
+
+.user-info {
+  margin: 15px 0 10px 100px;
 }
 
 .user-info tbody tr th {
   padding-right: 50px;
   text-align: start;
+  font-weight: 600;
 }
-h1 {
-  font-size: x-large;
+
+.info hr {
+  margin-top: 15px;
+  width: 88vw;
+  max-width: 1500px;
 }

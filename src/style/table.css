@@ -1,9 +1,11 @@
 .review-container {
+  margin-top: 30px;
   height: 300px;
-  padding: 30px 80px;
+  padding: 30px 95px;
 }
 
 .review-container h1 {
+  /* padding-left: 10px; */
   font-size: 25px;
   font-weight: 600;
 }

@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Footer from './layout/Footer';
-import Header from './layout/Header';
-import Search from './component/Search';
-import MainList from './main/MainList';
-import MainListNoBookmark from './main/MainListNoBookmark';
+import Footer from '../layout/Footer';
+import Header from '../layout/Header';
+import Search from '../component/Search';
+import MainListNoBookmark from '../main/MainListNoBookmark';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

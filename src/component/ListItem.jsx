@@ -17,7 +17,7 @@ function ListItem(props) {
   }
 
   return (
-    <li className="card" data-target="card">
+    <li className="list-item" data-target="card">
       <a href="">
         <img src={props.picture} alt={props.name} />
         <h3>{props.name}</h3>

@@ -1,7 +1,7 @@
-import React from "react";
-import logo from "../resources/logo.png";
-import "../style/reset.css";
-import "../style/review.css";
+import React from 'react';
+import '../style/reset.css';
+import '../style/review.css';
+
 function Table(props) {
   return (
     <div class="review">

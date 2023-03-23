@@ -9,7 +9,7 @@ function List(props) {
       <div className="title">
         <h1>{props.title}</h1>
       </div>
-      <ul>
+      <ul className="list-wrapper">
         <ListItem
           picture="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229153530528_ttiel"
           name="해운대"
