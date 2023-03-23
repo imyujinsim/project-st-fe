@@ -8,7 +8,7 @@ import axios from 'axios';
 // import { createProxyMiddleware } from 'http-proxy-middleware';
 
 export default function SearchResult() {
-  const key = encodeURIComponent(process.env.REACT_APP_TOUR);
+  const key = decodeURIComponent(process.env.REACT_APP_TOUR);
   const [data, setData] = useState('');
 
   useEffect(() => {
@@ -16,7 +16,6 @@ export default function SearchResult() {
     const getData = async () => {
       await axios
         .get('/api', {
-          baseURL: '/searchKeyword1',
           params: {
             numOfRows: 10,
             pageNo: 1,
@@ -30,7 +29,7 @@ export default function SearchResult() {
             serviceKey: key,
           },
         })
-        .then((res) => setData(res));
+        .then((res) => setData(JSON.parse(res.data)));
     };
     void getData();
   }, []);
