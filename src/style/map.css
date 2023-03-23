@@ -1,5 +1,5 @@
 .myMap {
-  padding: 15px 80px 10px 80px;
+  padding: 15px 80px 10px 95px;
   height: 500px;
 }
 
@@ -7,7 +7,7 @@
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 10px;
-  padding-left: 80px;
+  /* padding-left: 80px; */
 }
 
 .map-container {

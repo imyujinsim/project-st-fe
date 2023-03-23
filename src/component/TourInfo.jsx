@@ -3,7 +3,7 @@ import '../style/info.css';
 
 function TourInfo(props) {
   return (
-    <table class="user-info">
+    <table class="user-info tour-info">
       <tbody>
         <tr>
           <th>전화번호</th>
