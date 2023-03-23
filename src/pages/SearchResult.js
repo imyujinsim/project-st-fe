@@ -40,6 +40,7 @@ export default function SearchResult() {
       <Header />
       <hr />
       <Search />
+
       <Result data={data} />
       <Footer />
     </>
