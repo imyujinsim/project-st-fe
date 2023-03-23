@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
-import "../style/reset.css";
-import "../style/card.css";
+import React, { useCallback, useState } from 'react';
+import '../style/reset.css';
+import '../style/card.css';
 
 function ListItem(props) {
   const index = props.index;
