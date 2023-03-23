@@ -1,53 +1,73 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
-import Search from "../component/Search";
-import Result from "../searchResult/Result";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom/client';
+import Footer from '../layout/Footer';
+import Header from '../layout/Header';
+import Search from '../component/Search';
+import Result from '../searchResult/Result';
+import axios from 'axios';
+// import { createProxyMiddleware } from 'http-proxy-middleware';
 
-// const env = require('dotenv').config();
+export default function SearchResult() {
+  const key = encodeURIComponent(process.env.REACT_APP_TOUR);
+  const [data, setData] = useState('');
 
-async function getData() {
-  try {
-    const client = axios.create({
-      baseURL: "http://apis.data.go.kr/B551011/KorService1",
-      headers: {
-        ServiceKey: process.env.REACT_APP_TOUR,
-      },
-    });
+  useEffect(() => {
+    // axios 안돼요ㅠㅠㅠㅠㅠ
+    const getData = async () => {
+      await axios
+        .get('/api', {
+          baseURL: '/searchKeyword1',
+          params: {
+            numOfRows: 10,
+            pageNo: 1,
+            MobileOS: 'ETC',
+            MobileApp: 'STTour',
+            _type: 'json',
+            listYN: 'Y',
+            arrange: 'A',
+            keyword: 'busan',
+            contentTypeId: 12,
+            serviceKey: key,
+          },
+        })
+        .then((res) => setData(res));
+    };
+    void getData();
+  }, []);
 
-    const response = await client.get("/searchKeyword", {
-      params: {
-        numOfRows: 10,
-        pageNo: 1,
-        MobileOS: "ETC",
-        MobileApp: "STTour",
-        _type: "json",
-        listYN: "Y",
-        arrange: "A",
-        keyword: "강원",
-        contentTypeId: 12,
-      },
-    });
-
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-function SearchResult(props) {
-  // console.log(env);
   return (
     <>
       <Header />
       <hr />
       <Search />
-      <Result data={getData()} />
+
+      <Result data={data} />
       <Footer />
     </>
   );
 }
 
-export default SearchResult;
+// async function getData() {
+//   try {
+//     await axios
+//       .get('/searchKeyword1', {
+//         baseURL: 'https://apis.data.go.kr/B551011/KorService1',
+//         params: {
+//           numOfRows: '10',
+//           pageNo: '1',
+//           MobileOS: 'ETC',
+//           MobileApp: 'STTour',
+//           _type: 'json',
+//           listYN: 'Y',
+//           arrange: 'A',
+//           keyword: 'busan',
+//           contentTypeId: '12',
+//           serviceKey: key,
+//         },
+//       })
+//       .then((result) => console.log(result.data))
+//       .catch(console.log);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }

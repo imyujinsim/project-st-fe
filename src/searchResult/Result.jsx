@@ -3,6 +3,7 @@ import ListItem from '../component/ListItem';
 import '../style/search-result.css';
 
 function Result(props) {
+  console.log(props.data);
   return (
     <div className="search-result-page">
       <ul className="result-list">
