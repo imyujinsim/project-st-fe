@@ -12,7 +12,6 @@ export default function SearchResult() {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    // axios 안돼요ㅠㅠㅠㅠㅠ
     const getData = async () => {
       await axios
         .get("/searchKeyword1", {
@@ -30,7 +29,7 @@ export default function SearchResult() {
             serviceKey: key,
           },
         })
-        .then((result) => console.log(result.data));
+        .then((result) => setData(result.data.response.body.items.item));
     };
     void getData();
   }, []);
