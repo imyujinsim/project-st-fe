@@ -1,7 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import ListItem from "../component/ListItem";
-import "../style/search-result.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ListItem from '../component/ListItem';
+import '../style/search-result.css';
+
 function Result(props) {
   const data = props.data;
 
