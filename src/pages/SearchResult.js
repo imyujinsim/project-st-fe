@@ -29,7 +29,7 @@ export default function SearchResult() {
             serviceKey: key,
           },
         })
-        .then((result) => setData(result.data));
+        .then((result) => setData(result.data.response.body.items.item));
     };
     void getData();
   }, []);

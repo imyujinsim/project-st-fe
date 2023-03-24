@@ -4,6 +4,7 @@ import '../style/card.css';
 
 function ListItem(props) {
   const index = props.index;
+  const data = props.contentid;
 
   function click(e) {
     if (e.target.classList.contains('checked')) {
@@ -22,7 +23,7 @@ function ListItem(props) {
         <img src={props.picture} alt={props.name} />
         <h3>{props.name}</h3>
       </a>
-      <button className="bookmark" id={index} onClick={click}></button>
+      <button className="bookmark" id={data} onClick={click}></button>
     </li>
   );
 }
