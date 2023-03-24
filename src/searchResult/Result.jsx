@@ -24,4 +24,32 @@ function Result(props) {
   );
 }
 
+// function Result(props) {
+//   const data = props.data;
+//   const parent = document.querySelector(".result-list");
+
+//   Array.from(data).forEach((item) => {
+//     const pic = item.firstimage;
+//     console.log(pic);
+
+//     ReactDOM.render(
+//       <ListItem
+//         picture={item.firstimage}
+//         name={item.title}
+//         contentid={item.contentid}
+//       />,
+//       parent
+//     );
+//   });
+//   return (
+//     <div className="search-result-page">
+//       <ul className="result-list">
+//         {/* {Array.from(data).forEach((item) => {
+
+//         })} */}
+//       </ul>
+//     </div>
+//   );
+// }
+
 export default Result;

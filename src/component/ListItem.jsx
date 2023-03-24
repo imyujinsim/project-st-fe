@@ -1,17 +1,17 @@
-import React, { useCallback, useState } from 'react';
-import '../style/reset.css';
-import '../style/card.css';
+import React, { useCallback, useState } from "react";
+import "../style/reset.css";
+import "../style/card.css";
 
 function ListItem(props) {
   const index = props.index;
   const data = props.contentid;
 
   function click(e) {
-    if (e.target.classList.contains('checked')) {
-      e.target.classList.remove('checked');
+    if (e.target.classList.contains("checked")) {
+      e.target.classList.remove("checked");
       // 데이터베이스에서 삭제
     } else {
-      e.target.classList.add('checked');
+      e.target.classList.add("checked");
       // 데이터베이스에 추가
       console.log(e.target.id);
     }
@@ -23,6 +23,7 @@ function ListItem(props) {
         <img src={props.picture} alt={props.name} />
         <h3>{props.name}</h3>
       </a>
+
       <button className="bookmark" id={data} onClick={click}></button>
     </li>
   );
