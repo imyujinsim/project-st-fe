@@ -1,5 +1,4 @@
 .search {
-  /* margin-bottom: 20px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +6,14 @@
   height: 170px;
 }
 
-.search .search_bar_main {
+.search-form {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .search-form .search-bar-main {
   padding: 0 30px;
   width: 50%;
   height: 55px;
