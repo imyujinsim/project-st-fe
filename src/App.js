@@ -6,6 +6,7 @@ import Detail from "./pages/Detail";
 import SearchResult from "./pages/SearchResult";
 import UserInfo from "./pages/UserInfo";
 import axios from "axios";
+import No from "./pages/noResult";
 
 const URL = "/B551011/KorService1";
 
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/signup" element={<UserSignUp />} />
       <Route path="/detail" element={<Detail />} />
       <Route path="/result" element={<SearchResult />} />
+      <Route path="noresult" element={<No />} />
       <Route path="/userInfo" element={<UserInfo />} />
     </Routes>
   );

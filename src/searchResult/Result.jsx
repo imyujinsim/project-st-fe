@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ListItem from '../component/ListItem';
-import '../style/search-result.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import ListItem from "../component/ListItem";
+import "../style/search-result.css";
+import noPic from "../resources/icons/no_image.gif";
 
 function Result(props) {
   const data = props.data;
@@ -10,7 +11,7 @@ function Result(props) {
     return (
       <ListItem
         key={item.contentid}
-        picture={item.firstimage}
+        picture={item.firstimage !== "" ? item.firstimage : noPic}
         name={item.title}
         contentid={item.contentid}
       />
