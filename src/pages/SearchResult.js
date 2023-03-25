@@ -22,8 +22,8 @@ export default function SearchResult() {
 
     const getData = async () => {
       await axios
-        .get('/searchKeyword1', {
-          baseURL: 'https://apis.data.go.kr/B551011/KorService1',
+        .get("/searchKeyword1", {
+          baseURL: "https://apis.data.go.kr/B551011/KorService1",
           params: {
             numOfRows: 20,
             pageNo: 1,

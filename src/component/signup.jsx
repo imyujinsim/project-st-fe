@@ -1,8 +1,8 @@
-import React from 'react';
-import logo from '../resources/logo.png';
-import '../style/reset.css';
-import '../style/signup.css';
-import '../style/hr.css';
+import React from "react";
+import logo from "../resources/logo.png";
+import "../style/reset.css";
+import "../style/signup.css";
+import "../style/hr.css";
 
 function Signup(props) {
   return (
@@ -27,7 +27,16 @@ function Signup(props) {
           <div className="row">
             <div className="col-md-6 mb-4 d-flex align-items-center">
               <div className="form-outline datepicker w-100">
-                <input type="text" name="userName" placeholder="생년월일" />
+                <input
+                  type="text"
+                  id="emailAddress"
+                  placeholder="아이디(이메일)"
+                />
+              </div>
+            </div>
+            <div className="col-md-6 mb-4 d-flex align-items-center">
+              <div className="form-outline passwd ">
+                <input type="text" name="passwd" placeholder="비밀번호" />
               </div>
             </div>
             {/* <div className="col-md-6 mb-4">
@@ -65,7 +74,7 @@ function Signup(props) {
           <div className="row">
             <div className="col-md-6 mb-4 pb-2">
               <div className="form-outline">
-                <input type="text" id="emailAddress" placeholder="이메일" />
+                <input type="text" name="userName" placeholder="생년월일" />
               </div>
             </div>
             <div className="col-md-6 mb-4 pb-2">
