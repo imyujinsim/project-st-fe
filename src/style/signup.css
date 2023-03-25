@@ -38,7 +38,7 @@
   margin-bottom: 20px;
 }
 
-input[type='text'] {
+.signup-form {
   margin-bottom: 10px;
   margin-right: 10px;
   height: 45px;
