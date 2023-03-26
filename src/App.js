@@ -1,14 +1,12 @@
-import { Route, Routes } from "react-router-dom";
-import Main from "./pages/Main";
-import Login from "./pages/LogIn";
-import UserSignUp from "./pages/UserSignUp";
-import Detail from "./pages/Detail";
-import SearchResult from "./pages/SearchResult";
-import UserInfo from "./pages/UserInfo";
-import axios from "axios";
-import No from "./pages/noResult";
-
-const URL = "/B551011/KorService1";
+import { Route, Routes } from 'react-router-dom';
+import Main from './pages/Main';
+import Login from './pages/LogIn';
+import UserSignUp from './pages/UserSignUp';
+import Detail from './pages/Detail';
+import SearchResult from './pages/SearchResult';
+import UserInfo from './pages/UserInfo';
+import axios from 'axios';
+import No from './pages/noResult';
 
 const App = () => {
   return (
@@ -16,9 +14,9 @@ const App = () => {
       <Route path="/" element={<Main />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<UserSignUp />} />
-      <Route path="/detail" element={<Detail />} />
+      <Route path="/detail/:id" element={<Detail />} />
       <Route path="/result" element={<SearchResult />} />
-      <Route path="noresult" element={<No />} />
+      <Route path="/noresult" element={<No />} />
       <Route path="/userInfo" element={<UserInfo />} />
     </Routes>
   );

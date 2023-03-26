@@ -15,6 +15,7 @@ export default function SearchResult() {
   // console.log(value);
   const [value, setValue] = useState('');
   // console.log(value);
+  const [detail, setDetail] = useState('');
 
   useEffect(() => {
     const localValue = window.localStorage.getItem('query');
@@ -22,8 +23,8 @@ export default function SearchResult() {
 
     const getData = async () => {
       await axios
-        .get("/searchKeyword1", {
-          baseURL: "https://apis.data.go.kr/B551011/KorService1",
+        .get('/KorService1/searchKeyword1', {
+          baseURL: 'https://apis.data.go.kr/B551011',
           params: {
             numOfRows: 20,
             pageNo: 1,
@@ -39,7 +40,6 @@ export default function SearchResult() {
         })
         .then((result) => {
           setData(result.data.response.body.items.item);
-          // console.log(result);
         });
     };
     void getData();
@@ -55,14 +55,12 @@ export default function SearchResult() {
     window.localStorage.setItem('query', query);
   };
 
-  const search = document.querySelector('.search-form');
-
   return (
     <>
       <Header />
       <hr />
       <Search setValue={setValue} onsubmit={handleResultSubmit} />
-      <Result data={data} value={value} />
+      <Result data={data} value={value} setDetail={setDetail} />
       <Footer />
     </>
   );

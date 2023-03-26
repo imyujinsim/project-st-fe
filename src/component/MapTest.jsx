@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import "../style/MapTest.css";
+import React, { useEffect } from 'react';
+import '../style/MapTest.css';
 
 const { kakao } = window;
 
@@ -12,8 +12,8 @@ const MapTest = () => {
       console.log(pos);
       latitude = pos.coords.latitude;
       longitude = pos.coords.longitude;
-      console.log("현재 위치는 : " + latitude + ", " + longitude);
-      const container = document.getElementById("myMap");
+      console.log('현재 위치는 : ' + latitude + ', ' + longitude);
+      const container = document.getElementById('myMap');
       const options = {
         center: new kakao.maps.LatLng(latitude, longitude),
         level: 3,
@@ -37,14 +37,14 @@ const MapTest = () => {
   }, []);
 
   return (
-    <div class="myMap">
+    <div className="myMap">
       <h1> 지 도 </h1>
       <div
-        class="map"
+        className="map"
         id="myMap"
         style={{
-          width: "500px",
-          height: "500px",
+          width: '500px',
+          height: '500px',
         }}
       ></div>
     </div>

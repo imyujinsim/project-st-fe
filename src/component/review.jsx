@@ -4,7 +4,7 @@ import '../style/review.css';
 
 function Table(props) {
   return (
-    <div class="review">
+    <div className="review">
       <h1> 리 뷰 </h1>
       <table striped bordered hover>
         <thead>

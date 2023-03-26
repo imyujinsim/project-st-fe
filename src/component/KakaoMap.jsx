@@ -3,12 +3,16 @@ import '../style/map.css';
 
 const { kakao } = window;
 
-const KakaoMap = () => {
+const KakaoMap = (props) => {
+  const detail = props.detail;
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (pos) {
       console.log(pos);
-      let latitude = pos.coords.latitude;
-      let longitude = pos.coords.longitude;
+      const latitude = detail.mapy;
+      const longitude = detail.mapx;
+
+      // let latitude = pos.coords.latitude;
+      // let longitude = pos.coords.longitude;
       console.log(longitude);
 
       const container = document.getElementById('myMap');
@@ -43,7 +47,7 @@ const KakaoMap = () => {
       var zoomControl = new kakao.maps.ZoomControl();
       map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
     });
-  }, []);
+  }, [detail]);
 
   return (
     <div class="myMap">
