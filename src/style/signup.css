@@ -1,4 +1,4 @@
-/* @import '~mdb-ui-kit/css/mdb.min.css'; */
+/* @import "~mdb-ui-kit/css/mdb.min.css"; */
 
 /* .form-outline > input {
   width: inherit;
@@ -64,4 +64,11 @@
 
 .mt-4 {
   position: relative;
+}
+
+input.btn btn-primary.btn-lg.btn-color {
+  color: #fff;
+  font-size: 16px;
+  background-color: #b1aeae;
+  margin-top: 20px;
 }

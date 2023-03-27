@@ -1,27 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ListItem from '../component/ListItem';
-import '../style/search-result.css';
-import noPic from '../resources/icons/no_image.gif';
+import React from "react";
+import ReactDOM from "react-dom";
+import ListItem from "../component/ListItem";
+import "../style/search-result.css";
+import noPic from "../resources/icons/no_image.gif";
 
 function Result(props) {
   const data = props.data ? props.data : [];
 
   const listItems = Array.from(data).map((item) => {
     return (
-      <Link
-        to={{
-          pathname: `/detail/${item.contentid}`,
-          state: { latitude: item.latitude, longitude: item.longitude },
-        }}
+      <ListItem
         key={item.contentid}
-      >
-        <ListItem
-          picture={item.firstimage !== "" ? item.firstimage : noPic}
-          name={item.title}
-          contentid={item.contentid}
-        />
-      </Link>
+        picture={item.firstimage !== "" ? item.firstimage : noPic}
+        name={item.title}
+        contentid={item.contentid}
+      />
     );
   });
 

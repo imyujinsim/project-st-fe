@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../resources/logo.png";
 import "../style/reset.css";
 import "../style/login.css";
+import { Link } from "react-router-dom";
 
 function Login(props) {
   return (
@@ -18,9 +19,15 @@ function Login(props) {
             아이디 저장하기
           </label>
           <input type="submit" defaultValue="로그인" />
-          <button type="button" className="btn text" style={{ float: "right" }}>
-            회원가입
-          </button>
+          <Link to="/signup">
+            <button
+              type="button"
+              className="btn text"
+              style={{ float: "right" }}
+            >
+              회원가입
+            </button>
+          </Link>
         </form>
       </div>
     </div>
