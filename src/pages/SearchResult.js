@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom/client";
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
-import Search from "../component/Search";
-import Result from "../searchResult/Result";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom/client';
+import Footer from '../layout/Footer';
+import Header from '../layout/Header';
+import Search from '../component/Search';
+import Result from '../searchResult/Result';
+import axios from 'axios';
 // import handleResultSubmit from './handleEvent';
 // import { createProxyMiddleware } from 'http-proxy-middleware';
 
 export default function SearchResult() {
   const key = decodeURIComponent(process.env.REACT_APP_TOUR);
-  const [data, setData] = useState("");
+  const [data, setData] = useState('');
   // const [value, setValue] = useState('');
   // console.log(value);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   // console.log(value);
   const [detail, setDetail] = useState('');
 
   useEffect(() => {
-    const localValue = window.localStorage.getItem("query");
-    console.log(window.localStorage.getItem("query"));
+    const localValue = window.localStorage.getItem('query');
+    console.log(window.localStorage.getItem('query'));
 
     const getData = async () => {
       await axios
@@ -28,11 +28,11 @@ export default function SearchResult() {
           params: {
             numOfRows: 20,
             pageNo: 1,
-            MobileOS: "ETC",
-            MobileApp: "STTour",
-            _type: "json",
-            listYN: "Y",
-            arrange: "A",
+            MobileOS: 'ETC',
+            MobileApp: 'STTour',
+            _type: 'json',
+            listYN: 'Y',
+            arrange: 'A',
             keyword: value ? value : localValue,
             contentTypeId: 12,
             serviceKey: key,
@@ -52,7 +52,7 @@ export default function SearchResult() {
     // setFormData(query);
     console.log(query);
     setValue(query);
-    window.localStorage.setItem("query", query);
+    window.localStorage.setItem('query', query);
   };
 
   return (
