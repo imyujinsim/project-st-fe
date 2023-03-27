@@ -1,8 +1,7 @@
-import React from "react";
-import logo from "../resources/logo.png";
-import "../style/reset.css";
-import "../style/signup.css";
-import "../style/hr.css";
+import React from 'react';
+import logo from '../resources/logo.png';
+import '../style/reset.css';
+import '../style/signup.css';
 
 function Signup(props) {
   return (
@@ -15,19 +14,30 @@ function Signup(props) {
           <div className="row">
             <div className="col-md-6 mb-4">
               <div className="form-outline">
-                <input type="text" id="firstName" placeholder="성" />
+                <input
+                  className="signup-input"
+                  type="text"
+                  id="firstName"
+                  placeholder="성"
+                />
               </div>
             </div>
             <div className="col-md-6 mb-4">
               <div className="form-outline">
-                <input type="text" id="lastName" placeholder="이름" />
+                <input
+                  className="signup-input"
+                  type="text"
+                  id="lastName"
+                  placeholder="이름"
+                />
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-md-6 mb-4 d-flex align-items-center">
-              <div className="form-outline datepicker w-100">
+              <div className="form-outline w-100">
                 <input
+                  className="signup-input"
                   type="text"
                   id="emailAddress"
                   placeholder="아이디(이메일)"
@@ -36,7 +46,12 @@ function Signup(props) {
             </div>
             <div className="col-md-6 mb-4 d-flex align-items-center">
               <div className="form-outline passwd ">
-                <input type="text" name="passwd" placeholder="비밀번호" />
+                <input
+                  className="signup-input"
+                  type="text"
+                  name="passwd"
+                  placeholder="비밀번호"
+                />
               </div>
             </div>
             {/* <div className="col-md-6 mb-4">
@@ -74,21 +89,27 @@ function Signup(props) {
           <div className="row">
             <div className="col-md-6 mb-4 pb-2">
               <div className="form-outline">
-                <input type="text" name="userName" placeholder="생년월일" />
+                <input
+                  className="signup-input"
+                  type="text"
+                  name="userName"
+                  placeholder="생년월일"
+                />
               </div>
             </div>
             <div className="col-md-6 mb-4 pb-2">
               <div className="form-outline">
-                <input type="text" id="phoneNumber" placeholder="전화번호" />
+                <input
+                  className="signup-input"
+                  type="text"
+                  id="phoneNumber"
+                  placeholder="전화번호"
+                />
               </div>
             </div>
           </div>
           <div className="mt-4 pt-2">
-            <input
-              className="btn btn-primary btn-lg btn-color"
-              type="submit"
-              defaultValue="가입하기"
-            />
+            <input className="signup-btn" defaultValue="회원가입" />
           </div>
         </form>
       </div>

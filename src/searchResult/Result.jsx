@@ -11,7 +11,7 @@ function Result(props) {
     return (
       <ListItem
         key={item.contentid}
-        picture={item.firstimage !== "" ? item.firstimage : noPic}
+        picture={item.firstimage !== '' ? item.firstimage : noPic}
         name={item.title}
         contentid={item.contentid}
       />

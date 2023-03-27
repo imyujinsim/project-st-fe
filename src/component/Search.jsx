@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import "../style/reset.css";
-import "../style/search.css";
+import React, { useState } from 'react';
+import '../style/reset.css';
+import '../style/search.css';
+import queryString from 'query-string';
 
-const searchBar = document.querySelector(".search-bar-main");
+const searchBar = document.querySelector('.search-bar-main');
 
 function Search(props) {
   // const search = document.querySelector('.search-form');

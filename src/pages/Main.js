@@ -35,9 +35,9 @@ function Main(props) {
         })
         .then((result) => {
           setData(result.data.response.body.items.item);
-          console.log(result);
         });
     };
+    console.log(data);
     void getData();
   }, [value]);
 
