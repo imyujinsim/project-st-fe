@@ -9,12 +9,19 @@ function Result(props) {
 
   const listItems = Array.from(data).map((item) => {
     return (
-      <ListItem
+      <Link
+        to={{
+          pathname: `/detail/${item.contentid}`,
+          state: { latitude: item.latitude, longitude: item.longitude },
+        }}
         key={item.contentid}
-        picture={item.firstimage !== '' ? item.firstimage : noPic}
-        name={item.title}
-        contentid={item.contentid}
-      />
+      >
+        <ListItem
+          picture={item.firstimage !== "" ? item.firstimage : noPic}
+          name={item.title}
+          contentid={item.contentid}
+        />
+      </Link>
     );
   });
 
