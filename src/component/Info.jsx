@@ -5,10 +5,12 @@ import '../style/info.css';
 import TourInfo from './TourInfo';
 
 function Info(props) {
+  const detail = window.localStorage.getItem('detail');
+
   return (
-    <div class="info">
-      <h1>해운대</h1>
-      <TourInfo />
+    <div className="info">
+      <h1>{detail}</h1>
+      <TourInfo intro={props.intro} detailData={props.detail} />
       <hr />
     </div>
   );

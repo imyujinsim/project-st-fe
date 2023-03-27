@@ -10,16 +10,17 @@
 }
 
 .user-info {
-  margin: 15px 0 10px 100px;
+  margin: 15px 0 10px 50px;
 }
 
 .tour-info {
-  padding: 20px;
+  margin: 15px 0 10px 30px;
 }
 
-.user-info tbody tr th {
-  padding-right: 50px;
-  text-align: start;
+.tour-info-table tr th {
+  width: 180px;
+  padding-right: 0;
+  text-align: left;
   font-weight: 600;
 }
 

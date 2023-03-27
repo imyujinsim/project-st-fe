@@ -1,12 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import ListItem from "../component/ListItem";
-import "../style/search-result.css";
-import noPic from "../resources/icons/no_image.gif";
-import { Link } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ListItem from '../component/ListItem';
+import '../style/search-result.css';
+import noPic from '../resources/icons/no_image.gif';
 
 function Result(props) {
-  const data = props.data;
+  const data = props.data ? props.data : [];
 
   const listItems = Array.from(data).map((item) => {
     return (

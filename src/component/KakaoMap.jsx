@@ -4,9 +4,24 @@ import "../style/map.css";
 
 const { kakao } = window;
 
-const KakaoMap = ({ location }) => {
-  const key = decodeURIComponent(process.env.REACT_APP_TOUR);
-  const [data, setData] = useState([]);
+const KakaoMap = (props) => {
+  const detail = props.detail;
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      console.log(pos);
+      const latitude = detail.mapy;
+      const longitude = detail.mapx;
+
+      // let latitude = pos.coords.latitude;
+      // let longitude = pos.coords.longitude;
+      console.log(longitude);
+
+      const container = document.getElementById('myMap');
+      const options = {
+        center: new kakao.maps.LatLng(latitude, longitude),
+        level: 3,
+      };
+      const map = new kakao.maps.Map(container, options);
 
   useEffect(() => {
     const container = document.getElementById("myMap");
@@ -59,8 +74,11 @@ const KakaoMap = ({ location }) => {
     const zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-    getData();
-  }, [key, location.contentid, location.latitude, location.longitude]);
+      // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+      var zoomControl = new kakao.maps.ZoomControl();
+      map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+    });
+  }, [detail]);
 
   return (
     <div className="myMap">
