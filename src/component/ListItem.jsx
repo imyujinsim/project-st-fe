@@ -4,7 +4,6 @@ import '../style/reset.css';
 import '../style/card.css';
 
 function ListItem(props) {
-  const index = props.index;
   const data = props.contentid;
 
   function click(e) {
