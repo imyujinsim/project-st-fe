@@ -109,7 +109,11 @@ function Signup(props) {
             </div>
           </div>
           <div className="mt-4 pt-2">
-            <input className="signup-btn" defaultValue="회원가입" />
+            <input
+              type="button"
+              className="signup-btn"
+              defaultValue="회원가입"
+            />
           </div>
         </form>
       </div>
