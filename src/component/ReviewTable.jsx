@@ -64,13 +64,19 @@ function ReviewTable(props) {
                 enctype="multipart/form-data"
                 className="reviewForm"
               >
-                <div className="row">
-                  <input type="text" name="boardWriter" placeholder="작성자" />{' '}
+                <div className="review-row">
+                  <input
+                    type="text"
+                    name="boardWriter"
+                    placeholder="작성자"
+                    className="author"
+                  />{' '}
                   <br />
                   <input
                     type="text"
                     name="boardPass"
                     placeholder="비밀번호"
+                    className="password"
                   />{' '}
                   <br />
                 </div>
