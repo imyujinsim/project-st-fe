@@ -1,6 +1,9 @@
 .myMap {
+  margin-top: 30px;
   padding: 15px 80px 10px 95px;
-  height: 500px;
+  /* height: 500px; */
+  height: auto;
+  overflow: auto;
 }
 
 .myMap h1 {
@@ -11,6 +14,7 @@
 }
 
 .map-container {
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
 }
