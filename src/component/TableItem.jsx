@@ -8,9 +8,9 @@ function TableItem(props) {
     <>
       <div
         class="container"
-        onClick={() => {
-          const accordion = document.querySelector('.container');
-          accordion.classList.toggle('active');
+        onClick={(event) => {
+          const accordion = event.currentTarget;
+          accordion.classList.toggle("active");
         }}
       >
         <div class="label">
