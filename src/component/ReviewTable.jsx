@@ -18,8 +18,8 @@ function ReviewTable(props) {
       <button
         id="myBtn"
         onClick={() => {
-          const modal = document.querySelector('#myModal');
-          modal.classList.remove('hide');
+          const modal = document.querySelector("#myModal");
+          modal.classList.remove("hide");
         }}
       >
         글쓰기
@@ -30,9 +30,9 @@ function ReviewTable(props) {
           <span
             class="close"
             onClick={() => {
-              const modal = document.querySelector('#myModal');
-              modal.classList.add('hide');
-              console.log('clicked');
+              const modal = document.querySelector("#myModal");
+              modal.classList.add("hide");
+              console.log("clicked");
             }}
           >
             &times;
@@ -51,14 +51,14 @@ function ReviewTable(props) {
                   name="boardWriter"
                   placeholder="작성자"
                   className="author"
-                />{' '}
+                />{" "}
                 <br />
                 <input
                   type="text"
                   name="boardPass"
                   placeholder="비밀번호"
                   className="password"
-                />{' '}
+                />{" "}
                 <br />
               </div>
               <input
@@ -66,7 +66,7 @@ function ReviewTable(props) {
                 name="boardTitle"
                 placeholder="제목"
                 className="title"
-              />{' '}
+              />{" "}
               <br />
               <textarea
                 name="boardContents"
@@ -82,8 +82,8 @@ function ReviewTable(props) {
                 className="submitBtn"
                 onClick={(event) => {
                   event.preventDefault();
-                  const modal = document.querySelector('#myModal');
-                  modal.classList.add('hide');
+                  const modal = document.querySelector("#myModal");
+                  modal.classList.add("hide");
                 }}
               />
             </form>
