@@ -54,37 +54,6 @@ function Signup(props) {
                 />
               </div>
             </div>
-            {/* <div className="col-md-6 mb-4">
-              <h6 className="mb-2 pb-1">성별: </h6>
-              <div className="form-check form-check-inline">
-                <div className="row">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="femaleGender"
-                    defaultValue="option1"
-                    defaultChecked=""
-                  />
-                  <label className="form-check-label" htmlFor="femaleGender">
-                    여성
-                  </label>
-                </div>
-                <p> </p>
-                <div className="form-check form-check-inline">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="maleGender"
-                    defaultValue="option2"
-                  />
-                  <label className="form-check-label" htmlFor="maleGender">
-                    남성
-                  </label>
-                </div>
-              </div>
-            </div> */}
           </div>
           <div className="row">
             <div className="col-md-6 mb-4 pb-2">
