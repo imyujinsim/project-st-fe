@@ -1,20 +1,26 @@
 import React from 'react';
 
 function TableItem(props) {
-  const accordion = document.getElementsByClassName('container');
+  // const accordion = document.getElementsByClassName('container');
 
-  for (let i = 0; i < accordion.length; i++) {
-    accordion[i].addEventListener('click', function () {
-      this.classList.toggle('active');
-    });
-  }
+  // for (let i = 0; i < accordion.length; i++) {
+  //   accordion[i].addEventListener('click', function () {
+  //     this.classList.toggle('active');
+  //   });
+  // }
 
   const edit = document.querySelector('.edit');
   const remove = document.querySelector('.remove');
 
   return (
     <>
-      <div class="container">
+      <div
+        class="container"
+        onClick={() => {
+          const accordion = document.querySelector('.container');
+          accordion.classList.toggle('active');
+        }}
+      >
         <div class="label">
           <p>01</p>
           <p>제목제목제목</p>
