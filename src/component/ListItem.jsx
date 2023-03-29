@@ -1,20 +1,22 @@
-import React, { useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../style/reset.css';
-import '../style/card.css';
+import React, { useCallback, useState } from "react";
+import { Link } from "react-router-dom";
+import "../style/reset.css";
+import "../style/card.css";
 
 function ListItem(props) {
   const data = props.contentid;
 
   function click(e) {
     e.preventDefault();
-    if (e.target.classList.contains('checked')) {
-      e.target.classList.remove('checked');
+    if (e.target.classList.contains("checked")) {
+      e.target.classList.remove("checked");
       // 데이터베이스에서 삭제
     } else {
-      e.target.classList.add('checked');
+      e.target.classList.add("checked");
       // 데이터베이스에 추가
       console.log(e.target.id);
+      console.log(props.picture);
+      console.log(props.name);
     }
   }
 
@@ -22,8 +24,8 @@ function ListItem(props) {
     <Link
       to={`/detail/${data}`}
       onClick={() => {
-        window.localStorage.setItem('detail', props.name);
-        window.localStorage.setItem('contentId', data);
+        window.localStorage.setItem("detail", props.name);
+        window.localStorage.setItem("contentId", data);
       }}
     >
       <li className="list-item" data-target="card" id={data}>

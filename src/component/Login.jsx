@@ -3,8 +3,24 @@ import logo from "../resources/logo.png";
 import "../style/reset.css";
 import "../style/login.css";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Login(props) {
+  const LoginPage = () => {
+    const navigate = useNavigate();
+    const { state } = useLocation();
+
+    const handleLogin = () => {
+      Cookies.set("id", "id");
+
+      if (state) {
+        navigate(state);
+      } else {
+        navigate("/login");
+      }
+    };
+  };
   return (
     <div className="login-wrapper">
       <div className="login-form-wrapper">
@@ -21,6 +37,7 @@ function Login(props) {
           <input type="submit" defaultValue="로그인" />
           <Link to="/signup">
             <button
+              onClick={LoginPage.handleLogin}
               type="button"
               className="btn text"
               style={{ float: "right" }}
@@ -33,5 +50,4 @@ function Login(props) {
     </div>
   );
 }
-
 export default Login;

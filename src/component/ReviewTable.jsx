@@ -18,8 +18,8 @@ function ReviewTable(props) {
       <button
         id="myBtn"
         onClick={() => {
-          const modal = document.querySelector('#myModal');
-          modal.classList.remove('hide');
+          const modal = document.querySelector("#myModal");
+          modal.classList.remove("hide");
         }}
       >
         글쓰기
@@ -30,9 +30,9 @@ function ReviewTable(props) {
           <span
             class="close"
             onClick={() => {
-              const modal = document.querySelector('#myModal');
-              modal.classList.add('hide');
-              console.log('clicked');
+              const modal = document.querySelector("#myModal");
+              modal.classList.add("hide");
+              console.log("clicked");
             }}
           >
             &times;
@@ -51,14 +51,14 @@ function ReviewTable(props) {
                   name="boardWriter"
                   placeholder="작성자"
                   className="author"
-                />{' '}
+                />{" "}
                 <br />
                 <input
                   type="text"
                   name="boardPass"
                   placeholder="비밀번호"
                   className="password"
-                />{' '}
+                />{" "}
                 <br />
               </div>
               <input
@@ -66,7 +66,7 @@ function ReviewTable(props) {
                 name="boardTitle"
                 placeholder="제목"
                 className="title"
-              />{' '}
+              />{" "}
               <br />
               <textarea
                 name="boardContents"
@@ -82,49 +82,14 @@ function ReviewTable(props) {
                 className="submitBtn"
                 onClick={(event) => {
                   event.preventDefault();
-                  const modal = document.querySelector('#myModal');
-                  modal.classList.add('hide');
+                  const modal = document.querySelector("#myModal");
+                  modal.classList.add("hide");
                 }}
               />
             </form>
           </div>
         </div>
       </div>
-      <div>
-        <input
-          type="button"
-          className="review-write"
-          defaultValue="글쓰기"
-          onClick={() => setShowModal(true)}
-        />
-      </div>
-      {showModal && (
-        <div className="modal">
-          <div className="modal-header">리뷰를 작성하세요.</div>
-          <div className="modal-body">
-            <form>
-              <input type="text" placeholder="제목을 입력하세요"></input>
-              <input type="text" placeholder="내용을 입력하세요"></input>
-            </form>
-          </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => setShowModal(false)}
-            >
-              취소
-            </button>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => alert("리뷰가 저장되었습니다.")}
-            >
-              저장
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
