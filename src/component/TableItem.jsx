@@ -1,15 +1,23 @@
-import React from "react";
+import React from 'react';
 
 function TableItem(props) {
-  const edit = document.querySelector(".edit");
-  const remove = document.querySelector(".remove");
+  // const accordion = document.getElementsByClassName('container');
+
+  // for (let i = 0; i < accordion.length; i++) {
+  //   accordion[i].addEventListener('click', function () {
+  //     this.classList.toggle('active');
+  //   });
+  // }
+
+  const edit = document.querySelector('.edit');
+  const remove = document.querySelector('.remove');
 
   return (
     <>
       <div
         class="container"
-        onClick={() => {
-          const accordion = document.querySelector('.container');
+        onClick={(event) => {
+          const accordion = event.currentTarget;
           accordion.classList.toggle('active');
         }}
       >
@@ -30,8 +38,8 @@ function TableItem(props) {
             <p
               className="edit"
               onClick={() => {
-                const modal = document.querySelector("#myModal");
-                modal.classList.remove("hide");
+                const modal = document.querySelector('#myModal');
+                modal.classList.remove('hide');
               }}
             >
               <svg
@@ -52,9 +60,9 @@ function TableItem(props) {
             <p
               className="remove"
               onClick={() => {
-                if (window.confirm("삭제하시겠습니까?")) {
+                if (window.confirm('삭제하시겠습니까?')) {
                   // 삭제하는 코드
-                  console.log("삭제");
+                  console.log('삭제');
                 }
               }}
             >
@@ -77,9 +85,9 @@ function TableItem(props) {
           <span
             class="close"
             onClick={() => {
-              const modal = document.querySelector("#myModal");
-              modal.classList.add("hide");
-              console.log("clicked");
+              const modal = document.querySelector('#myModal');
+              modal.classList.add('hide');
+              console.log('clicked');
             }}
           >
             &times;
@@ -98,14 +106,14 @@ function TableItem(props) {
                   name="boardWriter"
                   placeholder="작성자"
                   className="author"
-                />{" "}
+                />{' '}
                 <br />
                 <input
                   type="text"
                   name="boardPass"
                   placeholder="비밀번호"
                   className="password"
-                />{" "}
+                />{' '}
                 <br />
               </div>
               <input
@@ -113,7 +121,7 @@ function TableItem(props) {
                 name="boardTitle"
                 placeholder="제목"
                 className="title"
-              />{" "}
+              />{' '}
               <br />
               <textarea
                 name="boardContents"
@@ -129,8 +137,8 @@ function TableItem(props) {
                 className="submitBtn"
                 onClick={(event) => {
                   event.preventDefault();
-                  const modal = document.querySelector("#myModal");
-                  modal.classList.add("hide");
+                  const modal = document.querySelector('#myModal');
+                  modal.classList.add('hide');
                 }}
               />
             </form>
