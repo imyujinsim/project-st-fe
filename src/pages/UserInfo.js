@@ -1,11 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "../style/table.css";
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
-import Myreview from "../mypage/Myreview";
-import MyInfo from "../mypage/MyInfo";
-import List from "../component/List";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Footer from '../layout/Footer';
+import Header from '../layout/Header';
+import Myreview from '../mypage/Myreview';
+import MyInfo from '../mypage/MyInfo';
+import List from '../component/List';
 
 function UserInfo(props) {
   return (
