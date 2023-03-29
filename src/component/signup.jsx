@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from '../resources/logo.png';
-import '../style/reset.css';
-import '../style/signup.css';
+import React from "react";
+import logo from "../resources/logo.png";
+import "../style/reset.css";
+import "../style/signup.css";
 
 function Signup(props) {
   return (
