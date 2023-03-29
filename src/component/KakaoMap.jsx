@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import "../style/map.css";
+import React, { useEffect } from 'react';
+import '../style/map.css';
 
 const { kakao } = window;
 
@@ -8,14 +8,14 @@ const KakaoMap = (props) => {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (pos) {
       console.log(pos);
-      const latitude = detail.mapy;
-      const longitude = detail.mapx;
+      const latitude = detail.mapy ? detail.mapy : detail.mapy;
+      const longitude = detail.mapx ? detail.mapx : detail.mapx;
 
-      // let latitude = pos.coords.latitude;
-      // let longitude = pos.coords.longitude;
+      let myLati = pos.coords.latitude;
+      let myLong = pos.coords.longitude;
       console.log(longitude);
 
-      const container = document.getElementById("myMap");
+      const container = document.getElementById('myMap');
       const options = {
         center: new kakao.maps.LatLng(latitude, longitude),
         level: 3,
@@ -57,9 +57,8 @@ const KakaoMap = (props) => {
           class="map"
           id="myMap"
           style={{
-            width: "600px",
-            height: "300px",
-
+            width: '600px',
+            height: '300px',
           }}
         ></div>
       </div>

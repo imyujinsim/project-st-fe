@@ -1,4 +1,4 @@
-.review-container {
+/* .review-container {
   margin-top: 30px;
   height: 300px;
   padding: 30px 95px;
@@ -41,6 +41,191 @@ tbody tr td {
 
 .table tbody tr:hover {
   background-color: #edecec7d;
+} */
+
+/*  */
+.accordion-body {
+  /* height: auto; */
+  margin-top: 30px;
+  /* height: 300px; */
+  padding: 30px 95px;
+}
+
+.accordion-body h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.label {
+  display: flex;
+  justify-content: space-around;
+}
+
+.accordion {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 0 30px 0 0;
+}
+
+.container .label {
+  position: relative;
+  padding: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.accordion .label::before {
+  content: '+';
+  color: rgb(86, 85, 85);
+  position: absolute;
+  top: 45%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+.accordion .content {
+  position: relative;
+  background: white;
+  height: 0;
+  font-size: 12px;
+  text-align: justify;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.2s;
+  line-height: 2;
+}
+
+.accordion hr {
+  width: 100;
+  margin-left: 0;
+  border: 0.5px solid grey;
+}
+
+.accordion .container.active .content {
+  margin: 20px 0;
+  height: 100%;
+}
+
+.accordion .container.active .label::before {
+  content: '-';
+  font-size: 30px;
+}
+
+.accordion-body {
+  position: relative;
+}
+
+.icons {
+  margin-top: 5px;
+  display: flex;
+  gap: 10px;
+}
+
+/* modal */
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.hide {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.review {
+  position: relative;
+}
+
+#myBtn {
+  position: absolute;
+  bottom: -5px;
+  right: 230px;
+}
+
+.form-data .reviewForm {
+  text-align: center;
+}
+
+.form-data h2 {
+  font-size: 25px;
+  font-weight: 600;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  margin: 0 auto;
+}
+
+.reviewForm {
+  width: 100%;
+}
+
+.review-row {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-row .author,
+.review-row .password {
+  width: 49%;
+  margin-bottom: 5px;
+}
+
+.title {
+  width: 70%;
+  margin-bottom: 5px;
+}
+
+.review-input {
+  width: 70%;
+}
+
+.form-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.submitBtn {
+  margin-top: 10px;
+  margin-bottom: 35px;
 }
 
 .review-write {

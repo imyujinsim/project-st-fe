@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import '../style/table.css';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 import Myreview from '../mypage/Myreview';
