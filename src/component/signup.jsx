@@ -22,6 +22,14 @@ function Signup(props) {
         date: '1996-10-02',
       },
       withCredentials: true,
+      headers: {
+        'Content-Type': `application/json;charset=UTF-8`,
+        Accept: 'application/json',
+
+        // 추가
+        'Access-Control-Allow-Origin': `http://15.164.104.56:80`,
+        'Access-Control-Allow-Credentials': 'true',
+      },
     })
       .then(function (response) {
         console.log(response);
