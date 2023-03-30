@@ -26,7 +26,7 @@ function Signup(props) {
         tel: tel,
         date: birth,
       },
-      withCredentials: false,
+      withCredentials: true,
       headers: {
         'Content-Type': `application/json;charset=UTF-8`,
         Accept: 'application/json',
