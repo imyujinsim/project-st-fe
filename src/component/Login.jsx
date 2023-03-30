@@ -22,7 +22,7 @@ function Login(props) {
   //     }
   //   };
   // };
-  const url = '//43.201.150.104:8080/account/login';
+  const url = 'https://api.bodam.site:8080/account/login';
 
   const handleSubmit = async () => {
     const id = document.querySelector('#identification').value;
