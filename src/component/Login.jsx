@@ -22,7 +22,7 @@ function Login(props) {
   //     }
   //   };
   // };
-  const url = encodeURI('http://3.36.124.165:8080/account/login');
+  const url = encodeURI('http://43.201.150.104:8080/account/login');
 
   const handleSubmit = async () => {
     const id = document.querySelector('#identification').value;
