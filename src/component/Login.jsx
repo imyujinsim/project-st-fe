@@ -25,8 +25,11 @@ function Login(props) {
   const url = encodeURI('http://3.36.124.165:8080/account/login');
 
   const handleSubmit = async () => {
-    await axios
-      .post(url, { id: 'donghee1234', passwd: 'donghee1234' })
+    await axios({
+      url: url,
+      method: 'post',
+      data: { id: 'donghee1234', passwd: 'donghee1234' },
+    })
       .then(function (response) {
         console.log(response);
       })

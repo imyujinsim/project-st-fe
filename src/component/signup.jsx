@@ -8,8 +8,10 @@ function Signup(props) {
   const url = 'http://3.36.124.165:8080/account/join';
 
   const handleSubmit = async () => {
-    await axios
-      .post(url, {
+    await axios({
+      url: url,
+      method: 'post',
+      data: {
         id: 'yujin',
         passwd: '1234',
         name: 'yujin',
@@ -18,7 +20,8 @@ function Signup(props) {
         tel: '010-8513-4832',
         city: 'busan',
         date: '1996-10-02',
-      })
+      },
+    })
       .then(function (response) {
         console.log(response);
       })
