@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../resources/logo.png';
 import '../style/reset.css';
 import '../style/login.css';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -22,18 +22,18 @@ function Login(props) {
   //     }
   //   };
   // };
-  const url = 'http://3.36.124.165:8080/account/login';
+  // const url = 'http://3.36.124.165:8080/account/login';
 
-  const handleSubmit = async () => {
-    await axios
-      .post(url, { id: 'donghee1234', passwd: 'donghee1234' })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+  // const handleSubmit = async () => {
+  //   await axios
+  //     .post(url, { id: 'donghee1234', passwd: 'donghee1234' })
+  //     .then(function (response) {
+  //       console.log(response);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <div className="login-wrapper">
@@ -41,7 +41,7 @@ function Login(props) {
         <h2>
           <img src={logo} width={300} />
         </h2>
-        <form method="post" action="" id="login-form" onSubmit={handleSubmit}>
+        <form method="post" action="" id="login-form">
           <input type="text" name="userName" placeholder="아이디(이메일)" />
           <input type="password" name="userPassword" placeholder="비밀번호" />
           <label htmlFor="remember-check">
