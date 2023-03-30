@@ -2,15 +2,38 @@ import React from 'react';
 import logo from '../resources/logo.png';
 import '../style/reset.css';
 import '../style/signup.css';
+import axios from 'axios';
 
 function Signup(props) {
+  const url = 'http://3.36.124.165:8080/account/join';
+
+  const handleSubmit = async () => {
+    await axios
+      .post('url', {
+        id: 'yujin',
+        passwd: '1234',
+        name: 'yujin',
+        gender: '여',
+        address: 'yujin@naver.com',
+        tel: '010-8513-4832',
+        city: 'busan',
+        date: '1996-10-02',
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
     <section className="signup">
       <div className="signup-wrapper">
         <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 logo-wrapper">
           <img src={logo} width={300} />
         </h3>
-        <form className="signup-form">
+        <form className="signup-form" action="/" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-6 mb-4">
               <div className="form-outline">
@@ -79,7 +102,7 @@ function Signup(props) {
           </div>
           <div>
             <input
-              type="button"
+              type="submit"
               className="signup-btn"
               defaultValue="회원가입"
             />
