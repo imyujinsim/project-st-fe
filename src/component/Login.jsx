@@ -22,7 +22,7 @@ function Login(props) {
   //     }
   //   };
   // };
-  const url = '/account/login';
+  const url = 'https://api.bodam.site:8080/account/login';
 
   const handleSubmit = async () => {
     const id = document.querySelector('#identification').value;
@@ -37,10 +37,10 @@ function Login(props) {
         Accept: 'application/json',
 
         // 추가
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://api.bodam.site:8080',
         'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Methods': 'POST',
-        'Access-Control-Request-Headers': 'X-PINGOTHER, Content-Type',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Request-Headers': 'X-Custom-Header',
       },
     })
       .then(function (response) {
