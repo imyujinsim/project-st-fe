@@ -29,6 +29,7 @@ function Login(props) {
       url: url,
       method: 'post',
       data: { id: 'donghee1234', passwd: 'donghee1234' },
+      withCredentials: true,
     })
       .then(function (response) {
         console.log(response);

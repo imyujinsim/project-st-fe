@@ -21,6 +21,7 @@ function Signup(props) {
         city: 'busan',
         date: '1996-10-02',
       },
+      withCredentials: true,
     })
       .then(function (response) {
         console.log(response);
