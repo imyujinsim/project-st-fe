@@ -39,7 +39,7 @@ function Login(props) {
         // 추가
         'Access-Control-Allow-Origin': '//api.bodam.site:8080',
         'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Methods': 'POST',
         'Access-Control-Request-Headers': 'X-PINGOTHER, Content-Type',
       },
     })
