@@ -37,8 +37,9 @@ function Login(props) {
         Accept: 'application/json',
 
         // 추가
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://api.bodam.site:8080',
         'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Methods': 'post',
       },
     })
       .then(function (response) {
