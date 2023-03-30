@@ -33,13 +33,14 @@ function Login(props) {
       data: { id: id, passwd: passwd },
       withCredentials: true,
       headers: {
-        'Content-Type': `application/json;charset=UTF-8`,
+        'Content-Type': `text/json`,
         Accept: 'application/json',
 
         // 추가
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Methods': 'post',
+        'Access-Control-Allow-Methods': 'post, options',
+        'Access-Control-Request-Headers': 'X-PINGOTHER, Content-Type',
       },
     })
       .then(function (response) {
@@ -58,7 +59,7 @@ function Login(props) {
         <h2>
           <img src={logo} width={300} />
         </h2>
-        <form action="/" id="login-form" onSubmit={handleSubmit}>
+        <form action="/" method="post" id="login-form" onSubmit={handleSubmit}>
           <input
             type="text"
             name="userName"
