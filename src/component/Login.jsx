@@ -44,7 +44,7 @@ function Login(props) {
         <h2>
           <img src={logo} width={300} />
         </h2>
-        <form action="/" method="post" id="login-form" onSubmit={handleSubmit}>
+        <form action="/" id="login-form" onSubmit={handleSubmit}>
           <input type="text" name="userName" placeholder="아이디(이메일)" />
           <input type="password" name="userPassword" placeholder="비밀번호" />
           <label htmlFor="remember-check">
