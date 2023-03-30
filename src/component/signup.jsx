@@ -5,7 +5,7 @@ import '../style/signup.css';
 import axios from 'axios';
 
 function Signup(props) {
-  const url = 'http://3.36.124.165:8080/account/join';
+  const url = 'http://43.201.150.104:8080:8080/account/join';
 
   const handleSubmit = async () => {
     const identification = document.querySelector('#identification').value;
@@ -26,7 +26,7 @@ function Signup(props) {
         tel: tel,
         date: birth,
       },
-      withCredentials: true,
+      withCredentials: false,
       headers: {
         'Content-Type': `application/json;charset=UTF-8`,
         Accept: 'application/json',

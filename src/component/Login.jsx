@@ -31,7 +31,7 @@ function Login(props) {
       url: url,
       method: 'post',
       data: { id: id, passwd: passwd },
-      withCredentials: true,
+      withCredentials: false,
       headers: {
         'Content-Type': `application/json;charset=UTF-8`,
         Accept: 'application/json',
