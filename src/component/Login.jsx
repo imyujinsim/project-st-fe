@@ -22,7 +22,7 @@ function Login(props) {
   //     }
   //   };
   // };
-  const url = encodeURI('http://api.bodam.site:8080/account/login');
+  const url = encodeURI('//43.201.150.104:8080/account/login');
 
   const handleSubmit = async () => {
     const id = document.querySelector('#identification').value;
@@ -30,7 +30,7 @@ function Login(props) {
     await axios({
       url: url,
       method: 'post',
-      data: { id: 'donghee1234', passwd: 'donghee1234' },
+      data: { id: id, passwd: passwd },
       withCredentials: false,
       headers: {
         'Content-Type': `application/json;charset=UTF-8`,
