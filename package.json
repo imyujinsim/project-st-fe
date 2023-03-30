@@ -46,6 +46,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "proxy": "http://apis.data.go.kr/B551011/KorService1"
+    "proxy": "https://api.bodam.site:8080"
   }
 }
