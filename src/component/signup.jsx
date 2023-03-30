@@ -33,7 +33,12 @@ function Signup(props) {
         <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 logo-wrapper">
           <img src={logo} width={300} />
         </h3>
-        <form className="signup-form" action="/" onSubmit={handleSubmit}>
+        <form
+          method="post"
+          className="signup-form"
+          action="/"
+          onSubmit={handleSubmit}
+        >
           <div className="row">
             <div className="col-md-6 mb-4">
               <div className="form-outline">
