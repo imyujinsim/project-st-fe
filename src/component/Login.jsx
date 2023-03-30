@@ -30,7 +30,7 @@ function Login(props) {
     await axios({
       url: url,
       method: 'post',
-      data: { id: id, passwd: passwd },
+      data: { id: 'donghee1234', passwd: 'donghee1234' },
       withCredentials: false,
       headers: {
         'Content-Type': `application/json;charset=UTF-8`,
