@@ -22,7 +22,7 @@ function Login(props) {
   //     }
   //   };
   // };
-  const url = 'http://3.36.124.165:8080/account/login';
+  const url = encodeURI('http://3.36.124.165:8080/account/login');
 
   const handleSubmit = async () => {
     await axios
