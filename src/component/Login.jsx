@@ -35,7 +35,7 @@ function Login(props) {
         Accept: 'application/json',
 
         // 추가
-        'Access-Control-Allow-Origin': 'http://15.164.104.56',
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Credentials': true,
       },
     })
