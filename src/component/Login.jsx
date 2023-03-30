@@ -29,7 +29,7 @@ function Login(props) {
     const passwd = document.querySelector('#passwd').value;
     await axios({
       url: url,
-      method: 'post',
+      method: 'POST',
       data: { id: id, passwd: passwd },
       withCredentials: true,
       headers: {
@@ -39,7 +39,7 @@ function Login(props) {
         // 추가
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Methods': 'post, options',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
         'Access-Control-Request-Headers': 'X-PINGOTHER, Content-Type',
       },
     })
@@ -59,7 +59,7 @@ function Login(props) {
         <h2>
           <img src={logo} width={300} />
         </h2>
-        <form action="/" method="post" id="login-form" onSubmit={handleSubmit}>
+        <form action="/" id="login-form" onSubmit={handleSubmit}>
           <input
             type="text"
             name="userName"
