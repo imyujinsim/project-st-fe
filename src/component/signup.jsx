@@ -28,7 +28,7 @@ function Signup(props) {
 
         // 추가
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Credentials': true,
       },
     })
       .then(function (response) {
