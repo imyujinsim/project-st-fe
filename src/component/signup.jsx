@@ -9,7 +9,7 @@ function Signup(props) {
 
   const handleSubmit = async () => {
     await axios
-      .post('url', {
+      .post(url, {
         id: 'yujin',
         passwd: '1234',
         name: 'yujin',
