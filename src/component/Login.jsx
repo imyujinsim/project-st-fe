@@ -37,7 +37,7 @@ function Login(props) {
         Accept: 'application/json',
 
         // 추가
-        'Access-Control-Allow-Origin': 'https://www.bodam.site',
+        'Access-Control-Allow-Origin': 'https://api.bodam.site',
         'Access-Control-Allow-Credentials': true,
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
         'Access-Control-Request-Headers': 'X-Custom-Header',
