@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../resources/logo.png';
 import '../style/reset.css';
 import '../style/login.css';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useLocation, useNavigate } from 'react-router-dom';
