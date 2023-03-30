@@ -25,10 +25,12 @@ function Login(props) {
   const url = encodeURI('http://3.36.124.165:8080/account/login');
 
   const handleSubmit = async () => {
+    const id = document.querySelector('#identification').value;
+    const passwd = document.querySelector('#passwd').value;
     await axios({
       url: url,
       method: 'post',
-      data: { id: 'donghee1234', passwd: 'donghee1234' },
+      data: { id: id, passwd: passwd },
       withCredentials: false,
       headers: {
         'Content-Type': `application/json;charset=UTF-8`,
@@ -41,6 +43,8 @@ function Login(props) {
     })
       .then(function (response) {
         console.log(response);
+        localStorage.setItem('token', response.data.token);
+        console.log(localStorage.getItem('token'));
       })
       .catch(function (error) {
         console.log(error);
@@ -54,8 +58,18 @@ function Login(props) {
           <img src={logo} width={300} />
         </h2>
         <form action="/" id="login-form" onSubmit={handleSubmit}>
-          <input type="text" name="userName" placeholder="아이디(이메일)" />
-          <input type="password" name="userPassword" placeholder="비밀번호" />
+          <input
+            type="text"
+            name="userName"
+            placeholder="아이디"
+            id="identification"
+          />
+          <input
+            type="password"
+            name="userPassword"
+            placeholder="비밀번호"
+            id="passwd"
+          />
           <label htmlFor="remember-check">
             <input type="checkbox" id="remember-check" />
             아이디 저장하기

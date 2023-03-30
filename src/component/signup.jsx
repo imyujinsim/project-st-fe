@@ -8,18 +8,23 @@ function Signup(props) {
   const url = 'http://3.36.124.165:8080/account/join';
 
   const handleSubmit = async () => {
+    const identification = document.querySelector('#identification').value;
+    const passwd = document.querySelector('#passwd').value;
+    const name = document.querySelector('#name').value;
+    const email = document.querySelector('#email').value;
+    const birth = document.querySelector('#birth').value;
+    const tel = document.querySelector('#phoneNumber').value;
+
     await axios({
       url: url,
       method: 'post',
       data: {
-        id: 'yujin',
-        passwd: '1234',
-        name: 'yujin',
-        gender: '여',
-        address: 'yujin@naver.com',
-        tel: '010-8513-4832',
-        city: 'busan',
-        date: '1996-10-02',
+        id: identification,
+        passwd: passwd,
+        name: name,
+        address: email,
+        tel: tel,
+        date: birth,
       },
       withCredentials: true,
       headers: {
@@ -52,8 +57,8 @@ function Signup(props) {
                 <input
                   className="signup-input"
                   type="text"
-                  id="firstName"
-                  placeholder="성"
+                  id="name"
+                  placeholder="이름"
                 />
               </div>
             </div>
@@ -61,9 +66,9 @@ function Signup(props) {
               <div className="form-outline">
                 <input
                   className="signup-input"
-                  type="text"
-                  id="lastName"
-                  placeholder="이름"
+                  type="email"
+                  id="email"
+                  placeholder="이메일"
                 />
               </div>
             </div>
@@ -74,8 +79,8 @@ function Signup(props) {
                 <input
                   className="signup-input"
                   type="text"
-                  id="emailAddress"
-                  placeholder="아이디(이메일)"
+                  id="identification"
+                  placeholder="아이디"
                 />
               </div>
             </div>
@@ -83,8 +88,9 @@ function Signup(props) {
               <div className="form-outline passwd ">
                 <input
                   className="signup-input"
-                  type="text"
+                  type="password"
                   name="passwd"
+                  id="passwd"
                   placeholder="비밀번호"
                 />
               </div>
@@ -97,7 +103,8 @@ function Signup(props) {
                   className="signup-input"
                   type="text"
                   name="userName"
-                  placeholder="생년월일"
+                  id="birth"
+                  placeholder="생년월일 (예시:981117)"
                 />
               </div>
             </div>
