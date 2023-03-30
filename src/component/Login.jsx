@@ -24,16 +24,16 @@ function Login(props) {
   // };
   // const url = 'http://3.36.124.165:8080/account/login';
 
-  // const handleSubmit = async () => {
-  //   await axios
-  //     .post(url, { id: 'donghee1234', passwd: 'donghee1234' })
-  //     .then(function (response) {
-  //       console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // };
+  const handleSubmit = async () => {
+    await axios
+      .post(url, { id: 'donghee1234', passwd: 'donghee1234' })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="login-wrapper">
@@ -41,7 +41,7 @@ function Login(props) {
         <h2>
           <img src={logo} width={300} />
         </h2>
-        <form method="post" action="" id="login-form">
+        <form method="post" action="" id="login-form" onSubmit={handleSubmit}>
           <input type="text" name="userName" placeholder="아이디(이메일)" />
           <input type="password" name="userPassword" placeholder="비밀번호" />
           <label htmlFor="remember-check">
