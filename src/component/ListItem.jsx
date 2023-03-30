@@ -24,10 +24,10 @@ function ListItem(props) {
     } else {
       e.target.classList.add('checked');
       // 데이터베이스에 추가
-      const postData = async () => {
-        const res = await axios.get();
-        if (res.data.type === 'liked') setLike(true);
-      };
+      // const postData = async () => {
+      //   const res = await axios.get();
+      //   if (res.data.type === 'liked') setLike(true);
+      // };
       console.log(e.target.id);
       console.log(props.picture);
       console.log(props.name);
