@@ -5,7 +5,7 @@ import '../style/signup.css';
 import axios from 'axios';
 
 function Signup(props) {
-  const url = 'http://43.201.150.104:8080:8080/account/join';
+  const url = 'http://43.201.150.104:8080/account/join';
 
   const handleSubmit = async () => {
     const identification = document.querySelector('#identification').value;
