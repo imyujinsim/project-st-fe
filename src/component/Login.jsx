@@ -59,7 +59,7 @@ function Login(props) {
         <h2>
           <img src={logo} width={300} />
         </h2>
-        <form action="/" method="POST" id="login-form" onSubmit={handleSubmit}>
+        <form action="/" id="login-form" onSubmit={handleSubmit}>
           <input
             type="text"
             name="userName"
