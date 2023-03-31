@@ -28,12 +28,12 @@ function Signup(props) {
       },
       withCredentials: true,
       headers: {
-        'Content-Type': `application/json;charset=UTF-8`,
+        'Content-Type': `text/plain`,
         Accept: 'application/json',
 
         // 추가
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
+        // 'Access-Control-Allow-Origin': '*',
+        // 'Access-Control-Allow-Credentials': true,
       },
     })
       .then(function (response) {
