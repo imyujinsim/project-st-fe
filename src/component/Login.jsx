@@ -26,7 +26,6 @@ function Login(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    window.location.href = '/';
     const id = document.querySelector('#identification').value;
     const passwd = document.querySelector('#passwd').value;
 
@@ -46,6 +45,7 @@ function Login(props) {
         console.log(response);
         localStorage.setItem('token', response.data.token);
         console.log(localStorage.getItem('token'));
+        window.location.href = '/';
       })
       .catch(function (error) {
         console.log(error);
