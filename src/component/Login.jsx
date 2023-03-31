@@ -58,6 +58,7 @@ function Login(props) {
         </h2>
         <form
           action="/"
+          method="post"
           id="login-form"
           onSubmit={(e) => {
             handleSubmit(e);
