@@ -28,12 +28,15 @@ function Login(props) {
     const id = document.querySelector('#identification').value;
     const passwd = document.querySelector('#passwd').value;
 
+    const data = JSON.stringify({ id: 'donghee1234', passwd: 'donghee1234' });
+
     axios.defaults.baseURL = 'https://api.bodam.site:8080';
     await axios
-      .post('/account/login', {
+      .post('/account/login', formData, {
         method: 'POST',
-        data: { id: 'donghee1234', passwd: 'donghee1234' },
+        data: data,
         withCredentials: true,
+        headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
         console.log(response);
