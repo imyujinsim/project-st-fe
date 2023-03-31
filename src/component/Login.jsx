@@ -26,6 +26,7 @@ function Login(props) {
 
   const handleSubmit = async () => {
     // e.preventDefault();
+    window.location.href = '/';
     const id = document.querySelector('#identification').value;
     const passwd = document.querySelector('#passwd').value;
 
@@ -49,7 +50,6 @@ function Login(props) {
       .catch(function (error) {
         console.log(error);
       });
-    window.location.href = '/';
   };
 
   return (
