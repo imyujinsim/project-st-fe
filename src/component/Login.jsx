@@ -35,7 +35,7 @@ function Login(props) {
         data: { id: id, passwd: passwd },
         withCredentials: true,
         headers: {
-          'Content-Type': `text/json`,
+          'Content-Type': `application/json`,
           Accept: 'application/json',
 
           // 추가
