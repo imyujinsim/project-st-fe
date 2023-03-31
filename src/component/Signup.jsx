@@ -22,7 +22,7 @@ function Signup(props) {
         id: identification,
         passwd: passwd,
         name: name,
-        address: email,
+        email: email,
         tel: tel,
         date: birth,
       },
