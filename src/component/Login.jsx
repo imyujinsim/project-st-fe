@@ -32,11 +32,11 @@ function Login(props) {
 
     axios.defaults.baseURL = 'https://api.bodam.site:8080';
     await axios
-      .post('/account/login', {
+      .post('https://api.bodam.site:8080/account/login', {
         method: 'POST',
         data: data,
         withCredentials: true,
-        headers: { 'Content-Type': 'application/json' },
+        // headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
         console.log(response);
