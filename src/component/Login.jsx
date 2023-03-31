@@ -59,7 +59,6 @@ function Login(props) {
           <img src={logo} width={300} />
         </h2>
         <form
-          action="/"
           method="post"
           id="login-form"
           onSubmit={(e) => {
