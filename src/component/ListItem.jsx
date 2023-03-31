@@ -6,33 +6,49 @@ import axios from 'axios';
 
 function ListItem(props) {
   const data = props.contentid;
-  const [like, setLike] = useState(false);
 
-  // useEffect(async () => {
-  //   const fetchData = async () => {
-  //     const res = await axios.get();
-  //     if (res.data.type === 'liked') setLike(true);
-  //   };
-  //   fetchData();
-  // }, []);
-
-  function click(e) {
+  const onHandleClickLike = (e) => {
     e.preventDefault();
-    if (e.target.classList.contains('checked')) {
-      e.target.classList.remove('checked');
-      // 데이터베이스에서 삭제
-    } else {
+
+    const wishlist = [];
+    useEffect(() => {
+      if (
+        wishlist.filter(
+          (InwishlistItem) => InwishlistItem.id === e.target.id
+        )[0]
+      ) {
+        e.target.classList.add('checked');
+      }
+    }, []);
+
+    if (
+      !wishlist.filter((InwishlistItem) => InwishlistItem.id === e.target.id)[0]
+    ) {
+      console.log('like clicked');
       e.target.classList.add('checked');
-      // 데이터베이스에 추가
-      // const postData = async () => {
-      //   const res = await axios.get();
-      //   if (res.data.type === 'liked') setLike(true);
-      // };
-      console.log(e.target.id);
-      console.log(props.picture);
-      console.log(props.name);
+      // 디비에 넣는 코드
+    } else {
+      console.log('like canceled');
+      e.target.classList.remove('checked');
+      // 디비에서 빼는 코드
     }
-  }
+    return;
+  };
+
+  // function click(e) {
+  //   e.preventDefault();
+  //   if (e.target.classList.contains('checked')) {
+  //     e.target.classList.remove('checked');
+  //     // 데이터베이스에서 삭제
+  //   } else {
+  //     e.target.classList.add('checked');
+  //     // 데이터베이스에 추가
+
+  //     console.log(e.target.id);
+  //     console.log(props.picture);
+  //     console.log(props.name);
+  //   }
+  // }
 
   return (
     <Link
@@ -48,7 +64,13 @@ function ListItem(props) {
           <h3>{props.name}</h3>
         </a>
 
-        <button className="bookmark" id={data} onClick={click}></button>
+        <button
+          className="bookmark"
+          id={data}
+          onClick={(e) => {
+            onHandleClickLike(e);
+          }}
+        ></button>
       </li>
     </Link>
   );
