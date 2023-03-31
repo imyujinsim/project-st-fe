@@ -26,7 +26,7 @@ function Signup(props) {
         tel: tel,
         date: birth,
       },
-      withCredentials: false,
+      withCredentials: true,
       headers: {
         'Content-Type': `application/json;charset=UTF-8`,
         Accept: 'application/json',
@@ -50,7 +50,14 @@ function Signup(props) {
         <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 logo-wrapper">
           <img src={logo} width={300} />
         </h3>
-        <form className="signup-form" action="/" onSubmit={handleSubmit}>
+        <form
+          className="signup-form"
+          action="/"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+        >
           <div className="row">
             <div className="col-md-6 mb-4">
               <div className="form-outline">
