@@ -28,7 +28,7 @@ function Signup(props) {
       },
       withCredentials: true,
       headers: {
-        'Content-Type': `text/plain`,
+        'Content-Type': 'application/json',
         Accept: 'application/json',
 
         // 추가
