@@ -45,11 +45,11 @@ function Login(props) {
         console.log(response);
         localStorage.setItem('token', response.data.token);
         console.log(localStorage.getItem('token'));
-        window.location.href = 'https://www.bodam.site';
       })
       .catch(function (error) {
         console.log(error);
       });
+    window.location.href = '/';
   };
 
   return (
@@ -59,6 +59,7 @@ function Login(props) {
           <img src={logo} width={300} />
         </h2>
         <form
+          action="/"
           method="post"
           id="login-form"
           onSubmit={(e) => {
