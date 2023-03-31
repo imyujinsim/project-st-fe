@@ -27,6 +27,8 @@ function Login(props) {
   const handleSubmit = async () => {
     const id = document.querySelector('#identification').value;
     const passwd = document.querySelector('#passwd').value;
+
+    axios.defaults.baseURL = 'https://api.bodam.site:8080';
     await axios({
       url: url,
       method: 'POST',
@@ -37,10 +39,10 @@ function Login(props) {
         Accept: 'application/json',
 
         // 추가
-        'Access-Control-Allow-Origin': 'https://api.bodam.site',
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Request-Headers': 'X-Custom-Header',
+        'Access-Control-Allow-Methods': '*',
+        'Access-Control-Request-Headers': '*',
       },
     })
       .then(function (response) {
