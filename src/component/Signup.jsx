@@ -54,7 +54,6 @@ function Signup(props) {
           className="signup-form"
           action="/"
           onSubmit={(e) => {
-            e.preventDefault();
             handleSubmit();
           }}
         >
