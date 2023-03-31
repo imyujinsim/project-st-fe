@@ -24,7 +24,7 @@ function Login(props) {
   // };
   const url = 'https://api.bodam.site:8080/account/login';
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     window.location.href = '/';
     const id = document.querySelector('#identification').value;
@@ -63,7 +63,7 @@ function Login(props) {
           method="post"
           id="login-form"
           onSubmit={(e) => {
-            handleSubmit();
+            handleSubmit(e);
           }}
         >
           <input
