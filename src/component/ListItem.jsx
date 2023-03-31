@@ -5,13 +5,13 @@ import '../style/card.css';
 import axios from 'axios';
 
 function ListItem(props) {
-  const data = props.contentid;
+  useEffect(() => {
+    const data = props.contentid;
 
-  const useOnHandleClickLike = (e) => {
-    e.preventDefault();
+    const useOnHandleClickLike = (e) => {
+      e.preventDefault();
 
-    const wishlist = [];
-    useEffect(() => {
+      const wishlist = [];
       if (
         wishlist.filter(
           (InwishlistItem) => InwishlistItem.id === e.target.id
@@ -19,21 +19,23 @@ function ListItem(props) {
       ) {
         e.target.classList.add('checked');
       }
-    }, []);
 
-    if (
-      !wishlist.filter((InwishlistItem) => InwishlistItem.id === e.target.id)[0]
-    ) {
-      console.log('like clicked');
-      e.target.classList.add('checked');
-      // 디비에 넣는 코드
-    } else {
-      console.log('like canceled');
-      e.target.classList.remove('checked');
-      // 디비에서 빼는 코드
-    }
-    return;
-  };
+      if (
+        !wishlist.filter(
+          (InwishlistItem) => InwishlistItem.id === e.target.id
+        )[0]
+      ) {
+        console.log('like clicked');
+        e.target.classList.add('checked');
+        // 디비에 넣는 코드
+      } else {
+        console.log('like canceled');
+        e.target.classList.remove('checked');
+        // 디비에서 빼는 코드
+      }
+      return;
+    };
+  }, []);
 
   // function click(e) {
   //   e.preventDefault();
