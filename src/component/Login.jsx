@@ -32,18 +32,8 @@ function Login(props) {
     await axios
       .post('/account/login', {
         method: 'POST',
-        data: { id: id, passwd: passwd },
+        data: { id: 'donghee1234', passwd: 'donghee1234' },
         withCredentials: true,
-        headers: {
-          'Content-Type': `application/json`,
-          Accept: 'application/json',
-
-          // 추가
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Credentials': true,
-          'Access-Control-Allow-Methods': '*',
-          'Access-Control-Request-Headers': '*',
-        },
       })
       .then(function (response) {
         console.log(response);
