@@ -24,8 +24,8 @@ function Login(props) {
   // };
   const url = 'https://api.bodam.site:8080/account/login';
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    // e.preventDefault();
     const id = document.querySelector('#identification').value;
     const passwd = document.querySelector('#passwd').value;
 
@@ -62,7 +62,7 @@ function Login(props) {
           method="post"
           id="login-form"
           onSubmit={(e) => {
-            handleSubmit(e);
+            handleSubmit();
           }}
         >
           <input

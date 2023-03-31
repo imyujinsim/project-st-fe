@@ -1,11 +1,18 @@
-import React from "react";
-import logo from "../resources/logo.png";
-import "../style/reset.css";
-import "../style/header.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import logo from '../resources/logo.png';
+import '../style/reset.css';
+import '../style/header.css';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
   const isLoggedIn = props.isLoggedIn;
+  const token = localStorage.getItem('token');
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  };
+
   return (
     <header>
       <nav>
@@ -13,7 +20,7 @@ function Header(props) {
           <img src={logo} className="main-logo" />
         </Link>
         <ul>
-          {isLoggedIn ? (
+          {token ? (
             <>
               <li>
                 <Link to="/userinfo" className="nav-item">
@@ -21,9 +28,9 @@ function Header(props) {
                 </Link>
               </li>
               <li>
-                <Link to="/logout" className="nav-item">
+                <button onClick={handleLogout} className="nav-item">
                   로그아웃
-                </Link>
+                </button>
               </li>
             </>
           ) : (
@@ -45,5 +52,4 @@ function Header(props) {
     </header>
   );
 }
-
 export default Header;
