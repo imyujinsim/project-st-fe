@@ -31,6 +31,7 @@ function Login(props) {
     const data = JSON.stringify({ id: 'donghee1234', passwd: 'donghee1234' });
 
     axios.defaults.baseURL = 'https://api.bodam.site:8080';
+    axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
     await axios
       .post('https://api.bodam.site:8080/account/login', {
         method: 'POST',
