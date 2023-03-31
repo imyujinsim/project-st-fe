@@ -86,14 +86,22 @@ import '../style/reset.css';
 import '../style/card.css';
 import axios from 'axios';
 
+function BookmarkAlert() {
+  return <div>로그인이 필요합니다.</div>;
+}
+
 function ListItem(props) {
   const data = props.contentid;
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     // localStorage에서 북마크 상태를 가져옵니다.
     const storedBookmark = window.localStorage.getItem(data);
     setIsBookmarked(storedBookmark === 'true');
+    // jwt 토큰이 있는지 확인합니다.
+    const jwtToken = window.localStorage.getItem('jwtToken');
+    setIsLoggedIn(!!jwtToken);
   }, [data]);
 
   function handleClick(e) {
@@ -118,10 +126,14 @@ function ListItem(props) {
           <img src={props.picture} alt={props.name} />
           <h3>{props.name}</h3>
         </a>
-        <button
-          className={`bookmark ${isBookmarked ? 'checked' : ''}`}
-          onClick={handleClick}
-        ></button>
+        {isLoggedIn ? (
+          <button
+            className={`bookmark ${isBookmarked ? 'checked' : ''}`}
+            onClick={handleClick}
+          ></button>
+        ) : (
+          <BookmarkAlert />
+        )}
       </li>
     </Link>
   );
