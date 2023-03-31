@@ -29,16 +29,18 @@ function Login(props) {
     const id = document.querySelector('#identification').value;
     const passwd = document.querySelector('#passwd').value;
 
-    const data = JSON.stringify({ id: 'donghee1234', passwd: 'donghee1234' });
+    const url = 'https://api.bodam.site:8080/account/login';
 
-    await axios
-      .post('https://api.bodam.site:8080/account/login', {
-        method: 'POST',
-        data: data,
-        withCredentials: true,
-        baseURL: 'https://api.bodam.site:8080',
-        headers: { 'Access-Control-Allow-Origin': '*' },
-      })
+    await axios({
+      url: url,
+      method: 'POST',
+      data: { id: id, passwd: passwd },
+      withCredentials: true,
+      headers: {
+        'Content-Type': `text/plain`,
+        Accept: 'application/json',
+      },
+    })
       .then(function (response) {
         console.log(response);
         localStorage.setItem('token', response.data.token);
