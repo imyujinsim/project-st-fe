@@ -7,7 +7,7 @@ import axios from 'axios';
 function ListItem(props) {
   const data = props.contentid;
 
-  const onHandleClickLike = (e) => {
+  const useOnHandleClickLike = (e) => {
     e.preventDefault();
 
     const wishlist = [];
@@ -68,7 +68,7 @@ function ListItem(props) {
           className="bookmark"
           id={data}
           onClick={(e) => {
-            onHandleClickLike(e);
+            useOnHandleClickLike(e);
           }}
         ></button>
       </li>
