@@ -25,7 +25,7 @@ function Login(props) {
   const url = 'https://api.bodam.site:8080/account/login';
 
   const handleSubmit = async () => {
-    // e.preventDefault();
+    e.preventDefault();
     window.location.href = '/';
     const id = document.querySelector('#identification').value;
     const passwd = document.querySelector('#passwd').value;
