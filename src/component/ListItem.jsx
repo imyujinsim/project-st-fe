@@ -5,9 +5,8 @@ import '../style/card.css';
 import axios from 'axios';
 
 function ListItem(props) {
+  const data = props.contentid;
   useEffect(() => {
-    const data = props.contentid;
-
     const useOnHandleClickLike = (e) => {
       e.preventDefault();
 
