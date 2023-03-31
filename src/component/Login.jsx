@@ -29,22 +29,22 @@ function Login(props) {
     const passwd = document.querySelector('#passwd').value;
 
     axios.defaults.baseURL = 'https://api.bodam.site:8080';
-    await axios({
-      url: url,
-      method: 'POST',
-      data: { id: id, passwd: passwd },
-      withCredentials: true,
-      headers: {
-        'Content-Type': `text/json`,
-        Accept: 'application/json',
+    await axios
+      .post(url, {
+        method: 'POST',
+        data: { id: id, passwd: passwd },
+        withCredentials: true,
+        headers: {
+          'Content-Type': `text/json`,
+          Accept: 'application/json',
 
-        // 추가
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Methods': '*',
-        'Access-Control-Request-Headers': '*',
-      },
-    })
+          // 추가
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+          'Access-Control-Allow-Methods': '*',
+          'Access-Control-Request-Headers': '*',
+        },
+      })
       .then(function (response) {
         console.log(response);
         localStorage.setItem('token', response.data.token);
