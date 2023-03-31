@@ -28,8 +28,8 @@ function Signup(props) {
       },
       withCredentials: true,
       headers: {
-        'Content-Type': `application/json`,
-        Accept: 'application/json',
+        'Content-Type': `text/plain`,
+        Accept: 'text/plain',
 
         // 추가
         // 'Access-Control-Allow-Origin': '*',

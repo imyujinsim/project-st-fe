@@ -37,8 +37,8 @@ function Login(props) {
       data: { id: id, passwd: passwd },
       withCredentials: true,
       headers: {
-        'Content-Type': `application/json`,
-        Accept: 'application/json',
+        'Content-Type': `text/plain`,
+        Accept: 'text/plain',
       },
     })
       .then(function (response) {
