@@ -30,7 +30,7 @@ function Login(props) {
 
     axios.defaults.baseURL = 'https://api.bodam.site:8080';
     await axios
-      .post(/account/login, {
+      .post('/account/login', {
         method: 'POST',
         data: { id: id, passwd: passwd },
         withCredentials: true,
