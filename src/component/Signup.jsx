@@ -29,7 +29,7 @@ function Signup(props) {
       withCredentials: true,
       headers: {
         'Content-Type': `text/plain`,
-        Accept: 'text/plain',
+        Accept: 'application/json',
 
         // 추가
         // 'Access-Control-Allow-Origin': '*',

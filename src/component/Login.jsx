@@ -38,7 +38,7 @@ function Login(props) {
       withCredentials: true,
       headers: {
         'Content-Type': `text/plain`,
-        Accept: 'text/plain',
+        Accept: 'application/json',
       },
     })
       .then(function (response) {
