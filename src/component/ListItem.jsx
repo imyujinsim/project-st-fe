@@ -15,6 +15,7 @@ function ListItem(props) {
     const url = 'https://api.bodam.site:8080/account/join';
 
     const callBookmark = async () => {
+      const token = localStorage.getItem('token');
       await axios({
         url: url,
         method: 'post',
@@ -22,6 +23,7 @@ function ListItem(props) {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
+          Authorization: `Bearer ${token}`,
         },
       })
         .then(function (response) {
