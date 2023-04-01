@@ -10,41 +10,67 @@ function ListItem(props) {
   const [isLoggedIn, setIsLoggedIn] = useState();
   const [likedItems, setLikedItems] = useState([]);
 
-  useEffect(() => {
-    // 화면이 로딩되면 북마크 목록 불러와서 localstorage에 넣기
-    const url = 'https://api.bodam.site:8080/bookmark/list';
-    const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
 
-    const callBookmark = async () => {
-      await axios({
-        url: url,
-        method: 'post',
-        withCredentials: true,
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          Authorization: `${token}`,
-        },
-      })
-        .then(function (response) {
-          console.log(response);
+  if (token) {
+    useEffect(() => {
+      // 화면이 로딩되면 북마크 목록 불러와서 localstorage에 넣기
+      const url = 'https://api.bodam.site:8080/bookmark/list';
+
+      const callBookmark = async () => {
+        await axios({
+          url: url,
+          method: 'post',
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `${token}`,
+          },
         })
-        .catch(function (error) {
-          console.log(error);
-        });
-    };
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      };
 
-    callBookmark();
-  }, [token]);
+      callBookmark();
+    }, [token]);
+  }
 
   useEffect(() => {
     // local storage 사용해서 페이지 로딩 시 북마크 되어있는 항목 표시
     setIsLoggedIn(window.localStorage.getItem('token') ? true : false);
     if (isLoggedIn) {
-      const storedLikedItems = JSON.parse(localStorage.getItem('likedItems'));
-      if (storedLikedItems) {
-        setLikedItems(storedLikedItems);
-      }
+      const url = 'https://api.bodam.site:8080/bookmark/list';
+
+      const callBookmark = async () => {
+        await axios({
+          url: url,
+          method: 'post',
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      };
+
+      callBookmark();
+
+      // const storedLikedItems = JSON.parse(localStorage.getItem('likedItems'));
+      // if (storedLikedItems) {
+      //   setLikedItems(storedLikedItems);
+      // }
     }
   }, [isLoggedIn]);
 
