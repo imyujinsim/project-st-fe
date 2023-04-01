@@ -29,7 +29,8 @@ function ListItem(props) {
           },
         })
           .then(function (response) {
-            console.log(response);
+            const data = response.data;
+            localStorage.setItem('bookmark', JSON.stringify(data));
           })
           .catch(function (error) {
             console.log(error);
@@ -37,11 +38,6 @@ function ListItem(props) {
       };
 
       callBookmark();
-
-      // const storedLikedItems = JSON.parse(localStorage.getItem('likedItems'));
-      // if (storedLikedItems) {
-      //   setLikedItems(storedLikedItems);
-      // }
     }
   }, [isLoggedIn]);
 
