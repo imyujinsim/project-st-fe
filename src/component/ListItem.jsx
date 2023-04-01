@@ -83,8 +83,7 @@ function ListItem(props) {
       const likedItems = JSON.parse(localStorage.getItem('bookmark') || '[]');
       console.log(likedItems);
       likedItems.push(bookmarkItem);
-      console.log(addedList);
-      localStorage.setItem('bookmark', JSON.stringify(addedList));
+      localStorage.setItem('bookmark', JSON.stringify(likedItems));
       // 데이터베이스에 추가
     } else {
       e.target.classList.remove('checked');
@@ -93,7 +92,6 @@ function ListItem(props) {
       const removedList = likedItems.filter(
         (item) => item.context_id !== contextId
       );
-      console.log(removedList);
       localStorage.setItem('bookmark', JSON.stringify(removedList));
       // 데이터베이스에서 삭제
     }
