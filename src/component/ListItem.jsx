@@ -32,7 +32,7 @@ function ListItem(props) {
           .then(function (response) {
             const data = response.data;
             localStorage.setItem('bookmark', JSON.stringify(data));
-            props.setIsExists(true);
+            setIsExists(true);
           })
           .catch(function (error) {
             console.log(error);
