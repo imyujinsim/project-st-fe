@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../style/reset.css';
 import '../style/main.css';
 import ListItem from './ListItem';
@@ -10,38 +10,21 @@ function List(props) {
   const token = localStorage.getItem('token');
   const [bookmarkItems, setBookmarkItems] = useState();
 
-  const callBookmark = async () => {
-    await axios({
-      url: 'https://api.bodam.site:8080/bookmark/list',
-      method: 'post',
-      withCredentials: true,
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then(function (response) {
-        const data = response.data;
-        setBookmarkItems(
-          Array.from(data).map((item) => {
-            return (
-              <ListItem
-                key={item.context_id}
-                picture={item.url !== '' ? item.url : noPic}
-                name={item.name}
-                contentid={item.context_id}
-              />
-            );
-          })
-        );
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+  const localBookmark = JSON.parse(localStorage.getItem('bookmark') || '[]');
 
-  callBookmark();
+  useEffect(() => {
+    const bookmark = Array.from(localBookmark).map((item) => {
+      return (
+        <ListItem
+          key={item.context_id}
+          picture={item.url !== '' ? item.url : noPic}
+          name={item.name}
+          contentid={item.context_id}
+        />
+      );
+    });
+    setBookmarkItems(bookmark);
+  }, [localBookmark]);
 
   const listItems = Array.from(locationData).map((item) => {
     return (
