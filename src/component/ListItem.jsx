@@ -71,7 +71,7 @@ function ListItem(props) {
             Accept: 'application/json',
             Authorization: `Bearer ${token}`,
           },
-          body: {
+          data: {
             context_id: contextId,
             name: name,
             url: url,
@@ -100,7 +100,7 @@ function ListItem(props) {
             Accept: 'application/json',
             Authorization: `Bearer ${token}`,
           },
-          body: {
+          data: {
             context_id: contextId,
             name: name,
             url: url,
