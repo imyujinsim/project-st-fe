@@ -12,7 +12,7 @@ function ListItem(props) {
 
   useEffect(() => {
     // 화면이 로딩되면 북마크 목록 불러와서 localstorage에 넣기
-    const url = 'https://api.bodam.site:8080/bookmark/mark';
+    const url = 'https://api.bodam.site:8080/bookmark/list';
 
     const callBookmark = async () => {
       const token = localStorage.getItem('token');
