@@ -12,7 +12,7 @@ function UserInfo(props) {
       <Header />
       <hr />
       <MyInfo />
-      <List title="찜한 목록" />
+      <List title="찜한 관광지" />
       <Myreview />
       <Footer />
     </>
