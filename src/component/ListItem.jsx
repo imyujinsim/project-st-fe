@@ -49,7 +49,7 @@ function ListItem(props) {
     e.preventDefault();
     if (e.target.classList.contains('checked')) {
       e.target.classList.remove('checked');
-      setLikedItems(likedItems.filter((item) => item === contentId));
+      setLikedItems(likedItems.filter((item) => item !== contentId));
       // 데이터베이스에서 삭제
     } else {
       e.target.classList.add('checked');
