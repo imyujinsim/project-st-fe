@@ -41,30 +41,6 @@ function ListItem(props) {
     }
   }, [isLoggedIn]);
 
-  // useEffect(() => {
-  //   const jsonItems = JSON.stringify(likedItems);
-  //   localStorage.setItem('bookmark', jsonItems);
-  // }, [likedItems]);
-
-  // const onHandleClickLike = (e, contentId) => {
-  //   e.preventDefault();
-
-  //   const index = likedItems.findIndex((item) => item === contentId);
-
-  //   if (index > -1) {
-  //     // 이미 좋아요 상태인 경우, likedItems 배열에서 해당 contentId를 삭제합니다.
-  //     setLikedItems(likedItems.filter((item) => item === contentId));
-  //     e.target.classList.remove('checked');
-  //     // 서버에서 해당 contentId를 좋아요 취소 처리합니다.
-  //     // await axios.delete(`/api/items/${contentId}/like`);
-  //   } else {
-  //     // 좋아요 상태가 아닌 경우, likedItems 배열에 해당 contentId를 추가합니다.
-  //     setLikedItems([...likedItems, contentId]);
-  //     e.target.classList.add('checked');
-  //     // 서버에서 해당 contentId를 좋아요 처리합니다.
-  //     // await axios.post(`/api/items/${contentId}/like`);
-  //   }
-  // };
   function onHandleClickLike(e) {
     e.preventDefault();
 
@@ -85,6 +61,26 @@ function ListItem(props) {
       likedItems.push(bookmarkItem);
       localStorage.setItem('bookmark', JSON.stringify(likedItems));
       // 데이터베이스에 추가
+      const addBookmark = async () => {
+        await axios({
+          url: 'https://api.bodam.site:8080/bookmark/mark',
+          method: 'post',
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: {
+            context_id: contextId,
+            name: name,
+            url: url,
+          },
+        })
+          .then(console.log)
+          .catch(console.log);
+      };
+      addBookmark();
     } else {
       e.target.classList.remove('checked');
       const likedItems = JSON.parse(localStorage.getItem('bookmark') || '[]');
@@ -94,6 +90,26 @@ function ListItem(props) {
       );
       localStorage.setItem('bookmark', JSON.stringify(removedList));
       // 데이터베이스에서 삭제
+      const deleteBookmark = async () => {
+        await axios({
+          url: 'https://api.bodam.site:8080/bookmark/unmark',
+          method: 'post',
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: {
+            context_id: contextId,
+            name: name,
+            url: url,
+          },
+        })
+          .then(console.log)
+          .catch(console.log);
+      };
+      deleteBookmark();
     }
   }
 
