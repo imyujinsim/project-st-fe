@@ -11,6 +11,29 @@ function ListItem(props) {
   const [likedItems, setLikedItems] = useState([]);
 
   useEffect(() => {
+    // 화면이 로딩되면 북마크 목록 불러와서 localstorage에 넣기
+    const url = 'https://api.bodam.site:8080/account/join';
+
+    const callBookmark = async () => {
+      await axios({
+        url: url,
+        method: 'post',
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
+  }, []);
+
+  useEffect(() => {
     // local storage 사용해서 페이지 로딩 시 북마크 되어있는 항목 표시
     setIsLoggedIn(window.localStorage.getItem('token') ? true : false);
     if (isLoggedIn) {
@@ -20,11 +43,6 @@ function ListItem(props) {
       }
     }
   }, [isLoggedIn]);
-
-  useEffect(() => {
-    // likedItems 배열이 업데이트 될 때마다 localStorage에 저장
-    localStorage.setItem('likedItems', JSON.stringify(likedItems));
-  }, [likedItems]);
 
   // const onHandleClickLike = (e, contentId) => {
   //   e.preventDefault();
@@ -45,15 +63,15 @@ function ListItem(props) {
   //     // await axios.post(`/api/items/${contentId}/like`);
   //   }
   // };
-  function onHandleClickLike(e, contentId) {
+  function onHandleClickLike(e) {
     e.preventDefault();
     if (e.target.classList.contains('checked')) {
       e.target.classList.remove('checked');
-      setLikedItems(likedItems.filter((item) => item !== contentId));
+      window.localStorage.removeItem(e.target.id);
       // 데이터베이스에서 삭제
     } else {
       e.target.classList.add('checked');
-      setLikedItems([...likedItems, e.target.id]);
+      window.localStorage.setItem(e.target.id, e.target.id);
       // 데이터베이스에 추가
     }
   }
