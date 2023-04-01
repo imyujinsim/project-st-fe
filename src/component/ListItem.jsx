@@ -7,7 +7,7 @@ import axios from 'axios';
 function ListItem(props) {
   const data = props.contentid;
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState();
   const [likedItems, setLikedItems] = useState([]);
 
   useEffect(() => {
