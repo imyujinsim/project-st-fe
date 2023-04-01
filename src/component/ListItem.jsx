@@ -33,15 +33,13 @@ function ListItem(props) {
 
     if (index > -1) {
       // 이미 좋아요 상태인 경우, likedItems 배열에서 해당 contentId를 삭제합니다.
-      setLikedItems(likedItems.filter((item) => item !== contentId));
+      setLikedItems(likedItems.filter((item) => item === contentId));
       e.target.classList.remove('checked');
       // 서버에서 해당 contentId를 좋아요 취소 처리합니다.
       // await axios.delete(`/api/items/${contentId}/like`);
     } else {
       // 좋아요 상태가 아닌 경우, likedItems 배열에 해당 contentId를 추가합니다.
-      const updatedItems = [...likedItems];
-      console.log(updatedItems);
-      setLikedItems(updatedItems);
+      setLikedItems([...likedItems, contentId]);
       e.target.classList.add('checked');
       // 서버에서 해당 contentId를 좋아요 처리합니다.
       // await axios.post(`/api/items/${contentId}/like`);
