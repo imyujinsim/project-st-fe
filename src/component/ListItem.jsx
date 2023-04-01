@@ -26,8 +26,7 @@ function ListItem(props) {
           headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json',
-            // Authorization: `Bearer ${token}`,
-            'X-AUTH-TOKEN': token,
+            Authorization: `Bearer ${token}`,
           },
         })
           .then(function (response) {
@@ -68,8 +67,12 @@ function ListItem(props) {
   // };
   function onHandleClickLike(e) {
     e.preventDefault();
+    console.log(e.target.children);
     if (e.target.classList.contains('checked')) {
       e.target.classList.remove('checked');
+      // const bookmarkItem = {
+      //   name: e.target.
+      // }
       window.localStorage.removeItem(e.target.id);
       // 데이터베이스에서 삭제
     } else {
