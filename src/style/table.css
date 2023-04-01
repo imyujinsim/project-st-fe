@@ -48,7 +48,8 @@ tbody tr td {
   /* height: auto; */
   margin-top: 30px;
   /* height: 300px; */
-  padding: 30px 95px 20px 110px;
+  padding: 30px 95px 30px 110px;
+  margin-bottom: 10px;
 }
 
 .accordion-body h1 {
