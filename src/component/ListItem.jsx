@@ -21,10 +21,10 @@ function ListItem(props) {
     }
   }, []);
 
-  // useEffect(() => {
-  //   // likedItems 배열이 업데이트 될 때마다 localStorage에 저장
-  //   localStorage.setItem('likedItems', JSON.stringify(likedItems));
-  // }, [likedItems]);
+  useEffect(() => {
+    // likedItems 배열이 업데이트 될 때마다 localStorage에 저장
+    localStorage.setItem('likedItems', JSON.stringify(likedItems));
+  }, [likedItems]);
 
   const onHandleClickLike = (e, contentId) => {
     e.preventDefault();
@@ -39,8 +39,7 @@ function ListItem(props) {
       // await axios.delete(`/api/items/${contentId}/like`);
     } else {
       // 좋아요 상태가 아닌 경우, likedItems 배열에 해당 contentId를 추가합니다.
-      setLikedItems((prevLikedItems) => [...prevLikedItems, contentId]);
-      localStorage.setItem('likedItems', JSON.stringify(likedItems));
+      setLikedItems([...likedItems, contentId]);
       e.target.classList.add('checked');
       // 서버에서 해당 contentId를 좋아요 처리합니다.
       // await axios.post(`/api/items/${contentId}/like`);
