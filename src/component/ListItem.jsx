@@ -26,7 +26,7 @@ function ListItem(props) {
     localStorage.setItem('likedItems', JSON.stringify(likedItems));
   }, [likedItems]);
 
-  const useOnHandleClickLike = (e, contentId) => {
+  const onHandleClickLike = (e, contentId) => {
     e.preventDefault();
 
     const index = likedItems.findIndex((item) => item === contentId);
@@ -79,7 +79,7 @@ function ListItem(props) {
             className="bookmark"
             id={data}
             onClick={(e) => {
-              useOnHandleClickLike(e, data);
+              onHandleClickLike(e, data);
             }}
           ></button>
         ) : (
