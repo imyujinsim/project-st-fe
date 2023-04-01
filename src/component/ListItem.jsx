@@ -35,7 +35,7 @@ function ListItem(props) {
     };
 
     callBookmark();
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     // local storage 사용해서 페이지 로딩 시 북마크 되어있는 항목 표시
