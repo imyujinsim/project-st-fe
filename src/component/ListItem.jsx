@@ -8,6 +8,7 @@ function ListItem(props) {
   const data = props.contentid;
 
   const [isLoggedIn, setIsLoggedIn] = useState();
+  const [isExists, setIsExists] = useState(false);
 
   const token = localStorage.getItem('token');
 
@@ -31,12 +32,12 @@ function ListItem(props) {
           .then(function (response) {
             const data = response.data;
             localStorage.setItem('bookmark', JSON.stringify(data));
+            setIsExists(true);
           })
           .catch(function (error) {
             console.log(error);
           });
       };
-
       callBookmark();
     }
   }, [isLoggedIn]);
@@ -129,7 +130,7 @@ function ListItem(props) {
 
         {isLoggedIn ? (
           <button
-            className="bookmark"
+            className={`bookmark ${isExists ? 'checked' : ''}`}
             id={data}
             onClick={(e) => {
               onHandleClickLike(e, data);
