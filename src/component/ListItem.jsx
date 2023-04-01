@@ -8,7 +8,6 @@ function ListItem(props) {
   const data = props.contentid;
 
   const [isLoggedIn, setIsLoggedIn] = useState();
-  const [likedItems, setLikedItems] = useState([]);
 
   const token = localStorage.getItem('token');
 
@@ -46,6 +45,11 @@ function ListItem(props) {
     }
   }, [isLoggedIn]);
 
+  // useEffect(() => {
+  //   const jsonItems = JSON.stringify(likedItems);
+  //   localStorage.setItem('bookmark', jsonItems);
+  // }, [likedItems]);
+
   // const onHandleClickLike = (e, contentId) => {
   //   e.preventDefault();
 
@@ -67,18 +71,35 @@ function ListItem(props) {
   // };
   function onHandleClickLike(e) {
     e.preventDefault();
-    console.log(e.target.children);
-    if (e.target.classList.contains('checked')) {
-      e.target.classList.remove('checked');
-      // const bookmarkItem = {
-      //   name: e.target.
-      // }
-      window.localStorage.removeItem(e.target.id);
-      // 데이터베이스에서 삭제
-    } else {
+
+    const name = e.target.parentNode.childNodes[0].children[0].alt;
+    const contextId = e.target.parentNode.id;
+    const url = e.target.parentNode.childNodes[0].children[0].src;
+
+    if (!e.target.classList.contains('checked')) {
       e.target.classList.add('checked');
-      window.localStorage.setItem(e.target.id, e.target.id);
+
+      const bookmarkItem = {
+        name: name,
+        context_id: contextId,
+        url: url,
+      };
+      const likedItems = JSON.parse(localStorage.getItem('bookmark') || []);
+      console.log(likedItems);
+      const addedList = [...likedItems].push(bookmarkItem);
+      console.log(addedList);
+      localStorage.setItem('bookmark', JSON.stringify(addedList));
       // 데이터베이스에 추가
+    } else {
+      e.target.classList.remove('checked');
+      const likedItems = JSON.parse(localStorage.getItem('bookmark') || []);
+      console.log(likedItems);
+      const removedList = Array.from(likedItems).filter(
+        (item) => item.context_id !== contextId
+      );
+      console.log(removedList);
+      localStorage.setItem('bookmark', JSON.stringify(removedList));
+      // 데이터베이스에서 삭제
     }
   }
 
