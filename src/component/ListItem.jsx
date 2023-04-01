@@ -142,7 +142,7 @@ function ListItem(props) {
         {isLoggedIn ? (
           <button
             className={`bookmark ${
-              JSON.parse(window.localStorage.getItem('bookmark')).filter(
+              JSON.parse(window.localStorage.getItem('bookmark')).find(
                 (item) => item.context_id === data
               )
                 ? 'checked'
