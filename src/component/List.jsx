@@ -3,14 +3,16 @@ import '../style/reset.css';
 import '../style/main.css';
 import ListItem from './ListItem';
 import noPic from '../resources/icons/no_image.gif';
+import axios from 'axios';
 
 function List(props) {
   const locationData = props.locationData ? props.locationData : '데이터 없음';
-  const [bookmarkData, setBookmarkData] = useState();
+  const token = localStorage.getItem('token');
+  const [bookmarkItems, setBookmarkItems] = useState();
 
   const callBookmark = async () => {
     await axios({
-      url: url,
+      url: 'https://api.bodam.site:8080/bookmark/list',
       method: 'post',
       withCredentials: true,
       headers: {
@@ -21,16 +23,18 @@ function List(props) {
     })
       .then(function (response) {
         const data = response.data;
-        Array.from(data).map((item) => {
-          return (
-            <ListItem
-              key={item.context_id}
-              picture={item.url !== '' ? item.url : noPic}
-              name={item.name}
-              contentid={item.context_id}
-            />
-          );
-        });
+        setBookmarkItems(
+          Array.from(data).map((item) => {
+            return (
+              <ListItem
+                key={item.context_id}
+                picture={item.url !== '' ? item.url : noPic}
+                name={item.name}
+                contentid={item.context_id}
+              />
+            );
+          })
+        );
       })
       .catch(function (error) {
         console.log(error);
