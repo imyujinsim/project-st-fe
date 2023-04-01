@@ -12,8 +12,8 @@ function ListItem(props) {
 
   useEffect(() => {
     // local storage 사용해서 페이지 로딩 시 북마크 되어있는 항목 표시
-    setIsLoggedIn = window.localStorage.getItem('token') ? true : false;
-    if (!!isLoggedIn) {
+    setIsLoggedIn(window.localStorage.getItem('token') ? true : false);
+    if (isLoggedIn) {
       const storedLikedItems = JSON.parse(localStorage.getItem('likedItems'));
       if (storedLikedItems) {
         setLikedItems(storedLikedItems);
