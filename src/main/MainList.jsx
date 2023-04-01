@@ -8,6 +8,7 @@ import Area from '../component/Area';
 function MainList(props) {
   const key = decodeURIComponent(process.env.REACT_APP_TOUR);
   const [locationData, setLocationData] = useState('');
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (pos) {
       console.log(pos);

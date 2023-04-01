@@ -32,7 +32,7 @@ function ListItem(props) {
           .then(function (response) {
             const data = response.data;
             localStorage.setItem('bookmark', JSON.stringify(data));
-            setIsExists(true);
+            props.setIsExists(true);
           })
           .catch(function (error) {
             console.log(error);
@@ -40,7 +40,7 @@ function ListItem(props) {
       };
       callBookmark();
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, isExists]);
 
   // useEffect(() => {
   //   if (isExists) {

@@ -50,6 +50,7 @@ function List(props) {
         picture={item.firstimage !== '' ? item.firstimage : noPic}
         name={item.title}
         contentid={item.contentid}
+        isExists={props.setIsExists}
       />
     );
   });
