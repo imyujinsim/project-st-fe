@@ -83,7 +83,7 @@ function ListItem(props) {
             }}
           ></button>
         ) : (
-          ''
+          <div className="empty"></div>
         )}
       </li>
     </Link>

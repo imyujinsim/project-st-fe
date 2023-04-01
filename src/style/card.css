@@ -69,3 +69,8 @@
 .empty {
   height: 25px;
 }
+
+.empty {
+  height: 25px;
+  width: 100%;
+}
