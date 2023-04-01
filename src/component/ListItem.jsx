@@ -42,16 +42,16 @@ function ListItem(props) {
     }
   }, [isLoggedIn]);
 
-  useEffect(() => {
-    if (isExists) {
-      const stored = JSON.parse(window.localStorage.getItem('bookmark'));
-      stored.forEach((item) => {
-        if(item.context_id === ) {
-          item
-        }
-      });
-    }
-  }, [isExists]);
+  // useEffect(() => {
+  //   if (isExists) {
+  //     const stored = JSON.parse(window.localStorage.getItem('bookmark'));
+  //     stored.forEach((item) => {
+  //       if(item.context_id === ) {
+  //         item
+  //       }
+  //     });
+  //   }
+  // }, [isExists]);
 
   function onHandleClickLike(e) {
     e.preventDefault();
@@ -142,7 +142,11 @@ function ListItem(props) {
         {isLoggedIn ? (
           <button
             className={`bookmark ${
-              JSON.parse(window.localStorage.getItem('bookmark')).filter(item => item.context_id === data) ? 'checked' : ''
+              JSON.parse(window.localStorage.getItem('bookmark')).filter(
+                (item) => item.context_id === data
+              )
+                ? 'checked'
+                : ''
             }`}
             id={data}
             onClick={(e) => {
