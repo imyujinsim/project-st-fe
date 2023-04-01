@@ -39,7 +39,7 @@ function ListItem(props) {
       // await axios.delete(`/api/items/${contentId}/like`);
     } else {
       // 좋아요 상태가 아닌 경우, likedItems 배열에 해당 contentId를 추가합니다.
-      const updatedItems = likedItems.push(contentId);
+      const updatedItems = [...likedItems].push(contentId);
       console.log(updatedItems);
       setLikedItems(updatedItems);
       e.target.classList.add('checked');
