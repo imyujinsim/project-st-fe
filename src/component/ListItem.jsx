@@ -12,34 +12,6 @@ function ListItem(props) {
 
   const token = localStorage.getItem('token');
 
-  if (token) {
-    useEffect(() => {
-      // 화면이 로딩되면 북마크 목록 불러와서 localstorage에 넣기
-      const url = 'https://api.bodam.site:8080/bookmark/list';
-
-      const callBookmark = async () => {
-        await axios({
-          url: url,
-          method: 'post',
-          withCredentials: true,
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-            Authorization: `${token}`,
-          },
-        })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      };
-
-      callBookmark();
-    }, [token]);
-  }
-
   useEffect(() => {
     // local storage 사용해서 페이지 로딩 시 북마크 되어있는 항목 표시
     setIsLoggedIn(window.localStorage.getItem('token') ? true : false);
