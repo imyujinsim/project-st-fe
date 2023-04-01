@@ -32,7 +32,7 @@ function ListItem(props) {
           .then(function (response) {
             const data = response.data;
             localStorage.setItem('bookmark', JSON.stringify(data));
-            props.setIsExists(true);
+            setIsExists(true);
           })
           .catch(function (error) {
             console.log(error);
@@ -41,17 +41,6 @@ function ListItem(props) {
       callBookmark();
     }
   }, [isLoggedIn, isExists]);
-
-  // useEffect(() => {
-  //   if (isExists) {
-  //     const stored = JSON.parse(window.localStorage.getItem('bookmark'));
-  //     stored.forEach((item) => {
-  //       if(item.context_id === ) {
-  //         item
-  //       }
-  //     });
-  //   }
-  // }, [isExists]);
 
   function onHandleClickLike(e) {
     e.preventDefault();
@@ -142,7 +131,7 @@ function ListItem(props) {
         {isLoggedIn ? (
           <button
             className={`bookmark ${
-              JSON.parse(window.localStorage.getItem('bookmark')).find(
+              JSON.parse(window.localStorage.getItem('bookmark') || '[]').find(
                 (item) => item.context_id === data
               )
                 ? 'checked'

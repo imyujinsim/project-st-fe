@@ -24,7 +24,7 @@ function List(props) {
       );
     });
     setBookmarkItems(bookmark);
-  }, [localBookmark]);
+  }, [localBookmark, bookmarkItems]);
 
   const listItems = Array.from(locationData).map((item) => {
     return (
