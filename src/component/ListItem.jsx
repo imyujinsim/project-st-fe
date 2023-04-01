@@ -31,6 +31,8 @@ function ListItem(props) {
           console.log(error);
         });
     };
+
+    callBookmark();
   }, []);
 
   useEffect(() => {
