@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import '../style/reset.css';
 import '../style/table.css';
@@ -24,7 +24,9 @@ function ReviewTable(props) {
       });
   };
 
-  getReviewData();
+  useEffect(() => {
+    getReviewData();
+  }, []);
 
   return (
     <div className="accordion-body">
