@@ -7,7 +7,7 @@ import TableItem from './TableItem';
 function ReviewTable(props) {
   const token = localStorage.getItem('token');
 
-  const handleSubmit = async () => {
+  const onSubmit = async () => {
     await axios({
       url: 'https://api.bodam.site:8080/board/save',
       method: 'post',
@@ -103,12 +103,13 @@ function ReviewTable(props) {
               <br />
               <button
                 className="submitBtn"
-                onClick={(event) => {
+                type="submit"
+                onClick={() => {
                   // event.preventDefault();
                   console.log('submitted');
-                  handleSubmit();
-                  const modal = document.querySelector('#myModal');
-                  modal.classList.add('hide');
+                  onSubmit();
+                  // const modal = document.querySelector('#myModal');
+                  // modal.classList.add('hide');
                 }}
               >
                 작성
