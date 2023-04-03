@@ -19,7 +19,6 @@ function ReviewTable(props) {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-        Authorization: `Bearer ${token}`,
       },
     })
       .then(function (response) {
@@ -31,10 +30,6 @@ function ReviewTable(props) {
         console.log(error);
       });
   };
-
-  useEffect(() => {
-    getReview();
-  }, []);
 
   useEffect(() => {
     getReview();
