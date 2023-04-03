@@ -24,8 +24,6 @@ function Modal(props) {
               event.preventDefault();
               console.log('submitted');
               props.handleSubmit();
-              const modal = document.querySelector('#myModal');
-              modal.classList.add('hide');
             }}
           >
             <div className="review-row">
@@ -59,11 +57,7 @@ function Modal(props) {
               className="content"
             ></textarea>
             <br />
-            <button
-              className="submitBtn"
-              type="submit"
-              enctype="multipart/form-data"
-            >
+            <button className="submitBtn" type="submit">
               작성
             </button>
           </form>
