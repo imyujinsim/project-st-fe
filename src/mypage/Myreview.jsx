@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import '../style/reset.css';
 import '../style/table.css';
 import TableItem from '../component/TableItem';
