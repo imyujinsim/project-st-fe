@@ -87,7 +87,7 @@ function Modal(props) {
               cols="30"
               rows="5"
               placeholder="내용 입력"
-              className="content"
+              className="review-input"
             ></textarea>
             <br />
             <input
