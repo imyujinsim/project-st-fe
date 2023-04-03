@@ -34,7 +34,8 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
-        setCount((count += 1));
+        const sum = (count += 1);
+        setCount(sum);
       })
       .catch(function (error) {
         console.log(error);
@@ -65,7 +66,7 @@ function ReviewTable(props) {
   }, []);
 
   useEffect(() => {
-    //   getReviewData();
+    getReviewData();
   }, [count]);
 
   const review = Array.isArray(reviewData)
