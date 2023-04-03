@@ -129,8 +129,6 @@ function TableItem(props) {
               className="reviewForm"
               onSubmit={(event) => {
                 event.preventDefault();
-                const target = event.target;
-                console.log(target);
                 console.log('submitted');
                 handleEdit();
                 console.log('handle edit');
