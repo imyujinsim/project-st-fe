@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import '../style/myinfo.css';
 
 function MyInfo(props) {
+  const [userData, setUserData] = useState();
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.bodam.site:8080/board/mylist/`,
+          {
+            withCredentials: true,
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log(response);
+        setUserData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(userData);
+  }, [userData]);
+
   return (
     <section className="user-information">
       <h1>내 정보</h1>
