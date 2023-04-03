@@ -15,7 +15,8 @@ function TableItem(props) {
 
   const token = localStorage.getItem('token');
 
-  const id = document.querySelector('.label').childNodes[0].value;
+  const id =
+    document.querySelector('.container').childNodes[0].childNodes[0].value;
   const contentId = window.localStorage.getItem('contentId');
   const author = document.querySelector('.author').value;
   const passwd = document.querySelector('.password').value;
