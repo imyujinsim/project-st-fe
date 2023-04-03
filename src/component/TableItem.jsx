@@ -52,17 +52,12 @@ function TableItem(props) {
         }}
       >
         <div class="label">
-          <p>01</p>
-          <p>제목제목제목</p>
-          <p>심유진</p>
+          <p>{props.id}</p>
+          <p>{props.title}</p>
+          <p>{props.author}</p>
         </div>
         <div class="content">
-          JavaScript is a scripting or programming language that allows you to
-          implement complex features on web pages — every time a web page does
-          more than just sit there and display static information for you to
-          look at — displaying timely content updates, interactive maps,
-          animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet
-          that JavaScript is probably involved. It is the third of the web trio.
+          {props.content}
           <br />
           <div className="icons">
             <p

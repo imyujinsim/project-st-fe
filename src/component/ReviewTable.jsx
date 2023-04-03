@@ -9,6 +9,7 @@ function ReviewTable(props) {
   const contentId = localStorage.getItem('contentId');
 
   const [count, setCount] = useState(0);
+  const [reviewData, setReviewData] = useState();
 
   const handleSubmit = async () => {
     await axios({
@@ -52,6 +53,7 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
+        setReviewData(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -62,16 +64,27 @@ function ReviewTable(props) {
     getReviewData();
   }, [count]);
 
+  const review = Array.isArray(reviewData)
+    ? reviewData
+        .filter((item) => item !== undefined && item !== null)
+        .map((item) => {
+          return (
+            <TableItem
+              id={item.id}
+              title={item.boardTitle}
+              author={item.boardWriter}
+              content={item.boardContents}
+            />
+          );
+        })
+    : null;
+
   return (
     <div className="accordion-body">
       <h1>리뷰</h1>
       <div className="accordion">
         <hr />
-        <TableItem />
-        <TableItem />
-        <TableItem />
-        <TableItem />
-        <TableItem />
+        {review}
       </div>
       <button
         id="myBtnw"
