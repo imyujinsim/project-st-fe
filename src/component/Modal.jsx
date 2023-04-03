@@ -16,7 +16,18 @@ function Modal(props) {
         </span>
         <div className="form-data">
           <h2>리뷰 작성</h2>
-          <form action="." method="post" className="reviewForm">
+          <form
+            action="."
+            method="post"
+            className="reviewForm"
+            onSubmit={(event) => {
+              event.preventDefault();
+              console.log('submitted');
+              props.handleSubmit();
+              const modal = document.querySelector('#myModal');
+              modal.classList.add('hide');
+            }}
+          >
             <div className="review-row">
               <input
                 type="text"
@@ -52,13 +63,6 @@ function Modal(props) {
               className="submitBtn"
               type="submit"
               enctype="multipart/form-data"
-              onSubmit={(event) => {
-                event.preventDefault();
-                console.log('submitted');
-                props.handleSubmit();
-                // const modal = document.querySelector('#myModal');
-                // modal.classList.add('hide');
-              }}
             >
               작성
             </button>
