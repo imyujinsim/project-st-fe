@@ -2,10 +2,10 @@ import React from 'react';
 
 function Modal(props) {
   return (
-    <div id="myModal" class="modal hide">
-      <div class="modal-content">
+    <div id="myModal" className="modal hide">
+      <div className="modal-content">
         <span
-          class="close"
+          className="close"
           onClick={() => {
             const modal = document.querySelector('#myModal');
             modal.classList.add('hide');
@@ -25,6 +25,7 @@ function Modal(props) {
               console.log('submitted');
               props.handleSubmit();
             }}
+            enctype="multipart/form-data"
           >
             <div className="review-row">
               <input
@@ -57,9 +58,7 @@ function Modal(props) {
               className="content"
             ></textarea>
             <br />
-            <button className="submitBtn" type="submit">
-              작성
-            </button>
+            <input className="submitBtn" type="submit" value="작성" />
           </form>
         </div>
       </div>
