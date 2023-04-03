@@ -12,6 +12,62 @@ function TableItem(props) {
   const edit = document.querySelector('.edit');
   const remove = document.querySelector('.remove');
 
+  const handleSubmit = async () => {
+    await axios({
+      url: 'https://api.bodam.site:8080/board/save',
+      method: 'post',
+      data: {
+        boardWriter: '유진',
+        boardPass: '1234',
+        boardTitle: '너무 좋아요',
+        boardContents: '잘 다녀왔어요 여행 좋아요!',
+        boardHits: 0,
+        boardCreatedTime: ' ',
+        boardUpdatedTime: ' ',
+      },
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const handleEdit = async () => {
+    await axios({
+      url: 'https://api.bodam.site:8080/board/update',
+      method: 'put',
+      data: {
+        boardWriter: '유진 수정',
+        boardPass: '1234',
+        boardTitle: '너무 좋아요 수정했어요',
+        boardContents: '잘 다녀왔어요 여행 좋아요! 수정했어요',
+        boardHits: 0,
+        boardCreatedTime: ' ',
+        boardUpdatedTime: ' ',
+      },
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
     <>
       <div
