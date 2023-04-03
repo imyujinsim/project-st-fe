@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 function TableItem(props) {
   // const accordion = document.getElementsByClassName('container');
@@ -11,6 +12,8 @@ function TableItem(props) {
 
   const edit = document.querySelector('.edit');
   const remove = document.querySelector('.remove');
+
+  const token = localStorage.getItem('token');
 
   const handleSubmit = async () => {
     await axios({
