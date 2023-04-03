@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../style/reset.css';
 import '../style/table.css';
@@ -6,6 +6,9 @@ import TableItem from './TableItem';
 
 function ReviewTable(props) {
   const token = localStorage.getItem('token');
+  const contentId = localStorage.getItem('contentId');
+
+  const [count, setCount] = useState(0);
 
   const handleSubmit = async () => {
     await axios({
@@ -19,7 +22,7 @@ function ReviewTable(props) {
         boardHits: 0,
         boardCreatedTime: ' ',
         boardUpdatedTime: ' ',
-        context_id: 124546,
+        context_id: contentId,
       },
       withCredentials: true,
       headers: {
@@ -30,6 +33,7 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
+        setCount((prevCount += response.data.length));
       })
       .catch(function (error) {
         console.log(error);
@@ -56,7 +60,7 @@ function ReviewTable(props) {
 
   useEffect(() => {
     getReviewData();
-  }, []);
+  }, [count]);
 
   return (
     <div className="accordion-body">
