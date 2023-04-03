@@ -69,12 +69,7 @@ function ReviewTable(props) {
           </span>
           <div className="form-data">
             <h2>리뷰 작성</h2>
-            <form
-              action="/board/save"
-              method="post"
-              enctype="multipart/form-data"
-              className="reviewForm"
-            >
+            <form action="." method="post" className="reviewForm">
               <div className="review-row">
                 <input
                   type="text"
@@ -106,18 +101,18 @@ function ReviewTable(props) {
                 className="content"
               ></textarea>
               <br />
-              <input
-                type="submit"
-                value="글작성"
+              <button
                 className="submitBtn"
-                onSubmit={(event) => {
-                  event.preventDefault();
+                onClick={(event) => {
+                  // event.preventDefault();
                   console.log('submitted');
                   handleSubmit();
                   const modal = document.querySelector('#myModal');
                   modal.classList.add('hide');
                 }}
-              />
+              >
+                작성
+              </button>
             </form>
           </div>
         </div>
