@@ -133,8 +133,8 @@ function TableItem(props) {
                 const title = document.querySelector('.title').value;
                 const review = document.querySelector('.review-input').value;
                 const id =
-                  event.target.parentNode.parentNode.previousSibling.firstChild
-                    .firstChild.value;
+                  parentElement.parentElement.parentElement.previousSibling
+                    .firstChild.firstChild.value;
                 handleEdit(author, passwd, title, review, id);
                 const modal = document.querySelector('#myModal');
                 modal.classList.add('hide');
