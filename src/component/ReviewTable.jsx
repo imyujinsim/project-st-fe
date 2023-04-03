@@ -64,8 +64,7 @@ function ReviewTable(props) {
 
   useEffect(() => {
     getReviewData();
-
-    const review = Array.isArray(reviewData)
+    Array.isArray(reviewData)
       ? reviewData
           .filter((item) => item !== undefined && item !== null)
           .map((item) => {
@@ -79,14 +78,11 @@ function ReviewTable(props) {
             );
           })
       : null;
-
-    setReviewList(review);
   }, []);
 
   useEffect(() => {
     getReviewData();
-
-    const review = Array.isArray(reviewData)
+    Array.isArray(reviewData)
       ? reviewData
           .filter((item) => item !== undefined && item !== null)
           .map((item) => {
@@ -100,8 +96,6 @@ function ReviewTable(props) {
             );
           })
       : null;
-
-    setReviewList(review);
   }, [count]);
 
   return (
