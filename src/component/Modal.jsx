@@ -68,4 +68,4 @@ function Modal(props) {
   );
 }
 
-export default ReviewTable;
+export default Modal;
