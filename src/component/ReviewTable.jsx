@@ -60,13 +60,13 @@ function ReviewTable(props) {
       });
   };
 
-  // useEffect(() => {
-  getReviewData();
-  // }, []);
+  useEffect(() => {
+    getReviewData();
+  }, []);
 
-  // useEffect(() => {
-  //   getReviewData();
-  // }, [count]);
+  useEffect(() => {
+    //   getReviewData();
+  }, [count]);
 
   const review = Array.isArray(reviewData)
     ? reviewData
