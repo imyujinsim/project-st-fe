@@ -33,7 +33,7 @@ function TableItem(props) {
         boardTitle: title,
         boardContents: review,
         context_id: contentId,
-        id: id,
+        id: 1,
       },
       withCredentials: true,
       headers: {
