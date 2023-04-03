@@ -9,90 +9,74 @@ function ReviewTable(props) {
   const contentId = localStorage.getItem('contentId');
 
   const [count, setCount] = useState(0);
-  const [reviewData, setReviewData] = useState();
-  const [reviewList, setReviewList] = useState();
+  const [reviewData, setReviewData] = useState([]);
+  const [reviewList, setReviewList] = useState([]);
 
   const handleSubmit = async (author, passwd, title, review) => {
-    await axios({
-      url: 'https://api.bodam.site:8080/board/save',
-      method: 'post',
-      data: {
-        boardWriter: author,
-        boardPass: passwd,
-        boardTitle: title,
-        boardContents: review,
-        boardHits: 0,
-        boardCreatedTime: ' ',
-        boardUpdatedTime: ' ',
-        context_id: contentId,
-      },
-      withCredentials: true,
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then(function (response) {
-        console.log(response);
-        const sum = (count += 1);
-        setCount(sum);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    try {
+      const response = await axios.post(
+        'https://api.bodam.site:8080/board/save',
+        {
+          boardWriter: author,
+          boardPass: passwd,
+          boardTitle: title,
+          boardContents: review,
+          boardHits: 0,
+          boardCreatedTime: ' ',
+          boardUpdatedTime: ' ',
+          context_id: contentId,
+        },
+        {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response);
+      setCount((prevCount) => prevCount + 1);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const getReviewData = async () => {
-    await axios({
-      url: 'https://api.bodam.site:8080/board/',
-      method: 'get',
-      withCredentials: true,
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
-      .then(function (response) {
+  useEffect(() => {
+    const getReviewData = async () => {
+      try {
+        const response = await axios.get('https://api.bodam.site:8080/board/', {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        });
         console.log(response);
         setReviewData(response.data);
-      })
-      .catch(function (error) {
+      } catch (error) {
         console.log(error);
-      });
-  };
-
-  useEffect(() => {
+      }
+    };
     getReviewData();
-    reviewData
-      .filter((item) => item !== undefined && item !== null)
-      .map((item) => {
-        return (
-          <TableItem
-            id={item.id}
-            title={item.boardTitle}
-            author={item.boardWriter}
-            content={item.boardContents}
-          />
-        );
-      });
-  }, []);
-
-  useEffect(() => {
-    getReviewData();
-    reviewData
-      .filter((item) => item !== undefined && item !== null)
-      .map((item) => {
-        return (
-          <TableItem
-            id={item.id}
-            title={item.boardTitle}
-            author={item.boardWriter}
-            content={item.boardContents}
-          />
-        );
-      });
   }, [count]);
+
+  useEffect(() => {
+    const reviews = reviewData
+      .filter((item) => item !== undefined && item !== null)
+      .map((item) => {
+        return (
+          <TableItem
+            key={item.id}
+            id={item.id}
+            title={item.boardTitle}
+            author={item.boardWriter}
+            content={item.boardContents}
+          />
+        );
+      });
+    setReviewList(reviews);
+  }, [reviewData]);
 
   return (
     <div className="accordion-body">
