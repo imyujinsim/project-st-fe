@@ -88,6 +88,8 @@ function Modal(props) {
               } else if (event.target.classList.contains('write')) {
                 handleSubmit();
               }
+              const modal = document.querySelector('#myModal');
+              modal.classList.add('hide');
             }}
             enctype="multipart/form-data"
           >
