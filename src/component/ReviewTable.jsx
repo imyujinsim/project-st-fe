@@ -106,7 +106,7 @@ function ReviewTable(props) {
         글쓰기
       </button>
 
-      <div id="myModalw" className={`modalw hide write`}>
+      <div id="myModalw" className="modalw hide write">
         <div className="modal-contentw">
           <span
             className="closew"
@@ -130,21 +130,8 @@ function ReviewTable(props) {
                 const target = event.target;
                 console.log(target);
                 console.log('submitted');
-                if (
-                  event.target.parentElement.parentElement.parentElement.classList.contains(
-                    'edit'
-                  )
-                ) {
-                  handleEdit();
-                  console.log('handle edit');
-                } else if (
-                  event.target.parentElement.parentElement.parentElementclassList.contains(
-                    'write'
-                  )
-                ) {
-                  handleSubmit();
-                  console.log('handle submit');
-                }
+                handleSubmit();
+                console.log('handle submit');
                 const modal = document.querySelector('#myModalw');
                 modal.classList.add('hide');
               }}

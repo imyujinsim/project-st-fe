@@ -141,9 +141,9 @@ function TableItem(props) {
       </div>
 
       <div id="myModal" className="modal hide edit">
-        <div className="modal-contentw">
+        <div className="modal-content">
           <span
-            className="closew"
+            className="close"
             onClick={(e) => {
               const modal = document.querySelector('#myModal');
               console.log(e.target);
@@ -164,21 +164,8 @@ function TableItem(props) {
                 const target = event.target;
                 console.log(target);
                 console.log('submitted');
-                if (
-                  event.target.parentElement.parentElement.parentElement.classList.contains(
-                    'edit'
-                  )
-                ) {
-                  handleEdit();
-                  console.log('handle edit');
-                } else if (
-                  event.target.parentElement.parentElement.parentElementclassList.contains(
-                    'write'
-                  )
-                ) {
-                  handleSubmit();
-                  console.log('handle submit');
-                }
+                handleEdit();
+                console.log('handle edit');
                 const modal = document.querySelector('#myModal');
                 modal.classList.add('hide');
               }}
