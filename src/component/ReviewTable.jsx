@@ -64,9 +64,9 @@ function ReviewTable(props) {
       });
   };
 
-  const review = Array.from(reviewData).map((item) => (
-    <TableItem data={item} />
-  ));
+  const review = Array.from(reviewData).map((item) => {
+    return <TableItem data={item} />;
+  });
 
   return (
     <div className="accordion-body">
