@@ -11,10 +11,10 @@ function ReviewTable(props) {
   const [count, setCount] = useState(0);
   const [reviewData, setReviewData] = useState();
 
-  const author = document.querySelector('.author').value;
-  const passwd = document.querySelector('.author').value;
-  const title = document.querySelector('.title').value;
-  const reviewValue = document.querySelector('.review-input').value;
+  const author = document.querySelector('.authorw').value;
+  const passwd = document.querySelector('.passwordw').value;
+  const title = document.querySelector('.titlew').value;
+  const reviewValue = document.querySelector('.review-inputw').value;
 
   const handleSubmit = async () => {
     await axios({

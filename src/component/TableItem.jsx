@@ -18,7 +18,7 @@ function TableItem(props) {
   const id = document.querySelector('.label').childNodes[0].value;
   const contentId = window.localStorage.getItem('contentId');
   const author = document.querySelector('.author').value;
-  const passwd = document.querySelector('.author').value;
+  const passwd = document.querySelector('.password').value;
   const title = document.querySelector('.title').value;
   const review = document.querySelector('.review-input').value;
 
