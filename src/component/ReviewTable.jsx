@@ -11,12 +11,11 @@ function ReviewTable(props) {
   const [count, setCount] = useState(0);
   const [reviewData, setReviewData] = useState();
 
-  const author = document.querySelector('.authorw').value;
-  const passwd = document.querySelector('.passwordw').value;
-  const title = document.querySelector('.titlew').value;
-  const reviewValue = document.querySelector('.review-inputw').value;
-
   const handleSubmit = async () => {
+    const author = document.querySelector('.authorw').value;
+    const passwd = document.querySelector('.passwordw').value;
+    const title = document.querySelector('.titlew').value;
+    const reviewValue = document.querySelector('.review-inputw').value;
     await axios({
       url: 'https://api.bodam.site:8080/board/save',
       method: 'post',
