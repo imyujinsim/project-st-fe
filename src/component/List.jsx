@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import '../style/reset.css';
 import '../style/main.css';
 import ListItem from './ListItem';
-import noPic from '../resources/icons/no_image.gif';
+// import noPic from '../resources/icons/no_image.gif';
 import axios from 'axios';
 
 function List(props) {
   const locationData = props.locationData ? props.locationData : '데이터 없음';
   const token = localStorage.getItem('token');
+  const noPic =
+    'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg';
   const [bookmarkItems, setBookmarkItems] = useState();
 
   const localBookmark = JSON.parse(localStorage.getItem('bookmark') || '[]');

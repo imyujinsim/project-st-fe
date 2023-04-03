@@ -1,10 +1,12 @@
 import React from 'react';
 import '../style/info-album.css';
-import noPic from '../resources/icons/no_image.gif';
+// import noPic from '../resources/icons/no_image.gif';
 
 function InfoAlbum(props) {
   const data = props.data;
   console.log(data);
+  const noPic =
+    'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg';
 
   const pictures = [];
   const alts = [];
