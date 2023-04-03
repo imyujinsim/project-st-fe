@@ -64,9 +64,9 @@ function ReviewTable(props) {
     getReviewData();
   }, []);
 
-  useEffect(() => {
-    getReviewData();
-  }, [count]);
+  // useEffect(() => {
+  //   getReviewData();
+  // }, [count]);
 
   const review = Array.isArray(reviewData)
     ? reviewData
