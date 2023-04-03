@@ -24,6 +24,7 @@ function ReviewTable(props) {
       .then(function (response) {
         console.log(response);
         setReviewData(response.data);
+        console.log(reviewData);
         // 응답 수 만큼 카운트 늘리기
       })
       .catch(function (error) {
@@ -61,9 +62,9 @@ function ReviewTable(props) {
       });
   };
 
-  const review = Array.from(reviewData).map((item) => {
-    <TableItem data={item} />;
-  });
+  // const review = Array.from(reviewData).map((item) => {
+  //   <TableItem data={item} />;
+  // });
 
   return (
     <div className="accordion-body">
