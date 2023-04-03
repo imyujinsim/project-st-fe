@@ -11,7 +11,7 @@ function ReviewTable(props) {
 
   const getReview = async () => {
     await axios({
-      url: 'https://api.bodam.site:8080/board',
+      url: 'https://api.bodam.site:8080/board/',
       method: 'get',
       withCredentials: true,
       headers: {
