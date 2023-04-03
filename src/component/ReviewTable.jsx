@@ -11,15 +11,20 @@ function ReviewTable(props) {
   const [count, setCount] = useState(0);
   const [reviewData, setReviewData] = useState();
 
+  const author = document.querySelector('.author').value;
+  const passwd = document.querySelector('.author').value;
+  const title = document.querySelector('.title').value;
+  const reviewValue = document.querySelector('.review-input').value;
+
   const handleSubmit = async () => {
     await axios({
       url: 'https://api.bodam.site:8080/board/save',
       method: 'post',
       data: {
-        boardWriter: '유진',
-        boardPass: '1234',
-        boardTitle: '너무 좋아요',
-        boardContents: '잘 다녀왔어요 여행 좋아요!',
+        boardWriter: author,
+        boardPass: passwd,
+        boardTitle: title,
+        boardContents: reviewValue,
         boardHits: 0,
         boardCreatedTime: ' ',
         boardUpdatedTime: ' ',
@@ -34,7 +39,8 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
-        setCount((count += 1));
+        const sum = (count += 1);
+        setCount(sum);
       })
       .catch(function (error) {
         console.log(error);
