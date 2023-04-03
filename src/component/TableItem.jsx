@@ -52,7 +52,7 @@ function TableItem(props) {
           accordion.classList.toggle('active');
         }}
       >
-        <div class="label">
+        <div class="label" id={props.id}>
           <p>{props.id}</p>
           <p>{props.title}</p>
           <p>{props.author}</p>
@@ -134,7 +134,7 @@ function TableItem(props) {
                 const review = document.querySelector('.review-input').value;
                 const id =
                   event.target.parentElement.parentElement.parentElement
-                    .previousSibling.firstChild.firstChild.value;
+                    .previousSibling.firstChild.id;
                 handleEdit(author, passwd, title, review, id);
                 const modal = document.querySelector('#myModal');
                 modal.classList.add('hide');
