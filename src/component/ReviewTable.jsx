@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../style/reset.css';
 import '../style/table.css';
 import TableItem from './TableItem';
+import Modal from './Modal';
 
 function ReviewTable(props) {
   const [count, setCount] = useState(0);
