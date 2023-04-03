@@ -5,6 +5,8 @@ import '../style/table.css';
 import TableItem from './TableItem';
 
 function ReviewTable(props) {
+  const token = localStorage.getItem('token');
+
   const handleSubmit = async () => {
     await axios({
       url: 'https://api.bodam.site:8080/board/save',
@@ -22,6 +24,7 @@ function ReviewTable(props) {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     })
       .then(function (response) {
