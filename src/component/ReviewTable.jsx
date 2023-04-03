@@ -64,7 +64,7 @@ function ReviewTable(props) {
 
   useEffect(() => {
     getReviewData();
-    Array.from(reviewData)
+    reviewData
       .filter((item) => item !== undefined && item !== null)
       .map((item) => {
         return (
@@ -80,7 +80,7 @@ function ReviewTable(props) {
 
   useEffect(() => {
     getReviewData();
-    Array.from(reviewData)
+    reviewData
       .filter((item) => item !== undefined && item !== null)
       .map((item) => {
         return (
