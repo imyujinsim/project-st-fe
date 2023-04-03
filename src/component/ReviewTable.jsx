@@ -64,16 +64,20 @@ function ReviewTable(props) {
       });
   };
 
-  const review = Array.from(reviewData).map((item) => {
-    return (
-      <TableItem
-        id={item.id}
-        title={item.boardTitle}
-        author={item.boardWriter}
-        content={item.boardContents}
-      />
-    );
-  });
+  const review = Array.isArray(reviewData)
+    ? reviewData
+        .filter((item) => item !== undefined && item !== null)
+        .map((item) => {
+          return (
+            <TableItem
+              id={item.id}
+              title={item.boardTitle}
+              author={item.boardWriter}
+              content={item.boardContents}
+            />
+          );
+        })
+    : null;
 
   return (
     <div className="accordion-body">
