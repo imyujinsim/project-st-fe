@@ -15,9 +15,11 @@ function TableItem(props) {
 
   const token = localStorage.getItem('token');
 
-  const handleEdit = async () => {
+  const handleEdit = async (e) => {
+    const id = e.target;
+    console.log(id);
     await axios({
-      url: 'https://api.bodam.site:8080/board/update/2',
+      url: `https://api.bodam.site:8080/board/update/${props.id}`,
       method: 'put',
       data: {
         boardWriter: '유진 수정',
@@ -25,7 +27,7 @@ function TableItem(props) {
         boardTitle: '너무 좋아요 수정했어요',
         boardContents: '잘 다녀왔어요 여행 좋아요! 수정했어요',
         context_id: 124546,
-        id: 2,
+        id: props.id,
       },
       withCredentials: true,
       headers: {
@@ -123,7 +125,7 @@ function TableItem(props) {
             <h2>리뷰 작성</h2>
             <form
               action="."
-              method="post"
+              method="put"
               className="reviewForm"
               onSubmit={(event) => {
                 event.preventDefault();
