@@ -11,7 +11,7 @@ function ReviewTable(props) {
   const [count, setCount] = useState(0);
   const [reviewData, setReviewData] = useState();
 
-  const handleSubmit = async (author, passwd, title, review) => {
+  const handleSubmit = async (author, passwd, title, reviewText) => {
     await axios({
       url: 'https://api.bodam.site:8080/board/save',
       method: 'post',
@@ -19,7 +19,7 @@ function ReviewTable(props) {
         boardWriter: author,
         boardPass: passwd,
         boardTitle: title,
-        boardContents: review,
+        boardContents: reviewText,
         boardHits: 0,
         boardCreatedTime: ' ',
         boardUpdatedTime: ' ',
