@@ -82,11 +82,12 @@ function Modal(props) {
             className="reviewForm"
             onSubmit={(event) => {
               event.preventDefault();
+              console.log(event.target.parent);
               console.log('submitted');
-              if (event.target.classList.contains('edit')) {
+              if (event.target.parent.classList.contains('edit')) {
                 handleEdit();
                 console.log('handle edit');
-              } else if (event.target.classList.contains('write')) {
+              } else if (event.target.parent.classList.contains('write')) {
                 handleSubmit();
                 console.log('handle submit');
               }
