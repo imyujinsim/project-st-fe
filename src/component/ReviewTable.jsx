@@ -6,7 +6,7 @@ import TableItem from './TableItem';
 import Modal from './Modal';
 
 function ReviewTable(props) {
-  const handleSubmit = async () => {
+  const getReviewData = async () => {
     await axios({
       url: 'https://api.bodam.site/board/',
       method: 'get',
@@ -23,6 +23,9 @@ function ReviewTable(props) {
         console.log(error);
       });
   };
+
+  getReviewData();
+
   return (
     <div className="accordion-body">
       <h1>리뷰</h1>
