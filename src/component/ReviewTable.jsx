@@ -33,7 +33,7 @@ function ReviewTable(props) {
 
   useEffect(() => {
     getReview();
-  }, [reviewData]);
+  }, []);
 
   const review = Array.isArray(reviewData)
     ? reviewData
