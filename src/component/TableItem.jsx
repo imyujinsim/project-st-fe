@@ -16,6 +16,7 @@ function TableItem(props) {
   const token = localStorage.getItem('token');
 
   const handleEdit = async (e) => {
+    console.log(e.target);
     const id = e.target.previousSibling.firstChild.firstChild.value;
     const contentId = window.localStorage.getItem('contentId');
     const author = document.querySelector('.author').value;
