@@ -61,14 +61,16 @@ function ReviewTable(props) {
       });
   };
 
+  const review = Array.from(reviewData).map((item) => {
+    <TableItem data={item} />;
+  });
+
   return (
     <div className="accordion-body">
       <h1>리뷰</h1>
       <div className="accordion">
         <hr />
-        {Array.from(reviewData).map((item) => {
-          <TableItem data={item} />;
-        })}
+        {review}
       </div>
       <button
         id="myBtn"
