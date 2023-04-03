@@ -16,22 +16,18 @@ function TableItem(props) {
   const token = localStorage.getItem('token');
 
   const handleEdit = async (e) => {
-    const id = props.id;
-    const contentId = window.localStorage.getItem('contentId');
-    const author = document.querySelector('.author').value;
-    const passwd = document.querySelector('.password').value;
-    const title = document.querySelector('.title').value;
-    const review = document.querySelector('.review-input').value;
+    const id = e.target;
+    console.log(id);
     await axios({
-      url: `https://api.bodam.site:8080/board/update/${id}`,
+      url: `https://api.bodam.site:8080/board/update/${props.id}`,
       method: 'put',
       data: {
-        boardWriter: author,
-        boardPass: passwd,
-        boardTitle: title,
-        boardContents: review,
-        context_id: contentId,
-        id: 1,
+        boardWriter: '유진 수정',
+        boardPass: '1234',
+        boardTitle: '너무 좋아요 수정했어요',
+        boardContents: '잘 다녀왔어요 여행 좋아요! 수정했어요',
+        context_id: 124546,
+        id: props.id,
       },
       withCredentials: true,
       headers: {

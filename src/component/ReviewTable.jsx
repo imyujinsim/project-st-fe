@@ -11,11 +11,7 @@ function ReviewTable(props) {
   const [count, setCount] = useState(0);
   const [reviewData, setReviewData] = useState();
 
-  const handleSubmit = async () => {
-    const author = document.querySelector('.authorw').value;
-    const passwd = document.querySelector('.passwordw').value;
-    const title = document.querySelector('.titlew').value;
-    const reviewValue = document.querySelector('.review-inputw').value;
+  const handleSubmit = async (author, passwd, title, review) => {
     await axios({
       url: 'https://api.bodam.site:8080/board/save',
       method: 'post',
@@ -23,7 +19,7 @@ function ReviewTable(props) {
         boardWriter: author,
         boardPass: passwd,
         boardTitle: title,
-        boardContents: reviewValue,
+        boardContents: review,
         boardHits: 0,
         boardCreatedTime: ' ',
         boardUpdatedTime: ' ',
@@ -38,8 +34,7 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
-        const sum = (count += 1);
-        setCount(sum);
+        setCount((count += 1));
       })
       .catch(function (error) {
         console.log(error);
@@ -126,10 +121,12 @@ function ReviewTable(props) {
               className="reviewFormw"
               onSubmit={(event) => {
                 event.preventDefault();
-                const target = event.target;
-                console.log(target);
+                const author = document.querySelector('.authorw');
+                const passwd = document.querySelector('.passwordw');
+                const title = document.querySelector('.titlew');
+                const review = document.querySelector('.review-inputw');
                 console.log('submitted');
-                handleSubmit();
+                handleSubmit(author, passwd, title, review);
                 console.log('handle submit');
                 const modal = document.querySelector('#myModalw');
                 modal.classList.add('hide');
