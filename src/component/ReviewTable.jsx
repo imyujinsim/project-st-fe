@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../style/reset.css';
 import '../style/table.css';
 import TableItem from './TableItem';
 
 function ReviewTable(props) {
+  const [count, setCount] = useState(0);
+
   const token = localStorage.getItem('token');
+
+  const getReview = async () => {
+    await axios({
+      url: 'https://api.bodam.site:8080/board',
+      method: 'get',
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+        // 응답 수 만큼 카운트 늘리기
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  getReview();
 
   const handleSubmit = async () => {
     await axios({
@@ -29,6 +52,7 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
+        // 카운트 하나 늘려주기
       })
       .catch(function (error) {
         console.log(error);
@@ -57,21 +81,6 @@ function ReviewTable(props) {
       </button>
       <div id="myModal" className="modal hide">
         <div className="modal-content">
-          <div className="form-data">
-            <h2>리뷰 작성</h2>
-            <form
-              action="."
-              method="post"
-              className="reviewForm"
-              onSubmit={() => {
-                console.log('submitted!');
-                handleSubmit();
-              }}
-              enctype="multipart/form-data"
-            >
-              <input className="submitBtn" type="submit" value="작성" />
-            </form>
-          </div>
           <span
             className="close"
             onClick={() => {
@@ -82,6 +91,58 @@ function ReviewTable(props) {
           >
             &times;
           </span>
+          <div className="form-data">
+            <h2>리뷰 작성</h2>
+            <form
+              action="."
+              method="post"
+              className="reviewForm"
+              onSubmit={(event) => {
+                event.preventDefault();
+                console.log('submitted');
+                handleSubmit();
+              }}
+              enctype="multipart/form-data"
+            >
+              <div className="review-row">
+                <input
+                  type="text"
+                  name="boardWriter"
+                  placeholder="작성자"
+                  className="author"
+                />{' '}
+                <br />
+                <input
+                  type="text"
+                  name="boardPass"
+                  placeholder="비밀번호"
+                  className="password"
+                />{' '}
+                <br />
+              </div>
+              <input
+                type="text"
+                name="boardTitle"
+                placeholder="제목"
+                className="title"
+              />{' '}
+              <br />
+              <textarea
+                name="boardContents"
+                cols="30"
+                rows="5"
+                placeholder="내용 입력"
+                className="content"
+              ></textarea>
+              <br />
+              <input
+                className="submitBtn"
+                type="submit"
+                value="작성"
+                onClick={console.log('submitted')}
+              />
+            </form>
+          </div>
         </div>
       </div>
     </div>

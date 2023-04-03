@@ -12,6 +12,36 @@ function TableItem(props) {
   const edit = document.querySelector('.edit');
   const remove = document.querySelector('.remove');
 
+  const token = localStorage.getItem('token');
+
+  const handleSubmit = async () => {
+    await axios({
+      url: 'https://api.bodam.site:8080/board/update',
+      method: 'post',
+      data: {
+        boardWriter: '유진',
+        boardPass: '1234',
+        boardTitle: '너무 좋아요',
+        boardContents: '잘 다녀왔어요 여행 좋아요!',
+        boardHits: 0,
+        boardCreatedTime: ' ',
+        boardUpdatedTime: ' ',
+      },
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
     <>
       <div
@@ -95,10 +125,15 @@ function TableItem(props) {
           <div className="form-data">
             <h2>리뷰 작성</h2>
             <form
-              action="/board/save"
+              action="/board/update"
               method="post"
               enctype="multipart/form-data"
               className="reviewForm"
+              onClick={() => {
+                const modal = document.querySelector('#myModal');
+                modal.classList.add('hide');
+                console.log('clicked');
+              }}
             >
               <div className="review-row">
                 <input
