@@ -66,7 +66,7 @@ function ReviewTable(props) {
       <h1>리뷰</h1>
       <div className="accordion">
         <hr />
-        {reviewData.map((item) => {
+        {Array.from(reviewData).map((item) => {
           <TableItem data={item} />;
         })}
       </div>
