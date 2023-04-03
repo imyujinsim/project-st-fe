@@ -96,7 +96,7 @@ function ReviewTable(props) {
       >
         글쓰기
       </button>
-      <Modal action={write} />
+      <Modal action={'write'} />
     </div>
   );
 }
