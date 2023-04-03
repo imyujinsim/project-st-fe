@@ -65,7 +65,14 @@ function ReviewTable(props) {
   };
 
   const review = Array.from(reviewData).map((item) => {
-    return <TableItem data={item} />;
+    return (
+      <TableItem
+        id={item.id}
+        title={item.boardTitle}
+        author={item.boardWriter}
+        content={item.boardContents}
+      />
+    );
   });
 
   return (

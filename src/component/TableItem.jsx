@@ -53,12 +53,12 @@ function TableItem(props) {
         }}
       >
         <div class="label">
-          <p>{props.data.id}</p>
-          <p>{props.data.boardTitle}</p>
-          <p>{props.data.boardWriter}</p>
+          <p>{props.id}</p>
+          <p>{props.title}</p>
+          <p>{props.author}</p>
         </div>
         <div class="content">
-          {props.data.boardContents}
+          {props.content}
           <br />
           <div className="icons">
             <p
