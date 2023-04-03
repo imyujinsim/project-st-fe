@@ -33,7 +33,7 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
-        setCount((prevCount += response.data.length));
+        setCount((count += 1));
       })
       .catch(function (error) {
         console.log(error);
