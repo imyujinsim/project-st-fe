@@ -4,6 +4,7 @@ import '../style/myinfo.css';
 
 function MyInfo(props) {
   const [userData, setUserData] = useState();
+  const token = localStorage.getItem('token');
   useEffect(() => {
     const getUserData = async () => {
       try {
