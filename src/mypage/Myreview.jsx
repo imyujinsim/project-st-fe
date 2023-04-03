@@ -8,6 +8,7 @@ import Modal from '../component/Modal';
 function Myreview(props) {
   const token = localStorage.getItem('token');
 
+  const [count, setCount] = useState(0);
   const [reviewData, setReviewData] = useState([]);
   const [reviewList, setReviewList] = useState([]);
 
