@@ -15,17 +15,16 @@ function TableItem(props) {
 
   const token = localStorage.getItem('token');
 
-  // const id =
-  // document.querySelector('.container').childNodes[0].childNodes[0].value;
-  const contentId = window.localStorage.getItem('contentId');
-  const author = document.querySelector('.author').value;
-  const passwd = document.querySelector('.password').value;
-  const title = document.querySelector('.title').value;
-  const review = document.querySelector('.review-input').value;
-
   const handleEdit = async (e) => {
+    const id =
+      document.querySelector('.container').childNodes[0].childNodes[0].value;
+    const contentId = window.localStorage.getItem('contentId');
+    const author = document.querySelector('.author').value;
+    const passwd = document.querySelector('.password').value;
+    const title = document.querySelector('.title').value;
+    const review = document.querySelector('.review-input').value;
     await axios({
-      url: `https://api.bodam.site:8080/board/update/`,
+      url: `https://api.bodam.site:8080/board/update/${id}`,
       method: 'put',
       data: {
         boardWriter: author,
