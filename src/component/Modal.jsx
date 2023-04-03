@@ -51,6 +51,7 @@ function Modal(props) {
             <button
               className="submitBtn"
               type="submit"
+              enctype="multipart/form-data"
               onSubmit={(event) => {
                 event.preventDefault();
                 console.log('submitted');
