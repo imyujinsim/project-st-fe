@@ -64,38 +64,34 @@ function ReviewTable(props) {
 
   useEffect(() => {
     getReviewData();
-    reviewData
-      ? Array.from(reviewData)
-          .filter((item) => item !== undefined && item !== null)
-          .map((item) => {
-            return (
-              <TableItem
-                id={item.id}
-                title={item.boardTitle}
-                author={item.boardWriter}
-                content={item.boardContents}
-              />
-            );
-          })
-      : null;
+    Array.from(reviewData)
+      .filter((item) => item !== undefined && item !== null)
+      .map((item) => {
+        return (
+          <TableItem
+            id={item.id}
+            title={item.boardTitle}
+            author={item.boardWriter}
+            content={item.boardContents}
+          />
+        );
+      });
   }, []);
 
   useEffect(() => {
     getReviewData();
-    reviewData
-      ? Array.from(reviewData)
-          .filter((item) => item !== undefined && item !== null)
-          .map((item) => {
-            return (
-              <TableItem
-                id={item.id}
-                title={item.boardTitle}
-                author={item.boardWriter}
-                content={item.boardContents}
-              />
-            );
-          })
-      : null;
+    Array.from(reviewData)
+      .filter((item) => item !== undefined && item !== null)
+      .map((item) => {
+        return (
+          <TableItem
+            id={item.id}
+            title={item.boardTitle}
+            author={item.boardWriter}
+            content={item.boardContents}
+          />
+        );
+      });
   }, [count]);
 
   return (
