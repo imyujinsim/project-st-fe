@@ -31,7 +31,10 @@ function ReviewTable(props) {
         console.log(error);
       });
   };
-  getReview();
+
+  useEffect(() => {
+    getReview();
+  }, []);
 
   const handleSubmit = async () => {
     await axios({
