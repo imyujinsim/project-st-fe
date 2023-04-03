@@ -128,6 +128,7 @@ function TableItem(props) {
               className="reviewForm"
               onSubmit={(event) => {
                 event.preventDefault();
+                console.log(event.target);
                 const author = document.querySelector('.author').value;
                 const passwd = document.querySelector('.password').value;
                 const title = document.querySelector('.title').value;

@@ -31,7 +31,6 @@ function ReviewTable(props) {
           headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json',
-            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -45,13 +44,16 @@ function ReviewTable(props) {
   useEffect(() => {
     const getReviewData = async () => {
       try {
-        const response = await axios.get('https://api.bodam.site:8080/board/', {
-          withCredentials: true,
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-        });
+        const response = await axios.get(
+          `https://api.bodam.site:8080/board/context/${contentId}`,
+          {
+            withCredentials: true,
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+          }
+        );
         console.log(response);
         setReviewData(response.data);
       } catch (error) {
