@@ -16,10 +16,7 @@ function TableItem(props) {
   const token = localStorage.getItem('token');
 
   const handleEdit = async (e) => {
-    console.log(e.target);
-    const id =
-      e.target.parentElement.parentElement.previousSibling.firstChild.firstChild
-        .value;
+    const id = props.id;
     const contentId = window.localStorage.getItem('contentId');
     const author = document.querySelector('.author').value;
     const passwd = document.querySelector('.password').value;
