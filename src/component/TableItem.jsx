@@ -81,7 +81,7 @@ function TableItem(props) {
             </p>
           </div>
         </div>
-        <Modal />
+        <Modal action={edit} />
       </div>
       <hr />
     </>

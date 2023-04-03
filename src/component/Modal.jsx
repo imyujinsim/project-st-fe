@@ -6,7 +6,7 @@ function Modal(props) {
 
   const handleSubmit = async () => {
     await axios({
-      url: 'https://api.bodam.site:8080/board/update',
+      url: 'https://api.bodam.site:8080/board/save',
       method: 'post',
       data: {
         boardWriter: '유진',
@@ -32,8 +32,36 @@ function Modal(props) {
       });
   };
 
+  const handleEdit = async () => {
+    await axios({
+      url: 'https://api.bodam.site:8080/board/update',
+      method: 'put',
+      data: {
+        boardWriter: '유진 수정',
+        boardPass: '1234',
+        boardTitle: '너무 좋아요 수정했어요',
+        boardContents: '잘 다녀왔어요 여행 좋아요! 수정했어요',
+        boardHits: 0,
+        boardCreatedTime: ' ',
+        boardUpdatedTime: ' ',
+      },
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
-    <div id="myModal" className="modal hide">
+    <div id="myModal" className={`modal hide ${props.action}`}>
       <div className="modal-content">
         <span
           className="close"
@@ -55,7 +83,11 @@ function Modal(props) {
             onSubmit={(event) => {
               event.preventDefault();
               console.log('submitted');
-              handleSubmit();
+              if (event.target.classList.contains('edit')) {
+                handleEdit();
+              } else if (event.target.classList.contains('write')) {
+                handleSubmit();
+              }
             }}
             enctype="multipart/form-data"
           >
