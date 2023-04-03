@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from './Modal';
 
 function TableItem(props) {
   // const accordion = document.getElementsByClassName('container');
@@ -82,7 +81,6 @@ function TableItem(props) {
         </div>
       </div>
 
-      <Modal action={'edit'} />
       <hr />
     </>
   );
