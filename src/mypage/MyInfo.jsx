@@ -8,7 +8,7 @@ function MyInfo(props) {
     const getUserData = async () => {
       try {
         const response = await axios.get(
-          `https://api.bodam.site:8080/board/mylist/`,
+          `https://api.bodam.site:8080/account`,
           {
             withCredentials: true,
             headers: {
