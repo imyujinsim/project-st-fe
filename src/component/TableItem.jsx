@@ -81,6 +81,91 @@ function TableItem(props) {
         </div>
       </div>
 
+      <div id="myModal" className="modal hide edit">
+        <div className="modal-contentw">
+          <span
+            className="closew"
+            onClick={(e) => {
+              const modal = document.querySelector('#myModal');
+              console.log(e.target);
+              modal.classList.add('hide');
+              console.log('clicked');
+            }}
+          >
+            &times;
+          </span>
+          <div className="form-data">
+            <h2>리뷰 작성</h2>
+            <form
+              action="."
+              method="post"
+              className="reviewForm"
+              onSubmit={(event) => {
+                event.preventDefault();
+                const target = event.target;
+                console.log(target);
+                console.log('submitted');
+                if (
+                  event.target.parentElement.parentElement.parentElement.classList.contains(
+                    'edit'
+                  )
+                ) {
+                  handleEdit();
+                  console.log('handle edit');
+                } else if (
+                  event.target.parentElement.parentElement.parentElementclassList.contains(
+                    'write'
+                  )
+                ) {
+                  handleSubmit();
+                  console.log('handle submit');
+                }
+                const modal = document.querySelector('#myModal');
+                modal.classList.add('hide');
+              }}
+              enctype="multipart/form-data"
+            >
+              <div className="review-row">
+                <input
+                  type="text"
+                  name="boardWriter"
+                  placeholder="작성자"
+                  className="author"
+                />{' '}
+                <br />
+                <input
+                  type="text"
+                  name="boardPass"
+                  placeholder="비밀번호"
+                  className="password"
+                />{' '}
+                <br />
+              </div>
+              <input
+                type="text"
+                name="boardTitle"
+                placeholder="제목"
+                className="title"
+              />{' '}
+              <br />
+              <textarea
+                name="boardContents"
+                cols="30"
+                rows="5"
+                placeholder="내용 입력"
+                className="review-input"
+              ></textarea>
+              <br />
+              <input
+                className="submitBtn"
+                type="submit"
+                value="작성"
+                onClick={console.log('submitted')}
+              />
+            </form>
+          </div>
+        </div>
+      </div>
       <hr />
     </>
   );

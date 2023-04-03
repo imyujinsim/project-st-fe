@@ -138,7 +138,7 @@ function ReviewTable(props) {
                   handleEdit();
                   console.log('handle edit');
                 } else if (
-                  event.target.parentElement.parentElement.classList.contains(
+                  event.target.parentElement.parentElement.parentElementclassList.contains(
                     'write'
                   )
                 ) {
