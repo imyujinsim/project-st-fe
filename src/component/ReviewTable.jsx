@@ -4,6 +4,34 @@ import '../style/table.css';
 import TableItem from './TableItem';
 
 function ReviewTable(props) {
+  const handleSubmit = async() => {
+    await axios({
+      url: url,
+      method: 'post',
+      data: {
+        "boardWriter":"유진",
+        "boardPass":"1234",
+        "boardTitle":"너무 좋아요",
+        "boardContents":"잘 다녀왔어요 여행 좋아요!",
+        "boardHits":0,
+        "boardCreatedTime": " ",
+        "boardUpdatedTime": " "
+      },
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  }
+
   return (
     <div className="accordion-body">
       <h1>리뷰</h1>
@@ -18,8 +46,8 @@ function ReviewTable(props) {
       <button
         id="myBtn"
         onClick={() => {
-          const modal = document.querySelector("#myModal");
-          modal.classList.remove("hide");
+          const modal = document.querySelector('#myModal');
+          modal.classList.remove('hide');
         }}
       >
         글쓰기
@@ -30,9 +58,9 @@ function ReviewTable(props) {
           <span
             class="close"
             onClick={() => {
-              const modal = document.querySelector("#myModal");
-              modal.classList.add("hide");
-              console.log("clicked");
+              const modal = document.querySelector('#myModal');
+              modal.classList.add('hide');
+              console.log('clicked');
             }}
           >
             &times;
@@ -51,14 +79,14 @@ function ReviewTable(props) {
                   name="boardWriter"
                   placeholder="작성자"
                   className="author"
-                />{" "}
+                />{' '}
                 <br />
                 <input
                   type="text"
                   name="boardPass"
                   placeholder="비밀번호"
                   className="password"
-                />{" "}
+                />{' '}
                 <br />
               </div>
               <input
@@ -66,7 +94,7 @@ function ReviewTable(props) {
                 name="boardTitle"
                 placeholder="제목"
                 className="title"
-              />{" "}
+              />{' '}
               <br />
               <textarea
                 name="boardContents"
@@ -82,9 +110,10 @@ function ReviewTable(props) {
                 className="submitBtn"
                 onClick={(event) => {
                   event.preventDefault();
-                  const modal = document.querySelector("#myModal");
-                  modal.classList.add("hide");
+                  const modal = document.querySelector('#myModal');
+                  modal.classList.add('hide');
                 }}
+                onSubmit={() => handleSubmit()}
               />
             </form>
           </div>
