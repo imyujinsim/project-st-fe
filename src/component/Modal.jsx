@@ -85,8 +85,10 @@ function Modal(props) {
               console.log('submitted');
               if (event.target.classList.contains('edit')) {
                 handleEdit();
+                console.log('handle edit');
               } else if (event.target.classList.contains('write')) {
                 handleSubmit();
+                console.log('handle submit');
               }
               const modal = document.querySelector('#myModal');
               modal.classList.add('hide');
