@@ -54,7 +54,7 @@ function Modal(props) {
               onSubmit={(event) => {
                 event.preventDefault();
                 console.log('submitted');
-                handleSubmit();
+                props.handleSubmit();
                 // const modal = document.querySelector('#myModal');
                 // modal.classList.add('hide');
               }}
