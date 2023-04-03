@@ -71,7 +71,7 @@ function ReviewTable(props) {
       <h1>리뷰</h1>
       <div className="accordion">
         <hr />
-        {review}
+        {/* {review} */}
       </div>
       <button
         id="myBtn"
