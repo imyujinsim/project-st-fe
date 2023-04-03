@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import '../style/reset.css';
 import '../style/table.css';
 import TableItem from './TableItem';
-import Modal from './Modal';
 
 function ReviewTable(props) {
-  const [count, setCount] = useState(0);
-  const [reviewData, setReviewData] = useState();
-
-  const token = localStorage.getItem('token');
-
-  const getReview = async () => {
+  const handleSubmit = async () => {
     await axios({
-      url: 'https://api.bodam.site:8080/board/',
+      url: 'https://api.bodam.site/board/',
       method: 'get',
       withCredentials: true,
       headers: {
@@ -23,39 +17,21 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
-        setReviewData(response.data);
-        // 응답 수 만큼 카운트 늘리기
       })
       .catch(function (error) {
         console.log(error);
       });
   };
-
-  useEffect(() => {
-    getReview();
-  }, []);
-
-  const review = Array.isArray(reviewData)
-    ? reviewData
-        .filter((item) => item !== undefined && item !== null)
-        .map((item) => {
-          return (
-            <TableItem
-              id={item.id}
-              title={item.boardTitle}
-              author={item.boardWriter}
-              content={item.boardContents}
-            />
-          );
-        })
-    : null;
-
   return (
     <div className="accordion-body">
       <h1>리뷰</h1>
       <div className="accordion">
         <hr />
-        {review}
+        <TableItem />
+        <TableItem />
+        <TableItem />
+        <TableItem />
+        <TableItem />
       </div>
       <button
         id="myBtn"
@@ -66,7 +42,73 @@ function ReviewTable(props) {
       >
         글쓰기
       </button>
-      <Modal action={'write'} />
+
+      <div id="myModal" class="modal hide">
+        <div class="modal-content">
+          <span
+            class="close"
+            onClick={() => {
+              const modal = document.querySelector('#myModal');
+              modal.classList.add('hide');
+              console.log('clicked');
+            }}
+          >
+            &times;
+          </span>
+          <div className="form-data">
+            <h2>리뷰 작성</h2>
+            <form
+              action="/board/save"
+              method="post"
+              enctype="multipart/form-data"
+              className="reviewForm"
+            >
+              <div className="review-row">
+                <input
+                  type="text"
+                  name="boardWriter"
+                  placeholder="작성자"
+                  className="author"
+                />{' '}
+                <br />
+                <input
+                  type="text"
+                  name="boardPass"
+                  placeholder="비밀번호"
+                  className="password"
+                />{' '}
+                <br />
+              </div>
+              <input
+                type="text"
+                name="boardTitle"
+                placeholder="제목"
+                className="title"
+              />{' '}
+              <br />
+              <textarea
+                name="boardContents"
+                cols="30"
+                rows="5"
+                placeholder="내용 입력"
+                className="content"
+              ></textarea>
+              <br />
+              <input
+                type="submit"
+                value="글작성"
+                className="submitBtn"
+                onClick={(event) => {
+                  event.preventDefault();
+                  const modal = document.querySelector('#myModal');
+                  modal.classList.add('hide');
+                }}
+                onSubmit={() => handleSubmit()}
+              />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

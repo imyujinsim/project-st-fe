@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import Modal from './Modal';
 
 function TableItem(props) {
   // const accordion = document.getElementsByClassName('container');
@@ -14,8 +12,6 @@ function TableItem(props) {
   const edit = document.querySelector('.edit');
   const remove = document.querySelector('.remove');
 
-  const token = localStorage.getItem('token');
-
   return (
     <>
       <div
@@ -26,12 +22,17 @@ function TableItem(props) {
         }}
       >
         <div class="label">
-          <p>{props.id}</p>
-          <p>{props.title}</p>
-          <p>{props.author}</p>
+          <p>01</p>
+          <p>제목제목제목</p>
+          <p>심유진</p>
         </div>
         <div class="content">
-          {props.content}
+          JavaScript is a scripting or programming language that allows you to
+          implement complex features on web pages — every time a web page does
+          more than just sit there and display static information for you to
+          look at — displaying timely content updates, interactive maps,
+          animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet
+          that JavaScript is probably involved. It is the third of the web trio.
           <br />
           <div className="icons">
             <p
@@ -59,10 +60,7 @@ function TableItem(props) {
             <p
               className="remove"
               onClick={() => {
-                if (
-                  window.prompt('삭제하시겠습니까? 비밀번호를 입력하세요') ===
-                  props.data.boardPass
-                ) {
+                if (window.confirm('삭제하시겠습니까?')) {
                   // 삭제하는 코드
                   console.log('삭제');
                 }
@@ -81,7 +79,71 @@ function TableItem(props) {
             </p>
           </div>
         </div>
-        <Modal action={'edit'} />
+      </div>
+      <div id="myModal" class="modal hide">
+        <div class="modal-content">
+          <span
+            class="close"
+            onClick={() => {
+              const modal = document.querySelector('#myModal');
+              modal.classList.add('hide');
+              console.log('clicked');
+            }}
+          >
+            &times;
+          </span>
+          <div className="form-data">
+            <h2>리뷰 작성</h2>
+            <form
+              action="/board/save"
+              method="post"
+              enctype="multipart/form-data"
+              className="reviewForm"
+            >
+              <div className="review-row">
+                <input
+                  type="text"
+                  name="boardWriter"
+                  placeholder="작성자"
+                  className="author"
+                />{' '}
+                <br />
+                <input
+                  type="text"
+                  name="boardPass"
+                  placeholder="비밀번호"
+                  className="password"
+                />{' '}
+                <br />
+              </div>
+              <input
+                type="text"
+                name="boardTitle"
+                placeholder="제목"
+                className="title"
+              />{' '}
+              <br />
+              <textarea
+                name="boardContents"
+                cols="30"
+                rows="5"
+                placeholder="내용 입력"
+                className="review-input"
+              ></textarea>
+              <br />
+              <input
+                type="submit"
+                value="글작성"
+                className="submitBtn"
+                onClick={(event) => {
+                  event.preventDefault();
+                  const modal = document.querySelector('#myModal');
+                  modal.classList.add('hide');
+                }}
+              />
+            </form>
+          </div>
+        </div>
       </div>
       <hr />
     </>
