@@ -3,7 +3,6 @@ import axios from 'axios';
 import '../style/reset.css';
 import '../style/table.css';
 import TableItem from './TableItem';
-import Modal from './Modal';
 
 function ReviewTable(props) {
   const token = localStorage.getItem('token');
@@ -56,8 +55,35 @@ function ReviewTable(props) {
       >
         글쓰기
       </button>
-
-      <Modal submit={handleSubmit} />
+      <div id="myModal" className="modal hide">
+        <div className="modal-content">
+          <div className="form-data">
+            <h2>리뷰 작성</h2>
+            <form
+              action="."
+              method="post"
+              className="reviewForm"
+              onSubmit={() => {
+                console.log('submitted!');
+                handleSubmit();
+              }}
+              enctype="multipart/form-data"
+            >
+              <input className="submitBtn" type="submit" value="작성" />
+            </form>
+          </div>
+          <span
+            className="close"
+            onClick={() => {
+              const modal = document.querySelector('#myModal');
+              modal.classList.add('hide');
+              console.log('clicked');
+            }}
+          >
+            &times;
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

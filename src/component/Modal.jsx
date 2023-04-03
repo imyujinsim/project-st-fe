@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Modal(props) {
+  console.log(props.handlesubmit);
   return (
     <div id="myModal" className="modal hide">
       <div className="modal-content">
