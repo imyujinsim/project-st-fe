@@ -117,8 +117,8 @@ function ReviewTable(props) {
                 }}
                 onSubmit={() => {
                   console.log(submitted);
-                  handleSubmit()
-                }
+                  handleSubmit();
+                }}
               />
             </form>
           </div>
