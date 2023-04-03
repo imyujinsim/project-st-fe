@@ -115,7 +115,10 @@ function ReviewTable(props) {
                   const modal = document.querySelector('#myModal');
                   modal.classList.add('hide');
                 }}
-                onSubmit={() => handleSubmit()}
+                onSubmit={() => {
+                  console.log(submitted);
+                  handleSubmit()
+                }
               />
             </form>
           </div>
