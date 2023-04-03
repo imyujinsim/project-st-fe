@@ -17,7 +17,8 @@ function TableItem(props) {
 
   const handleEdit = async (e) => {
     const id =
-      document.querySelector('.container').childNodes[0].childNodes[0].value;
+      document.querySelector('.accordion').childNodes[0].childNodes[0]
+        .childNodes[0].value;
     const contentId = window.localStorage.getItem('contentId');
     const author = document.querySelector('.author').value;
     const passwd = document.querySelector('.password').value;
