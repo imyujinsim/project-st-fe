@@ -4,18 +4,18 @@ import '../style/table.css';
 import TableItem from './TableItem';
 
 function ReviewTable(props) {
-  const handleSubmit = async() => {
+  const handleSubmit = async () => {
     await axios({
       url: url,
       method: 'post',
       data: {
-        "boardWriter":"유진",
-        "boardPass":"1234",
-        "boardTitle":"너무 좋아요",
-        "boardContents":"잘 다녀왔어요 여행 좋아요!",
-        "boardHits":0,
-        "boardCreatedTime": " ",
-        "boardUpdatedTime": " "
+        boardWriter: '유진',
+        boardPass: '1234',
+        boardTitle: '너무 좋아요',
+        boardContents: '잘 다녀왔어요 여행 좋아요!',
+        boardHits: 0,
+        boardCreatedTime: ' ',
+        boardUpdatedTime: ' ',
       },
       withCredentials: true,
       headers: {
@@ -30,8 +30,6 @@ function ReviewTable(props) {
         console.log(error);
       });
   };
-  }
-
   return (
     <div className="accordion-body">
       <h1>리뷰</h1>
@@ -122,4 +120,5 @@ function ReviewTable(props) {
     </div>
   );
 }
+
 export default ReviewTable;
