@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import '../style/reset.css';
 import '../style/table.css';
 import TableItem from './TableItem';
@@ -6,7 +7,7 @@ import TableItem from './TableItem';
 function ReviewTable(props) {
   const handleSubmit = async () => {
     await axios({
-      url: url,
+      url: 'https://api.bodam.site:8080/board/save',
       method: 'post',
       data: {
         boardWriter: '유진',
