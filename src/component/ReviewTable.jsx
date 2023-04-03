@@ -116,7 +116,7 @@ function ReviewTable(props) {
                   modal.classList.add('hide');
                 }}
                 onSubmit={() => {
-                  console.log(submitted);
+                  console.log('submitted');
                   handleSubmit();
                 }}
               />
