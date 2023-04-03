@@ -17,7 +17,7 @@ function TableItem(props) {
 
   const handleEdit = async () => {
     await axios({
-      url: 'https://api.bodam.site:8080/board/update',
+      url: 'https://api.bodam.site:8080/board/update/2',
       method: 'put',
       data: {
         boardWriter: '유진 수정',
