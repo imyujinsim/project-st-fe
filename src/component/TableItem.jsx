@@ -16,8 +16,6 @@ function TableItem(props) {
   const token = localStorage.getItem('token');
 
   const handleEdit = async (e) => {
-    const id = e.target;
-    console.log(id);
     await axios({
       url: `https://api.bodam.site:8080/board/update/${props.id}`,
       method: 'put',
@@ -129,6 +127,8 @@ function TableItem(props) {
               className="reviewForm"
               onSubmit={(event) => {
                 event.preventDefault();
+                const target = event.target;
+                console.log(target);
                 console.log('submitted');
                 handleEdit();
                 console.log('handle edit');
