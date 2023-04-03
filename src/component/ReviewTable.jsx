@@ -10,6 +10,7 @@ function ReviewTable(props) {
 
   const [count, setCount] = useState(0);
   const [reviewData, setReviewData] = useState();
+  const [reviewList, setReviewList] = useState();
 
   const handleSubmit = async (author, passwd, title, review) => {
     await axios({
@@ -63,33 +64,52 @@ function ReviewTable(props) {
 
   useEffect(() => {
     getReviewData();
+
+    const review = Array.isArray(reviewData)
+      ? reviewData
+          .filter((item) => item !== undefined && item !== null)
+          .map((item) => {
+            return (
+              <TableItem
+                id={item.id}
+                title={item.boardTitle}
+                author={item.boardWriter}
+                content={item.boardContents}
+              />
+            );
+          })
+      : null;
+
+    setReviewList(review);
   }, []);
 
   useEffect(() => {
     getReviewData();
-  }, [count]);
 
-  const review = Array.isArray(reviewData)
-    ? reviewData
-        .filter((item) => item !== undefined && item !== null)
-        .map((item) => {
-          return (
-            <TableItem
-              id={item.id}
-              title={item.boardTitle}
-              author={item.boardWriter}
-              content={item.boardContents}
-            />
-          );
-        })
-    : null;
+    const review = Array.isArray(reviewData)
+      ? reviewData
+          .filter((item) => item !== undefined && item !== null)
+          .map((item) => {
+            return (
+              <TableItem
+                id={item.id}
+                title={item.boardTitle}
+                author={item.boardWriter}
+                content={item.boardContents}
+              />
+            );
+          })
+      : null;
+
+    setReviewList(review);
+  }, [count]);
 
   return (
     <div className="accordion-body">
       <h1>리뷰</h1>
       <div className="accordion">
         <hr />
-        {review}
+        {reviewList}
       </div>
       <button
         id="myBtnw"
