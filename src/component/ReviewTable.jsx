@@ -6,6 +6,7 @@ import TableItem from './TableItem';
 
 function ReviewTable(props) {
   const [count, setCount] = useState(0);
+  const [reviewData, setReviewData] = useState();
 
   const token = localStorage.getItem('token');
 
@@ -22,6 +23,7 @@ function ReviewTable(props) {
     })
       .then(function (response) {
         console.log(response);
+        setReviewData(response.data);
         // 응답 수 만큼 카운트 늘리기
       })
       .catch(function (error) {
@@ -64,11 +66,9 @@ function ReviewTable(props) {
       <h1>리뷰</h1>
       <div className="accordion">
         <hr />
-        <TableItem />
-        <TableItem />
-        <TableItem />
-        <TableItem />
-        <TableItem />
+        {reviewData.map((item) => {
+          <TableItem data={item} />;
+        })}
       </div>
       <button
         id="myBtn"

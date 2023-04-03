@@ -53,17 +53,12 @@ function TableItem(props) {
         }}
       >
         <div class="label">
-          <p>01</p>
-          <p>제목제목제목</p>
-          <p>심유진</p>
+          <p>{props.data.id}</p>
+          <p>{props.data.boardTitle}</p>
+          <p>{props.data.boardWriter}</p>
         </div>
         <div class="content">
-          JavaScript is a scripting or programming language that allows you to
-          implement complex features on web pages — every time a web page does
-          more than just sit there and display static information for you to
-          look at — displaying timely content updates, interactive maps,
-          animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet
-          that JavaScript is probably involved. It is the third of the web trio.
+          {props.data.boardContents}
           <br />
           <div className="icons">
             <p
@@ -91,7 +86,10 @@ function TableItem(props) {
             <p
               className="remove"
               onClick={() => {
-                if (window.confirm('삭제하시겠습니까?')) {
+                if (
+                  window.prompt('삭제하시겠습니까? 비밀번호를 입력하세요') ===
+                  props.data.boardPass
+                ) {
                   // 삭제하는 코드
                   console.log('삭제');
                 }
