@@ -24,9 +24,8 @@ function TableItem(props) {
         boardPass: '1234',
         boardTitle: '너무 좋아요 수정했어요',
         boardContents: '잘 다녀왔어요 여행 좋아요! 수정했어요',
-        boardHits: 0,
-        boardCreatedTime: ' ',
-        boardUpdatedTime: ' ',
+        context_id: 124546,
+        id: 2,
       },
       withCredentials: true,
       headers: {
