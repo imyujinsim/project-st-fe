@@ -110,14 +110,12 @@ function ReviewTable(props) {
                 type="submit"
                 value="글작성"
                 className="submitBtn"
-                onClick={(event) => {
+                onSubmit={(event) => {
                   event.preventDefault();
-                  const modal = document.querySelector('#myModal');
-                  modal.classList.add('hide');
-                }}
-                onSubmit={() => {
                   console.log('submitted');
                   handleSubmit();
+                  const modal = document.querySelector('#myModal');
+                  modal.classList.add('hide');
                 }}
               />
             </form>
