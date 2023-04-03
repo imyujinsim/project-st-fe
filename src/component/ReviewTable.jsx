@@ -60,9 +60,9 @@ function ReviewTable(props) {
       });
   };
 
-  useEffect(() => {
-    getReviewData();
-  }, []);
+  // useEffect(() => {
+  getReviewData();
+  // }, []);
 
   // useEffect(() => {
   //   getReviewData();
