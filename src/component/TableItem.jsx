@@ -45,7 +45,6 @@ function TableItem(props) {
   };
 
   const deleteData = async (id) => {
-    const id = id;
     await axios({
       url: `https://api.bodam.site:8080/board/delete/${id}`,
       method: 'delete',
