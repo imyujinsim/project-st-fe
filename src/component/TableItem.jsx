@@ -67,7 +67,6 @@ function TableItem(props) {
   };
 
   // const { [`${props.id}modal`]: modalRef } = useRef(null);
-  console.log(props.content);
 
   return (
     <>
