@@ -46,24 +46,26 @@ function TableItem(props) {
   };
 
   const deleteData = async (id) => {
-    await axios({
-      url: `https://api.bodam.site:8080/board/delete/${id}`,
-      method: 'delete',
-      withCredentials: true,
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-      data: {
-        id: id,
-      },
-    })
-      .then((result) => {
-        console.log(result);
-        props.setCount((prev) => (prev -= 1));
-      })
-      .catch(console.log);
+    try {
+      const response = await axios.delete(
+        `https://api.bodam.site:8080/board/delete/${id}`,
+        {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          data: {
+            id: id,
+          },
+        }
+      );
+      console.log(response);
+      props.setCount((prev) => (prev -= 1));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   // const { [`${props.id}modal`]: modalRef } = useRef(null);
