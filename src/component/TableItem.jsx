@@ -89,7 +89,7 @@ function TableItem(props) {
             <p
               className="edit"
               onClick={(event) => {
-                const modal = document.querySelector(`#${props.id + 'modal'}`);
+                const modal = document.getElementById(`${props.id + 'modal'}`);
                 console.log(modal);
                 if (modal.classList.contains('modal')) {
                   modal.classList.toggle('hide');
@@ -145,7 +145,7 @@ function TableItem(props) {
                 className="close"
                 onClick={(e) => {
                   e.stopPropagation();
-                  const modal = document.querySelector(
+                  const modal = document.getElementById(
                     `#${props.id + 'modal'}`
                   );
                   console.log(modal);
@@ -174,8 +174,8 @@ function TableItem(props) {
                     console.log(id);
                     handleEdit(author, passwd, title, review, id);
                     console.log(author, passwd, title, review, id);
-                    const modal = document.querySelector(
-                      `#${props.id + 'modal'}`
+                    const modal = document.getElementById(
+                      `${props.id + 'modal'}`
                     );
                     console.log(modal);
                     modal.classList.toggle('hide');
