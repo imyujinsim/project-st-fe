@@ -89,7 +89,7 @@ function TableItem(props) {
             <p
               className="edit"
               onClick={(event) => {
-                const modal = event.target.parentNode.parentNode.nextSibling;
+                const modal = document.getElementById(`${props.id + 'modal'}`);
                 if (modal.classList.contains('modal')) {
                   console.log(modal);
                   modal.classList.toggle('hide');
