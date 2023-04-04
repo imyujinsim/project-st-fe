@@ -63,7 +63,6 @@ function ListItem(props) {
       localStorage.setItem('bookmark', JSON.stringify(likedItems));
       // 데이터베이스에 추가
       const addBookmark = async () => {
-        console.log(contextId, name, url);
         await axios({
           url: 'https://api.bodam.site:8080/bookmark/mark',
           method: 'post',
@@ -74,7 +73,7 @@ function ListItem(props) {
             Authorization: `Bearer ${token}`,
           },
           data: {
-            contextId: contextId,
+            context_id: contextId,
             name: name,
             url: url,
           },
@@ -103,7 +102,7 @@ function ListItem(props) {
             Authorization: `Bearer ${token}`,
           },
           data: {
-            contextId: contextId,
+            context_id: contextId,
             name: name,
             url: url,
           },
