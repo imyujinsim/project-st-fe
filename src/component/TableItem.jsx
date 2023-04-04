@@ -119,7 +119,8 @@ function TableItem(props) {
               onClick={(e) => {
                 const id =
                   e.target.parentNode.parentNode.parentNode.parentNode.id;
-                console.log(id);
+                const element = document.getElementById(id);
+                console.log(element);
                 if (window.confirm('삭제하시겠습니까?')) {
                   // 삭제하는 코드
                   deleteData(id);
