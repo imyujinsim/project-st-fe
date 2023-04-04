@@ -114,7 +114,7 @@ function TableItem(props) {
             </p>
           </div>
 
-          <div id={`${props.id + modal} myModal`} className="modal hide edit">
+          <div id={`${props.id + 'modal'} myModal`} className="modal hide edit">
             <div className="modal-content">
               <span
                 className="close"
