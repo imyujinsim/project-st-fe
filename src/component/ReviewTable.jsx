@@ -103,7 +103,7 @@ function ReviewTable(props) {
           <span
             className="closew"
             onClick={(e) => {
-              const modal = ;
+              const modal = document.querySelector('#myModalw');
               modal.classList.add('hide');
               console.log('clicked');
             }}
