@@ -130,6 +130,11 @@ tbody tr td {
   gap: 10px;
 }
 
+.icons .edit,
+.icons .remove {
+  padding: 2px;
+}
+
 /* modal */
 /* The Modal (background) */
 .modal {
@@ -327,8 +332,8 @@ tbody tr td {
   justify-content: space-between;
 }
 
-.review-roww .author,
-.review-roww .password {
+.review-roww .authorw,
+.review-roww .passwordw {
   width: 49%;
   margin-bottom: 5px;
 }

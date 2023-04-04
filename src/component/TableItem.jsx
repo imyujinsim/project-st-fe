@@ -13,9 +13,6 @@ function TableItem(props) {
   const token = localStorage.getItem('token');
   const [count, setCount] = useState(0);
 
-  const edit = document.querySelector('.edit');
-  const remove = document.querySelector('.remove');
-
   const handleEdit = async (author, passwd, title, review, id) => {
     const contextId = localStorage.getItem('contentId');
     const token = localStorage.getItem('token');
@@ -68,14 +65,15 @@ function TableItem(props) {
     }
   };
 
-  // const { [`${props.id}modal`]: modalRef } = useRef(null);
-
   return (
     <>
       <div
         class="container"
+        id={`${props.id + 'container'}`}
         onClick={(event) => {
-          const accordion = document.querySelector('.container');
+          const accordion = document.getElementById(
+            `${props.id + 'accordion'}`
+          );
           accordion.classList.toggle('active');
         }}
       >
@@ -91,11 +89,6 @@ function TableItem(props) {
             <p
               className="edit"
               onClick={(event) => {
-                // const modal = document.getElementById(props.id + 'modal');
-                // modal.classList.remove('hide');
-                // const modal = modalRef.current.parentNode.parentNode;
-                // modal.classList.remove('hide');
-                // const modalName = props.id + 'modal';
                 const modal = event.target.parentNode.parentNode.nextSibling;
                 if (modal.classList.contains('modal')) {
                   console.log(modal);
@@ -152,10 +145,6 @@ function TableItem(props) {
                 className="close"
                 onClick={(e) => {
                   e.stopPropagation();
-                  // const modal = modalRef.current.parentNode.parentNode;
-                  // console.log(modal);
-                  // const modalName = props.id + 'modal';
-                  // const modal = e.target.parentNode.parentNode.parentNode;
                   const modal = document.getElementById(
                     `${props.id + 'modal'}`
                   );
@@ -184,10 +173,6 @@ function TableItem(props) {
                     const id = Number(event.target.id);
                     console.log(id);
                     handleEdit(author, passwd, title, review, id);
-                    // const modal = document.querySelector('#myModal');
-                    // modal.classList.add('hide');
-                    // const modal = modalRef;
-                    // const modal = event.target.parentNode.parentNode.parentNode;
                     const modal = document.getElementById(
                       `${props.id + 'modal'}`
                     );
