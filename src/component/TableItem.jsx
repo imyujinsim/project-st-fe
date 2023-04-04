@@ -48,11 +48,11 @@ function TableItem(props) {
     <>
       <div
         class="container"
-        id={props.id}
         onClick={(event) => {
-          const accordion = event.target.parentNode;
-          accordion.classList.toggle('active');
-          console.log(accordion);
+          const accordion = event.target.parentNode.parentNode;
+          if (accordion.classList.contains('container')) {
+            accordion.classList.toggle('active');
+          }
         }}
       >
         <div class="label">
@@ -114,7 +114,7 @@ function TableItem(props) {
             </p>
           </div>
 
-          <div id="myModal" className="modal hide edit">
+          <div id={`${props.id + modal} myModal`} className="modal hide edit">
             <div className="modal-content">
               <span
                 className="close"
@@ -122,9 +122,12 @@ function TableItem(props) {
                   // const modal = modalRef.current.parentNode.parentNode;
                   // console.log(modal);
                   // const modalName = props.id + 'modal';
-                  const modal = e.target.parentNode.parentNode.parentNode;
+                  // const modal = e.target.parentNode.parentNode.parentNode;
+                  const modal = document.getElementById(
+                    `${props.id + 'modal'}`
+                  );
                   console.log(modal);
-                  modal.classList.toggle('hide');
+                  // modal.classList.toggle('hide');
                   // console.log('clicked');
                 }}
               >
@@ -136,7 +139,7 @@ function TableItem(props) {
                   action="."
                   method="put"
                   className="reviewForm"
-                  id={props.id}
+                  // id={props.id}
                   onSubmit={(event) => {
                     event.preventDefault();
                     console.log(event.target);
@@ -151,8 +154,11 @@ function TableItem(props) {
                     // const modal = document.querySelector('#myModal');
                     // modal.classList.add('hide');
                     // const modal = modalRef;
-                    const modal = event.target.parentNode.parentNode.parentNode;
-                    modal.classList.toggle('hide');
+                    // const modal = event.target.parentNode.parentNode.parentNode;
+                    const modal = document.getElementById(
+                      `${props.id + 'modal'}`
+                    );
+                    // modal.classList.toggle('hide');
                   }}
                   enctype="multipart/form-data"
                 >
