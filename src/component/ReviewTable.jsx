@@ -130,7 +130,7 @@ function ReviewTable(props) {
                 review = '';
                 console.log('handle submit');
                 const modal = event.target.parentNode.parentNode.parentNode;
-                console.log(modal);
+                console.log(event.target);
                 modal.classList.add('hide');
               }}
               enctype="multipart/form-data"
