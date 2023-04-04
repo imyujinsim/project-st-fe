@@ -50,7 +50,7 @@ function TableItem(props) {
         class="container"
         id={props.id}
         onClick={(event) => {
-          const accordion = event.target.nextSibling;
+          const accordion = event.target.parentNode;
           accordion.classList.toggle('active');
           console.log(accordion);
         }}
