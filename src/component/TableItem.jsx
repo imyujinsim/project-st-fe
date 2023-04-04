@@ -159,7 +159,7 @@ function TableItem(props) {
                     `${props.id + 'modal'}`
                   );
                   console.log(modal);
-                  modal.classList.toggle('hide');
+                  modal.classList.add('hide');
                   console.log('clicked');
                 }}
               >
