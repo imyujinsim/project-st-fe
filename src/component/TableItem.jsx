@@ -119,7 +119,7 @@ function TableItem(props) {
               onClick={(e) => {
                 const id =
                   e.target.parentNode.parentNode.parentNode.parentNode.id;
-                const element = document.getElementById(id);
+                const element = document.getElementById(id).id;
                 console.log(element);
                 if (window.confirm('삭제하시겠습니까?')) {
                   // 삭제하는 코드
