@@ -103,7 +103,7 @@ function ListItem(props) {
             Authorization: `Bearer ${token}`,
           },
           data: {
-            context_id: contextId,
+            contextId: contextId,
             name: name,
             url: url,
           },
