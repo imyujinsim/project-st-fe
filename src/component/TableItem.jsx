@@ -90,10 +90,7 @@ function TableItem(props) {
               className="edit"
               onClick={(event) => {
                 const modal = document.getElementById(`${props.id + 'modal'}`);
-                if (modal.classList.contains('modal')) {
-                  console.log(modal);
-                  modal.classList.toggle('hide');
-                }
+                modal.classList.toggle('hide');
               }}
             >
               <svg
