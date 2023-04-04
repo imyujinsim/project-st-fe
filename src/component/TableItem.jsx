@@ -75,7 +75,7 @@ function TableItem(props) {
       <div
         class="container"
         onClick={(event) => {
-          const accordion = event.target.parentNode.parentNode;
+          const accordion = document.querySelector('.container');
           accordion.classList.toggle('active');
         }}
       >
@@ -84,7 +84,7 @@ function TableItem(props) {
           <p>{props.title}</p>
           <p>{props.author}</p>
         </div>
-        <div class="content active" id={props.id}>
+        <div class="content" id={props.id}>
           {props.content}
           <br />
           <div className="icons">
