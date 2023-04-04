@@ -117,10 +117,11 @@ function TableItem(props) {
             <p
               className="remove"
               onClick={(e) => {
-                const id =
-                  e.target.parentNode.parentNode.parentNode.parentNode.id;
-                const element = document.getElementById(id).id;
-                console.log(element);
+                const id = Number(
+                  e.target.parentNode.parentNode.parentNode.parentNode
+                    .previousSibling.firstChild.innerHTML
+                );
+                console.log(id);
                 if (window.confirm('삭제하시겠습니까?')) {
                   // 삭제하는 코드
                   deleteData(id);
