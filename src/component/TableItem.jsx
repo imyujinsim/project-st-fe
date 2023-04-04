@@ -68,7 +68,6 @@ function TableItem(props) {
     <>
       <div
         class="container"
-        id={props.id}
         onClick={(event) => {
           const accordion = event.target.parentNode.parentNode;
           if (accordion.classList.contains('container')) {
@@ -81,7 +80,7 @@ function TableItem(props) {
           <p>{props.title}</p>
           <p>{props.author}</p>
         </div>
-        <div class="content active">
+        <div class="content active" id={props.id}>
           {props.content}
           <br />
           <div className="icons">
@@ -118,7 +117,9 @@ function TableItem(props) {
             <p
               className="remove"
               onClick={(e) => {
-                const id = e.target.parentNode.parentNode.parentNode.parentNode;
+                const id = Number(
+                  e.target.parentNode.parentNode.parentNode.parentNode.id
+                );
                 console.log(id);
                 if (window.confirm('삭제하시겠습니까?')) {
                   // 삭제하는 코드
