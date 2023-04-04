@@ -62,7 +62,7 @@ function TableItem(props) {
         }
       );
       console.log(response);
-      props.setCount((prev) => (prev -= 1));
+      props.setCount((prev) => prev - 1);
     } catch (error) {
       console.log(error);
     }
