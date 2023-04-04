@@ -52,7 +52,7 @@ function TableItem(props) {
           accordion.classList.toggle('active');
         }}
       >
-        <div class="label" id={props.id}>
+        <div class="label">
           <p>{props.id}</p>
           <p>{props.title}</p>
           <p>{props.author}</p>
