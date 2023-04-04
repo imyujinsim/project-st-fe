@@ -20,7 +20,7 @@ function ReviewTable(props) {
           boardWriter: author,
           boardPass: passwd,
           boardTitle: title,
-          boardContexts: review,
+          boardContents: review,
           boardHits: 0,
           boardCreatedTime: ' ',
           boardUpdatedTime: ' ',
@@ -103,7 +103,7 @@ function ReviewTable(props) {
           <span
             className="closew"
             onClick={(e) => {
-              const modal = console.log(e.target);
+              const modal = ;
               modal.classList.add('hide');
               console.log('clicked');
             }}
