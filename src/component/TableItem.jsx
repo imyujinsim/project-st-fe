@@ -59,7 +59,7 @@ function TableItem(props) {
           <p>{props.title}</p>
           <p>{props.author}</p>
         </div>
-        <div class="content">
+        <div class="content active">
           {props.content}
           <br />
           <div className="icons">
