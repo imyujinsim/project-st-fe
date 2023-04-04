@@ -71,9 +71,7 @@ function TableItem(props) {
         class="container"
         id={`${props.id + 'container'}`}
         onClick={(event) => {
-          const accordion = document.getElementById(
-            `${props.id + 'accordion'}`
-          );
+          const accordion = document.getElementById(`${props.id}`);
           accordion.classList.toggle('active');
         }}
       >
