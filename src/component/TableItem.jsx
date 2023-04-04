@@ -159,8 +159,8 @@ function TableItem(props) {
                     `${props.id + 'modal'}`
                   );
                   console.log(modal);
-                  // modal.classList.toggle('hide');
-                  // console.log('clicked');
+                  modal.classList.toggle('hide');
+                  console.log('clicked');
                 }}
               >
                 &times;
@@ -191,7 +191,7 @@ function TableItem(props) {
                       `${props.id + 'modal'}`
                     );
                     console.log(modal);
-                    // modal.classList.toggle('hide');
+                    modal.classList.toggle('hide');
                   }}
                   enctype="multipart/form-data"
                 >
