@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import axios from 'axios';
 
 function TableItem(props) {
@@ -11,6 +11,7 @@ function TableItem(props) {
   // }
 
   const token = localStorage.getItem('token');
+  const [count, setCount] = useState(0);
 
   const edit = document.querySelector('.edit');
   const remove = document.querySelector('.remove');
@@ -58,7 +59,10 @@ function TableItem(props) {
         id: id,
       },
     })
-      .then(console.log)
+      .then((result) => {
+        console.log(result);
+        props.setCount((prev) => (prev -= 1));
+      })
       .catch(console.log);
   };
 
