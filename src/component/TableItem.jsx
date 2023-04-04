@@ -48,6 +48,7 @@ function TableItem(props) {
     <>
       <div
         class="container"
+        id={props.id}
         onClick={(event) => {
           const accordion = event.target.parentNode.parentNode;
           if (accordion.classList.contains('container')) {
@@ -73,8 +74,10 @@ function TableItem(props) {
                 // modal.classList.remove('hide');
                 // const modalName = props.id + 'modal';
                 const modal = event.target.parentNode.parentNode.nextSibling;
-                console.log(modal);
-                modal.classList.toggle('hide');
+                if (modal.classList.contains('modal')) {
+                  console.log(modal);
+                  modal.classList.toggle('hide');
+                }
               }}
             >
               <svg
@@ -94,11 +97,14 @@ function TableItem(props) {
             </p>
             <p
               className="remove"
-              onClick={() => {
-                if (window.confirm('삭제하시겠습니까?')) {
-                  // 삭제하는 코드
-                  console.log('삭제');
-                }
+              onClick={(e) => {
+                const id = e.target.parentNode.parentNode.parentNode.parentNode;
+                console.log(id);
+                //   if (window.confirm('삭제하시겠습니까?')) {
+                //     // 삭제하는 코드
+                //     deleteData(id);
+                //     console.log('삭제');
+                //   }
               }}
             >
               <svg
@@ -139,7 +145,7 @@ function TableItem(props) {
                   action="."
                   method="put"
                   className="reviewForm"
-                  // id={props.id}
+                  id={props.id}
                   onSubmit={(event) => {
                     event.preventDefault();
                     console.log(event.target);
@@ -158,6 +164,7 @@ function TableItem(props) {
                     const modal = document.getElementById(
                       `${props.id + 'modal'}`
                     );
+                    console.log(modal);
                     // modal.classList.toggle('hide');
                   }}
                   enctype="multipart/form-data"
