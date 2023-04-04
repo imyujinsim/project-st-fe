@@ -17,10 +17,10 @@ function ReviewTable(props) {
       const response = await axios.post(
         'https://api.bodam.site:8080/board/save',
         {
-          boardWriter: author,
-          boardPass: passwd,
-          boardTitle: title,
-          boardContents: review,
+          boardWriter: author.value,
+          boardPass: passwd.value,
+          boardTitle: title.value,
+          boardContents: review.value,
           boardHits: 0,
           boardCreatedTime: ' ',
           boardUpdatedTime: ' ',
@@ -118,12 +118,16 @@ function ReviewTable(props) {
               className="reviewFormw"
               onSubmit={(event) => {
                 event.preventDefault();
-                const author = document.querySelector('.authorw').value;
-                const passwd = document.querySelector('.passwordw').value;
-                const title = document.querySelector('.titlew').value;
-                const review = document.querySelector('.review-inputw').value;
+                const author = document.querySelector('.authorw');
+                const passwd = document.querySelector('.passwordw');
+                const title = document.querySelector('.titlew');
+                const review = document.querySelector('.review-inputw');
                 console.log('submitted');
                 handleSubmit(author, passwd, title, review);
+                author = '';
+                passwd = '';
+                title = '';
+                review = '';
                 console.log('handle submit');
                 const modal = document.querySelector('#myModalw');
                 modal.classList.add('hide');

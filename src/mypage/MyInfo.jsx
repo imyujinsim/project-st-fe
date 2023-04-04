@@ -9,7 +9,7 @@ function MyInfo(props) {
     const getUserData = async () => {
       try {
         const response = await axios.get(
-          `https://api.bodam.site:8080/account`,
+          `https://api.bodam.site:8080/account/info`,
           {
             withCredentials: true,
             headers: {
@@ -25,6 +25,7 @@ function MyInfo(props) {
         console.log(error);
       }
     };
+    getUserData();
   }, []);
 
   useEffect(() => {

@@ -2,14 +2,6 @@ import React, { useRef, useState } from 'react';
 import axios from 'axios';
 
 function TableItem(props) {
-  // const accordion = document.getElementsByClassName('container');
-
-  // for (let i = 0; i < accordion.length; i++) {
-  //   accordion[i].addEventListener('click', function () {
-  //     this.classList.toggle('active');
-  //   });
-  // }
-
   const token = localStorage.getItem('token');
   const [count, setCount] = useState(0);
 
@@ -20,10 +12,10 @@ function TableItem(props) {
       url: `https://api.bodam.site:8080/board/update/${id}`,
       method: 'put',
       data: {
-        boardWriter: author,
-        boardPass: passwd,
-        boardTitle: title,
-        boardContents: review,
+        boardWriter: author.value,
+        boardPass: passwd.value,
+        boardTitle: title.value,
+        boardContents: review.value,
         context_id: contextId,
         id: id,
       },
@@ -36,6 +28,7 @@ function TableItem(props) {
     })
       .then(function (response) {
         console.log(response);
+        props.count((prev) => prev + 1);
       })
       .catch(function (error) {
         console.log(error);
@@ -59,7 +52,7 @@ function TableItem(props) {
         }
       );
       console.log(response);
-      props.setCount((prev) => prev - 1);
+      props.count((prev) => prev - 1);
     } catch (error) {
       console.log(error);
     }
@@ -89,19 +82,20 @@ function TableItem(props) {
             <p
               className="edit"
               onClick={(event) => {
-                const modal = document.getElementById(`${props.id + 'modal'}`);
+                // const modal = document.getElementById(`${props.id + 'modal'}`);
+                const modal =
+                  event.target.parentNode.parentNode.nextSibling.parentNode
+                    .nextSibling;
                 console.log(modal);
-                if (modal.classList.contains('modal')) {
-                  modal.classList.toggle('hide');
-                }
+                modal.classList.toggle('hide');
               }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
                 y="0px"
-                width="24"
-                height="24"
+                width="28"
+                height="28"
                 viewBox="0 0 24 24"
               >
                 <path d="M18.4,4.4l1.2,1.2L6.2,19H5v-1.2L18.4,4.4 M18.4,2c-0.3,0-0.5,0.1-0.7,0.3L3,17v4h4L21.7,6.3c0.4-0.4,0.4-1,0-1.4l-2.6-2.6 C18.9,2.1,18.7,2,18.4,2L18.4,2z"></path>
@@ -114,7 +108,7 @@ function TableItem(props) {
             <p
               className="remove"
               onClick={(e) => {
-                const id = Number(e.target.parentNode.parentNode.id);
+                const id = Number(e.target.closest('.content').id);
                 console.log(id);
                 if (window.confirm('삭제하시겠습니까?')) {
                   // 삭제하는 코드
@@ -142,9 +136,10 @@ function TableItem(props) {
                 className="close"
                 onClick={(e) => {
                   e.stopPropagation();
-                  const modal = document.getElementById(
-                    `#${props.id + 'modal'}`
-                  );
+                  // const modal = document.getElementById(
+                  //   `${props.id + 'modal'}`
+                  // );
+                  const modal = e.target.parentNode.parentNode;
                   console.log(modal);
                   modal.classList.add('hide');
                   console.log('clicked');
@@ -162,18 +157,22 @@ function TableItem(props) {
                   onSubmit={(event) => {
                     event.preventDefault();
                     console.log(event.target);
-                    const author = document.querySelector('.author').value;
-                    const passwd = document.querySelector('.password').value;
-                    const title = document.querySelector('.title').value;
+                    const author = event.target.firstChild.firstChild;
+                    const passwd =
+                      event.target.parentNode.childNodes[1].childNodes[0]
+                        .childNodes[3];
+                    const title =
+                      event.target.parentNode.childNodes[1].childNodes[1];
                     const review =
-                      document.querySelector('.review-input').value;
+                      event.target.parentNode.childNodes[1].childNodes[4];
                     const id = Number(event.target.id);
                     console.log(id);
                     handleEdit(author, passwd, title, review, id);
                     console.log(author, passwd, title, review, id);
-                    const modal = document.getElementById(
-                      `${props.id + 'modal'}`
-                    );
+                    // const modal = document.getElementById(
+                    //   `${props.id + 'modal'}`
+                    // );
+                    const modal = event.target.parentNode.parentNode.parentNode;
                     console.log(modal);
                     modal.classList.toggle('hide');
                   }}

@@ -132,7 +132,11 @@ tbody tr td {
 
 .icons .edit,
 .icons .remove {
-  padding: 2px;
+  padding: 3px;
+}
+
+svg {
+  margin: 2px;
 }
 
 /* modal */
@@ -187,7 +191,7 @@ tbody tr td {
   right: 230px;
 }
 
-.form-data .reviewForm {
+.form-data .reviewForme {
   text-align: center;
 }
 
@@ -210,18 +214,18 @@ tbody tr td {
   justify-content: space-between;
 }
 
-.review-row .author,
-.review-row .password {
+.review-row .authore,
+.review-row .passworde {
   width: 49%;
   margin-bottom: 5px;
 }
 
-.title {
+.titlee {
   width: 70%;
   margin-bottom: 5px;
 }
 
-.review-input {
+.review-inpute {
   width: 70%;
 }
 

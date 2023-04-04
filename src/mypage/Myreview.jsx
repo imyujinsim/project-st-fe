@@ -46,6 +46,7 @@ function Myreview(props) {
             title={item.boardTitle}
             author={item.boardWriter}
             content={item.boardContents}
+            count={setCount}
           />
         );
       });
