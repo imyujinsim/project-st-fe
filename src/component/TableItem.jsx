@@ -151,6 +151,7 @@ function TableItem(props) {
               <span
                 className="close"
                 onClick={(e) => {
+                  e.stopPropagation();
                   // const modal = modalRef.current.parentNode.parentNode;
                   // console.log(modal);
                   // const modalName = props.id + 'modal';
