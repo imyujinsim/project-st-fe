@@ -10,6 +10,8 @@ function TableItem(props) {
   //   });
   // }
 
+  const token = localStorage.getItem('token');
+
   const edit = document.querySelector('.edit');
   const remove = document.querySelector('.remove');
 
