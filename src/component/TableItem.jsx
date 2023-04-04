@@ -42,6 +42,24 @@ function TableItem(props) {
       });
   };
 
+  const deleteData = async (id) => {
+    await axios({
+      url: `https://api.bodam.site:8080/board/delete/${id}`,
+      method: 'delete',
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      data: {
+        id: id,
+      },
+    })
+      .then(console.log)
+      .catch(console.log);
+  };
+
   // const { [`${props.id}modal`]: modalRef } = useRef(null);
 
   return (
