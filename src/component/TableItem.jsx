@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import axios from 'axios';
 
 function TableItem(props) {
@@ -13,10 +13,9 @@ function TableItem(props) {
   const edit = document.querySelector('.edit');
   const remove = document.querySelector('.remove');
 
-  const token = localStorage.getItem('token');
-
   const handleEdit = async (author, passwd, title, review, id) => {
     const contextId = localStorage.getItem('contentId');
+    const token = localStorage.getItem('token');
     await axios({
       url: `https://api.bodam.site:8080/board/update/${id}`,
       method: 'put',
@@ -43,12 +42,15 @@ function TableItem(props) {
       });
   };
 
+  // const { [`${props.id}modal`]: modalRef } = useRef(null);
+
   return (
     <>
       <div
         class="container"
+        id={props.id}
         onClick={(event) => {
-          const accordion = event.currentTarget;
+          const accordion = event.target.childNodes[1];
           accordion.classList.toggle('active');
         }}
       >
@@ -63,9 +65,15 @@ function TableItem(props) {
           <div className="icons">
             <p
               className="edit"
-              onClick={() => {
-                const modal = document.querySelector('#myModal');
-                modal.classList.remove('hide');
+              onClick={(event) => {
+                // const modal = document.getElementById(props.id + 'modal');
+                // modal.classList.remove('hide');
+                // const modal = modalRef.current.parentNode.parentNode;
+                // modal.classList.remove('hide');
+                // const modalName = props.id + 'modal';
+                const modal = event.target.parentNode.parentNode.nextSibling;
+                console.log(modal);
+                modal.classList.toggle('hide');
               }}
             >
               <svg
@@ -104,82 +112,89 @@ function TableItem(props) {
               </svg>
             </p>
           </div>
-        </div>
-      </div>
 
-      <div id="myModal" className="modal hide edit">
-        <div className="modal-content">
-          <span
-            className="close"
-            onClick={(e) => {
-              const modal = document.querySelector('#myModal');
-              console.log(e.target);
-              modal.classList.add('hide');
-              console.log('clicked');
-            }}
-          >
-            &times;
-          </span>
-          <div className="form-data">
-            <h2>리뷰 작성</h2>
-            <form
-              action="."
-              method="put"
-              className="reviewForm"
-              onSubmit={(event) => {
-                event.preventDefault();
-                console.log(event.target);
-                const author = document.querySelector('.author').value;
-                const passwd = document.querySelector('.password').value;
-                const title = document.querySelector('.title').value;
-                const review = document.querySelector('.review-input').value;
-                const id =
-                  event.target.parentElement.parentElement.parentElement
-                    .previousSibling.firstChild.id;
-                handleEdit(author, passwd, title, review, id);
-                const modal = document.querySelector('#myModal');
-                modal.classList.add('hide');
-              }}
-              enctype="multipart/form-data"
-            >
-              <div className="review-row">
-                <input
-                  type="text"
-                  name="boardWriter"
-                  placeholder="작성자"
-                  className="author"
-                />{' '}
-                <br />
-                <input
-                  type="text"
-                  name="boardPass"
-                  placeholder="비밀번호"
-                  className="password"
-                />{' '}
-                <br />
+          <div id="myModal" className="modal hide edit">
+            <div className="modal-content">
+              <span
+                className="close"
+                onClick={(e) => {
+                  // const modal = modalRef.current.parentNode.parentNode;
+                  // console.log(modal);
+                  // const modalName = props.id + 'modal';
+                  const modal = e.target.parentNode.parentNode.parentNode;
+                  console.log(modal);
+                  modal.classList.toggle('hide');
+                  // console.log('clicked');
+                }}
+              >
+                &times;
+              </span>
+              <div className="form-data">
+                <h2>리뷰 작성</h2>
+                <form
+                  action="."
+                  method="put"
+                  className="reviewForm"
+                  id={props.id}
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    console.log(event.target);
+                    const author = document.querySelector('.author').value;
+                    const passwd = document.querySelector('.password').value;
+                    const title = document.querySelector('.title').value;
+                    const review =
+                      document.querySelector('.review-input').value;
+                    const id = Number(event.target.id);
+                    console.log(id);
+                    handleEdit(author, passwd, title, review, id);
+                    // const modal = document.querySelector('#myModal');
+                    // modal.classList.add('hide');
+                    // const modal = modalRef;
+                    const modal = event.target.parentNode.parentNode.parentNode;
+                    modal.classList.toggle('hide');
+                  }}
+                  enctype="multipart/form-data"
+                >
+                  <div className="review-row">
+                    <input
+                      type="text"
+                      name="boardWriter"
+                      placeholder="작성자"
+                      className="author"
+                    />{' '}
+                    <br />
+                    <input
+                      type="text"
+                      name="boardPass"
+                      placeholder="비밀번호"
+                      className="password"
+                    />{' '}
+                    <br />
+                  </div>
+                  <input
+                    type="text"
+                    name="boardTitle"
+                    placeholder="제목"
+                    className="title"
+                  />{' '}
+                  <br />
+                  <textarea
+                    name="boardContents"
+                    cols="30"
+                    rows="5"
+                    placeholder="내용 입력"
+                    className="review-input"
+                  ></textarea>
+                  <br />
+                  <input
+                    className="submitBtn"
+                    type="submit"
+                    value="작성"
+                    onClick={console.log('submitted')}
+                  />
+                </form>
               </div>
-              <input
-                type="text"
-                name="boardTitle"
-                placeholder="제목"
-                className="title"
-              />{' '}
-              <br />
-              <textarea
-                name="boardContents"
-                cols="30"
-                rows="5"
-                placeholder="내용 입력"
-                className="review-input"
-              ></textarea>
-              <br />
-              <input
-                className="submitBtn"
-                type="submit"
-                value="작성"
-                onClick={console.log('submitted')}
-              />
-            </form>
+            </div>
           </div>
         </div>
       </div>
