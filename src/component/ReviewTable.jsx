@@ -20,7 +20,7 @@ function ReviewTable(props) {
           boardWriter: author,
           boardPass: passwd,
           boardTitle: title,
-          boardContents: review,
+          boardContexts: review,
           boardHits: 0,
           boardCreatedTime: ' ',
           boardUpdatedTime: ' ',
