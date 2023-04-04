@@ -67,6 +67,7 @@ function TableItem(props) {
   };
 
   // const { [`${props.id}modal`]: modalRef } = useRef(null);
+  console.log(props.content);
 
   return (
     <>
@@ -74,9 +75,7 @@ function TableItem(props) {
         class="container"
         onClick={(event) => {
           const accordion = event.target.parentNode.parentNode;
-          if (accordion.classList.contains('container')) {
-            accordion.classList.toggle('active');
-          }
+          accordion.classList.toggle('active');
         }}
       >
         <div class="label">
