@@ -173,6 +173,7 @@ function TableItem(props) {
                     const id = Number(event.target.id);
                     console.log(id);
                     handleEdit(author, passwd, title, review, id);
+                    console.log(author, passwd, title, review, id);
                     const modal = document.getElementById(
                       `${props.id + 'modal'}`
                     );
