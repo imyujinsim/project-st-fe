@@ -8,7 +8,7 @@ function MyInfo(props) {
 
   useEffect(() => {
     const getUserData = async () => {
-      const response = await axios
+      await axios
         .get(`https://api.bodam.site:8080/account/info`, {
           withCredentials: true,
           headers: {
@@ -27,8 +27,6 @@ function MyInfo(props) {
     };
     getUserData();
   }, []);
-
-  console.log(userData);
 
   return (
     <section className="user-information">
