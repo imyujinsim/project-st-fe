@@ -28,6 +28,8 @@ function MyInfo(props) {
     getUserData();
   }, []);
 
+  console.log(userData);
+
   return (
     <section className="user-information">
       <h1>내 정보</h1>
