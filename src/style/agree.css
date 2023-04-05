@@ -20,7 +20,7 @@ p {
   margin-bottom: 15px;
 }
 
-input {
+input[type='checkbox'] {
   margin-right: 8px;
 }
 
