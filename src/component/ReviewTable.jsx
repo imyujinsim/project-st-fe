@@ -129,8 +129,6 @@ function ReviewTable(props) {
                 title = '';
                 review = '';
                 console.log('handle submit');
-                const modal = document.querySelector('#myModalw');
-                modal.classList.add('hide');
               }}
               enctype="multipart/form-data"
             >
@@ -169,7 +167,10 @@ function ReviewTable(props) {
                 className="submitBtnw"
                 type="submit"
                 value="작성"
-                onClick={console.log('submitted')}
+                onClick={() => {
+                  const modal = document.querySelector('#myModalw');
+                  modal.classList.add('hide');
+                }}
               />
             </form>
           </div>
