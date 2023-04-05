@@ -51,6 +51,12 @@ function MyInfo(props) {
           </tr>
           <tr>
             <th>
+              <b>이메일</b>
+            </th>
+            <td>yujin@naver.com</td>
+          </tr>
+          <tr>
+            <th>
               <b>전화번호</b>
             </th>
             <td>010-2034-3882</td>
