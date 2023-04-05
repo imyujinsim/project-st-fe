@@ -32,6 +32,12 @@ function MyInfo(props) {
   //   console.log(userData);
   // }, [userData]);
 
+  const name = userData.name;
+  const email = userData.email;
+  const tel = userData.tel;
+  const id = userData.id;
+  const date = userData.date;
+
   return (
     <section className="user-information">
       <h1>내 정보</h1>
@@ -41,31 +47,31 @@ function MyInfo(props) {
             <th>
               <b>이름</b>
             </th>
-            <td>{userData.name}</td>
+            <td>{name}</td>
           </tr>
           <tr>
             <th>
               <b>아이디</b>
             </th>
-            <td>{userData.id}</td>
+            <td>{id}</td>
           </tr>
           <tr>
             <th>
               <b>이메일</b>
             </th>
-            <td>{userData.email}</td>
+            <td>{email}</td>
           </tr>
           <tr>
             <th>
               <b>전화번호</b>
             </th>
-            <td>{userData.tel}</td>
+            <td>{tel}</td>
           </tr>
           <tr>
             <th>
               <b>생년월일</b>
             </th>
-            <td>{userData.date}</td>
+            <td>{date}</td>
           </tr>
         </tbody>
       </table>
