@@ -49,6 +49,7 @@ function Login(props) {
       })
       .catch(function (error) {
         console.log(error);
+        alert('아이디나 비밀번호가 틀렸습니다.');
       });
   };
 
@@ -85,7 +86,6 @@ function Login(props) {
           <input type="submit" defaultValue="로그인" />
           <Link to="/signup">
             <button
-              // onClick={LoginPage.handleLogin}
               type="button"
               className="btn text"
               style={{ float: 'right' }}
