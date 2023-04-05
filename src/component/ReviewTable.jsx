@@ -88,7 +88,8 @@ function ReviewTable(props) {
         <hr />
         {reviewList}
       </div>
-      <button
+      {token ? 
+      (<button
         id="myBtnw"
         onClick={() => {
           const modal = document.querySelector('#myModalw');
@@ -96,7 +97,7 @@ function ReviewTable(props) {
         }}
       >
         글쓰기
-      </button>
+      </button>) : ()}
 
       <div id="myModalw" className="modalw hide write">
         <div className="modal-contentw">
