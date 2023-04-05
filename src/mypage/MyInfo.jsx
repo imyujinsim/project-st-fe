@@ -32,8 +32,6 @@ function MyInfo(props) {
   //   console.log(userData);
   // }, [userData]);
 
-  console.log(userData);
-
   return (
     <section className="user-information">
       <h1>내 정보</h1>
@@ -43,31 +41,31 @@ function MyInfo(props) {
             <th>
               <b>이름</b>
             </th>
-            <td></td>
+            <td>{userData.name}</td>
           </tr>
           <tr>
             <th>
               <b>아이디</b>
             </th>
-            <td></td>
+            <td>{userData.id}</td>
           </tr>
           <tr>
             <th>
               <b>이메일</b>
             </th>
-            <td></td>
+            <td>{userData.email}</td>
           </tr>
           <tr>
             <th>
               <b>전화번호</b>
             </th>
-            <td></td>
+            <td>{userData.tel}</td>
           </tr>
           <tr>
             <th>
               <b>생년월일</b>
             </th>
-            <td></td>
+            <td>{userData.date}</td>
           </tr>
         </tbody>
       </table>
