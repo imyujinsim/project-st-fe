@@ -42,7 +42,7 @@ function Header(props) {
                 </Link>
               </li>
               <li>
-                <Link to="/signup" className="nav-item">
+                <Link to="/agree" className="nav-item">
                   회원가입
                 </Link>
               </li>

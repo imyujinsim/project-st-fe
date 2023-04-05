@@ -162,7 +162,7 @@ function TableItem(props) {
                 &times;
               </span>
               <div className="form-data">
-                <h2>리뷰 작성</h2>
+                <h2>리뷰 수정</h2>
                 <form
                   action="."
                   method="put"
