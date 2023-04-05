@@ -5,8 +5,6 @@ import UserSignUp from './pages/UserSignUp';
 import Detail from './pages/Detail';
 import SearchResult from './pages/SearchResult';
 import UserInfo from './pages/UserInfo';
-import axios from 'axios';
-import No from './pages/noResult';
 
 const App = () => {
   return (
