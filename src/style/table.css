@@ -23,21 +23,22 @@
 .label p:first-child {
   position: absolute;
   /* left: 30px; */
-  left: 8%;
+  left: 5%;
   width: 20px;
   text-align: center;
 }
 
 .label p:nth-child(2) {
   position: absolute;
+  width: 150px;
+  text-align: center;
   left: 30%;
-  left: 150px;
 }
 
 .label p:nth-child(3) {
   position: absolute;
   /* right: 80px; */
-  right: 40%;
+  right: 10%;
 }
 
 .accordion {
@@ -68,11 +69,12 @@
 }
 
 .accordion .content {
+  padding-left: 5%;
   display: block;
   position: relative;
   background: white;
   height: 0;
-  font-size: 12px;
+  font-size: 15px;
   text-align: justify;
   width: 100%;
   overflow: hidden;
@@ -81,8 +83,7 @@
 }
 
 .content .icons {
-  position: absolute;
-  right: 10%;
+  margin-left: 85%;
 }
 
 .accordion hr {

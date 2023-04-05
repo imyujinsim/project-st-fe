@@ -118,10 +118,10 @@ function ReviewTable(props) {
               className="reviewFormw"
               onSubmit={(event) => {
                 event.preventDefault();
-                const author = document.querySelector('.authorw');
-                const passwd = document.querySelector('.passwordw');
-                const title = document.querySelector('.titlew');
-                const review = document.querySelector('.review-inputw');
+                let author = document.querySelector('.authorw');
+                let passwd = document.querySelector('.passwordw');
+                let title = document.querySelector('.titlew');
+                let review = document.querySelector('.review-inputw');
                 console.log('submitted');
                 handleSubmit(author, passwd, title, review);
                 author = '';

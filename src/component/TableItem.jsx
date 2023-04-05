@@ -175,6 +175,11 @@ function TableItem(props) {
                     const modal = event.target.parentNode.parentNode.parentNode;
                     console.log(modal);
                     modal.classList.toggle('hide');
+
+                    author.value = '';
+                    title.value = '';
+                    passwd.value = '';
+                    review.value = '';
                   }}
                   enctype="multipart/form-data"
                 >

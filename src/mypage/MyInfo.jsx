@@ -28,9 +28,9 @@ function MyInfo(props) {
     getUserData();
   }, []);
 
-  useEffect(() => {
-    console.log(userData);
-  }, [userData]);
+  // useEffect(() => {
+  //   console.log(userData);
+  // }, [userData]);
 
   return (
     <section className="user-information">
@@ -41,31 +41,31 @@ function MyInfo(props) {
             <th>
               <b>이름</b>
             </th>
-            <td>심유진</td>
+            <td>{userData.name}</td>
           </tr>
           <tr>
             <th>
               <b>아이디</b>
             </th>
-            <td>yujin2345</td>
+            <td>{userData.id}</td>
           </tr>
           <tr>
             <th>
               <b>이메일</b>
             </th>
-            <td>yujin@naver.com</td>
+            <td>{userData.email}</td>
           </tr>
           <tr>
             <th>
               <b>전화번호</b>
             </th>
-            <td>010-2034-3882</td>
+            <td>{userData.tel}</td>
           </tr>
           <tr>
             <th>
               <b>생년월일</b>
             </th>
-            <td>1996.10.02</td>
+            <td>{userData.date}</td>
           </tr>
         </tbody>
       </table>
