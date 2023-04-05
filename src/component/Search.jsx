@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../style/reset.css';
 import '../style/search.css';
-
-const searchBar = document.querySelector('.search-bar-main');
 
 function Search(props) {
   return (

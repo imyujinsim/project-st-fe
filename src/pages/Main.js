@@ -5,7 +5,6 @@ import Header from '../layout/Header';
 import Search from '../component/Search';
 import MainList from '../main/MainList';
 import axios from 'axios';
-import { handleMainSubmit } from './handleEvent';
 
 function Main(props) {
   const key = decodeURIComponent(process.env.REACT_APP_TOUR);

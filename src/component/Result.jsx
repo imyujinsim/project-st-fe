@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ListItem from './ListItem';
 import '../style/search-result.css';
-// import noPic from "../resources/icons/no_image.gif";
 
 function Result(props) {
   const data = props.data ? props.data : [];

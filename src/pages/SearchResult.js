@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom/client';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 import Search from '../component/Search';
-import Result from '../searchResult/Result';
+import Result from '../component/Result';
 import axios from 'axios';
-// import handleResultSubmit from './handleEvent';
-// import { createProxyMiddleware } from 'http-proxy-middleware';
 
 export default function SearchResult() {
   const key = decodeURIComponent(process.env.REACT_APP_TOUR);
