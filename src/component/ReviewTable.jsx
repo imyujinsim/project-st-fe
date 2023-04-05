@@ -169,6 +169,7 @@ function ReviewTable(props) {
                 value="작성"
                 onClick={() => {
                   const modal = document.querySelector('#myModalw');
+                  console.log(modal);
                   modal.classList.add('hide');
                 }}
               />
