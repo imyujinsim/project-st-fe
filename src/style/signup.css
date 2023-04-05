@@ -40,6 +40,10 @@
   border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
 }
 
+#passwd {
+  font-size: 15px;
+}
+
 .signup-input {
   color: #000;
   padding-left: 8px;
