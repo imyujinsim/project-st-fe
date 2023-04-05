@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/info-album.css';
-// import noPic from '../resources/icons/no_image.gif';
 
 function InfoAlbum(props) {
   const data = props.data;
@@ -18,7 +17,6 @@ function InfoAlbum(props) {
   } else {
     console.log('데이터 없음');
   }
-  // console.log(pictures);
 
   return (
     <div className="album-container">

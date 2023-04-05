@@ -4,26 +4,8 @@ import '../style/reset.css';
 import '../style/login.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Cookies from 'js-cookie';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 function Login(props) {
-  // const LoginPage = () => {
-  //   const navigate = useNavigate();
-  //   const { state } = useLocation();
-
-  //   const handleLogin = () => {
-  //     Cookies.set("id", "id");
-
-  //     if (state) {
-  //       navigate(state);
-  //     } else {
-  //       navigate("/login");
-  //     }
-  //   };
-  // };
-  const url = 'https://api.bodam.site:8080/account/login';
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const id = document.querySelector('#identification').value;

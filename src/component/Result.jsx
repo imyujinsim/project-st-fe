@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListItem from '../component/ListItem';
+import ListItem from './ListItem';
 import '../style/search-result.css';
 // import noPic from "../resources/icons/no_image.gif";
 

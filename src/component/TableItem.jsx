@@ -1,9 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 
 function TableItem(props) {
   const token = localStorage.getItem('token');
-  const [count, setCount] = useState(0);
 
   const handleEdit = async (author, passwd, title, review, id) => {
     const contextId = localStorage.getItem('contentId');
@@ -135,10 +134,6 @@ function TableItem(props) {
               <span
                 className="close"
                 onClick={(e) => {
-                  e.stopPropagation();
-                  // const modal = document.getElementById(
-                  //   `${props.id + 'modal'}`
-                  // );
                   const modal = e.target.parentNode.parentNode;
                   console.log(modal);
                   modal.classList.add('hide');
@@ -169,9 +164,6 @@ function TableItem(props) {
                     console.log(id);
                     handleEdit(author, passwd, title, review, id);
                     console.log(author, passwd, title, review, id);
-                    // const modal = document.getElementById(
-                    //   `${props.id + 'modal'}`
-                    // );
                     const modal = event.target.parentNode.parentNode.parentNode;
                     console.log(modal);
                     modal.classList.toggle('hide');

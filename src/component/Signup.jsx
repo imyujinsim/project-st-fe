@@ -30,10 +30,6 @@ function Signup(props) {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-
-        // 추가
-        // 'Access-Control-Allow-Origin': '*',
-        // 'Access-Control-Allow-Credentials': true,
       },
     })
       .then(function (response) {

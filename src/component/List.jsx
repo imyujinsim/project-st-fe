@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../style/reset.css';
 import '../style/main.css';
 import ListItem from './ListItem';
-// import noPic from '../resources/icons/no_image.gif';
-import axios from 'axios';
 
 function List(props) {
   const locationData = props.locationData ? props.locationData : '데이터 없음';
