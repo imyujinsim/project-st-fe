@@ -5,38 +5,28 @@ import '../style/myinfo.css';
 function MyInfo(props) {
   const [userData, setUserData] = useState();
   const token = localStorage.getItem('token');
+
   useEffect(() => {
     const getUserData = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.bodam.site:8080/account/info`,
-          {
-            withCredentials: true,
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json',
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        console.log(response);
-        setUserData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
+      const response = await axios
+        .get(`https://api.bodam.site:8080/account/info`, {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+          setUserData(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
     getUserData();
   }, []);
-
-  // useEffect(() => {
-  //   console.log(userData);
-  // }, [userData]);
-
-  const name = userData.name;
-  const email = userData.email;
-  const tel = userData.tel;
-  const id = userData.id;
-  const date = userData.date;
 
   return (
     <section className="user-information">
@@ -47,31 +37,31 @@ function MyInfo(props) {
             <th>
               <b>이름</b>
             </th>
-            <td>{name}</td>
+            <td>{userData.name}</td>
           </tr>
           <tr>
             <th>
               <b>아이디</b>
             </th>
-            <td>{id}</td>
+            <td>{userData.id}</td>
           </tr>
           <tr>
             <th>
               <b>이메일</b>
             </th>
-            <td>{email}</td>
+            <td>{userData.email}</td>
           </tr>
           <tr>
             <th>
               <b>전화번호</b>
             </th>
-            <td>{tel}</td>
+            <td>{userData.tel}</td>
           </tr>
           <tr>
             <th>
               <b>생년월일</b>
             </th>
-            <td>{date}</td>
+            <td>{userData.date}</td>
           </tr>
         </tbody>
       </table>
