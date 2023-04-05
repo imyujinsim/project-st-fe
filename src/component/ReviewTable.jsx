@@ -99,7 +99,7 @@ function ReviewTable(props) {
           글쓰기
         </button>
       ) : (
-        ''
+        <div></div>
       )}
 
       <div id="myModalw" className="modalw hide write">
