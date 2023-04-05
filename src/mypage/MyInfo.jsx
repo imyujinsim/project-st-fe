@@ -33,53 +33,46 @@ function MyInfo(props) {
   getUserData();
 
   useEffect(() => {
-    console.log(userData);
-    // setName(userData.name);
-    // setId(userData.id);
-    // setEmail(userData.email);
-    // setTel(userData.tel);
-    // setDate(userData.date);
+    return (
+      <section className="user-information">
+        <h1>내 정보</h1>
+        <table className="user-info">
+          <tbody>
+            <tr>
+              <th>
+                <b>이름</b>
+              </th>
+              <td>{userData.name}</td>
+            </tr>
+            <tr>
+              <th>
+                <b>아이디</b>
+              </th>
+              <td>{userData.id}</td>
+            </tr>
+            <tr>
+              <th>
+                <b>이메일</b>
+              </th>
+              <td>{userData.email}</td>
+            </tr>
+            <tr>
+              <th>
+                <b>전화번호</b>
+              </th>
+              <td>{userData.tel}</td>
+            </tr>
+            <tr>
+              <th>
+                <b>생년월일</b>
+              </th>
+              <td>{userData.date}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    );
   }, [userData]);
-
-  return (
-    <section className="user-information">
-      <h1>내 정보</h1>
-      <table className="user-info">
-        <tbody>
-          <tr>
-            <th>
-              <b>이름</b>
-            </th>
-            <td>{userData.name}</td>
-          </tr>
-          <tr>
-            <th>
-              <b>아이디</b>
-            </th>
-            <td>{userData.id}</td>
-          </tr>
-          <tr>
-            <th>
-              <b>이메일</b>
-            </th>
-            <td>{userData.email}</td>
-          </tr>
-          <tr>
-            <th>
-              <b>전화번호</b>
-            </th>
-            <td>{userData.tel}</td>
-          </tr>
-          <tr>
-            <th>
-              <b>생년월일</b>
-            </th>
-            <td>{userData.date}</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  );
 }
 
 export default MyInfo;
