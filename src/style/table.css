@@ -191,7 +191,7 @@ svg {
   right: 230px;
 }
 
-.form-data .reviewForme {
+.form-data .reviewForm {
   text-align: center;
 }
 
@@ -214,18 +214,18 @@ svg {
   justify-content: space-between;
 }
 
-.review-row .authore,
-.review-row .passworde {
+.review-row .author,
+.review-row .password {
   width: 49%;
   margin-bottom: 5px;
 }
 
-.titlee {
+.title {
   width: 70%;
   margin-bottom: 5px;
 }
 
-.review-inpute {
+.review-input {
   width: 70%;
 }
 
