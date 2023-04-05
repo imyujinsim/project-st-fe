@@ -29,7 +29,7 @@ function MainList(props) {
               arrange: 'A',
               mapX: myLongitude,
               mapY: myLatitude,
-              radius: 6300,
+              radius: 5000,
               contentTypeId: 12,
               serviceKey: key,
             },
