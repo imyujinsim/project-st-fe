@@ -61,7 +61,7 @@ function TableItem(props) {
     const time = new Date(
       props.updateTime ? props.updateTime : props.createTime
     );
-    const describeTime = '수정한 시간: ';
+    const describeTime = props.updateTime ? '수정한 시간: ' : '작성한 시간: ';
     const year = time.getFullYear();
     const month = time.getMonth() + 1;
     const day = time.getDay();
