@@ -74,6 +74,8 @@ function ReviewTable(props) {
             title={item.boardTitle}
             author={item.boardWriter}
             content={item.boardContents}
+            updateTime={item.boardUpdatedTime}
+            createTime={item.boardCreatedTime}
             count={setCount}
           />
         );

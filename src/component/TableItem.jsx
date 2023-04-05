@@ -57,6 +57,20 @@ function TableItem(props) {
     }
   };
 
+  function formatDate() {
+    const time = new Date(
+      props.updateTime ? props.updateTime : props.createTime
+    );
+    const describeTime = '수정한 시간: ';
+    const year = time.getFullYear();
+    const month = time.getMonth() + 1;
+    const day = time.getDay();
+    const hour = time.getHours();
+    const min = time.getMinutes();
+
+    return `${describeTime}${year}년 ${month}월 ${day}일 ${hour}시 ${min}분`;
+  }
+
   return (
     <>
       <div
@@ -69,14 +83,15 @@ function TableItem(props) {
           accordion.classList.toggle('active');
         }}
       >
-        <div class="label">
+        <div className="label">
           <p>{props.id}</p>
           <p>{props.title}</p>
           <p>{props.author}</p>
         </div>
-        <div class="content" id={props.id}>
+        <div className="content" id={props.id}>
           {props.content}
           <br />
+          <p className="time">{formatDate()}</p>
           {token ? (
             <div className="icons">
               <p
