@@ -4,6 +4,7 @@ import '../style/myinfo.css';
 
 function MyInfo(props) {
   const [userData, setUserData] = useState();
+  const [name, setName] = useState();
   const token = localStorage.getItem('token');
 
   useEffect(() => {
@@ -28,7 +29,10 @@ function MyInfo(props) {
     getUserData();
   }, []);
 
-  console.log(userData);
+  useEffect(() => {
+    console.log(userData);
+    setName(userData.name);
+  }, [userData]);
 
   return (
     <section className="user-information">
@@ -39,7 +43,7 @@ function MyInfo(props) {
             <th>
               <b>이름</b>
             </th>
-            <td>{userData.name}</td>
+            <td>{name}</td>
           </tr>
           <tr>
             <th>
