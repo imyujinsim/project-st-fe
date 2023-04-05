@@ -30,8 +30,6 @@
 
 .label p:nth-child(2) {
   position: absolute;
-  width: 150px;
-  text-align: center;
   left: 30%;
 }
 

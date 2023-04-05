@@ -41,31 +41,31 @@ function MyInfo(props) {
             <th>
               <b>이름</b>
             </th>
-            <td>{userData.name}</td>
+            <td>{userData.data.name}</td>
           </tr>
           <tr>
             <th>
               <b>아이디</b>
             </th>
-            <td>{userData.id}</td>
+            <td>{userData.data.id}</td>
           </tr>
           <tr>
             <th>
               <b>이메일</b>
             </th>
-            <td>{userData.email}</td>
+            <td>{userData.data.email}</td>
           </tr>
           <tr>
             <th>
               <b>전화번호</b>
             </th>
-            <td>{userData.tel}</td>
+            <td>{userData.data.tel}</td>
           </tr>
           <tr>
             <th>
               <b>생년월일</b>
             </th>
-            <td>{userData.date}</td>
+            <td>{userData.data.date}</td>
           </tr>
         </tbody>
       </table>
