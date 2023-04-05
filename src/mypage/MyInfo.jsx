@@ -5,6 +5,10 @@ import '../style/myinfo.css';
 function MyInfo(props) {
   const [userData, setUserData] = useState();
   const [name, setName] = useState();
+  const [id, setId] = useState();
+  const [email, setEmail] = useState();
+  const [tel, setTel] = useState();
+  const [date, setDate] = useState();
   const token = localStorage.getItem('token');
 
   useEffect(() => {
@@ -32,6 +36,10 @@ function MyInfo(props) {
   useEffect(() => {
     console.log(userData);
     setName(userData.name);
+    setId(userData.id);
+    setEmail(userData.email);
+    setTel(userData.tel);
+    setDate(userData.date);
   }, [userData]);
 
   return (
@@ -49,25 +57,25 @@ function MyInfo(props) {
             <th>
               <b>아이디</b>
             </th>
-            <td>{userData.id}</td>
+            <td>{id}</td>
           </tr>
           <tr>
             <th>
               <b>이메일</b>
             </th>
-            <td>{userData.email}</td>
+            <td>{email}</td>
           </tr>
           <tr>
             <th>
               <b>전화번호</b>
             </th>
-            <td>{userData.tel}</td>
+            <td>{tel}</td>
           </tr>
           <tr>
             <th>
               <b>생년월일</b>
             </th>
-            <td>{userData.date}</td>
+            <td>{date}</td>
           </tr>
         </tbody>
       </table>
