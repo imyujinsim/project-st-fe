@@ -11,6 +11,7 @@ function Header(props) {
   const handleLogout = () => {
     localStorage.removeItem('token');
     window.location.href = '/';
+    localStorage.setItem('bookmark', '[]');
   };
 
   return (
